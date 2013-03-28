@@ -1,0 +1,23 @@
+﻿<Window x:Class="SMPLSharpWPFTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="0 0 10 10">Модельное время: </TextBlock>
+            <TextBlock Text="{Binding Viewer.Position}"></TextBlock>
+        </StackPanel>
+        <TextBox Name="TT"  Grid.Row="1" Text="{Binding Output}" VerticalScrollBarVisibility="Auto" TextChanged="TT_TextChanged"></TextBox>
+        <DockPanel Grid.Row="2" LastChildFill="True" Height="25">
+            <Button Click="Button_Click" DockPanel.Dock="Left" Margin="0 0 10 0">Play </Button>
+            <Slider Height="23" Width="100" Minimum="5" ToolTip="{Binding Path=Viewer.Interval}"  Maximum="200" Value="{Binding Path=Viewer.Interval,Mode=TwoWay}"></Slider>
+            <ProgressBar Height="23" Name="slider1" VerticalAlignment="Center"  Value="{Binding Path=Viewer.Position,Mode=TwoWay}" Minimum="0" Maximum="{Binding Path=MaxTime}" IsEnabled="False" />
+
+        </DockPanel>
+    </Grid>
+</Window>

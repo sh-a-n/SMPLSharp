@@ -1,0 +1,7 @@
+*.suo
+/SMPLSharp/bin
+/SMPLSharp/obj
+/SMPLSharpConsoleTest/bin
+/SMPLSharpConsoleTest/obj
+/SMPLSharpWPFTest/bin
+/SMPLSharpWPFTest/obj
