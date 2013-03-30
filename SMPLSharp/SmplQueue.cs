@@ -16,76 +16,107 @@ namespace SMPLSharp.Objects
 
         #region Public Properties
 
-            // Имя очереди
+            /// <summary>
+            /// Имя очереди
+            /// </summary>
+ 
             virtual public string Name
             {
                 get;
                 protected set;
             }
 
-            // Длина очереди
+            /// <summary>
+            /// Длина очереди
+            /// </summary>
+ 
             public int Length
             {
                 get { return Elements.Count(); }
             }
 
-            // Максимальная длина очереди
+            /// <summary>
+            /// Максимальная длина очереди
+            /// </summary>
+ 
             virtual public int MaxLength
             {
                 get;
                 protected set;
             }
         
-            // Количество элементов, удаленных из очереди
+            /// <summary>
+            /// Количество элементов, удаленных из очереди
+            /// </summary>
+ 
             virtual public int CountPassed
             {
                 get;
                 protected set;
             }
 
-            // Время последнего изменения длины очереди
+            /// <summary>
+            /// Время последнего изменения длины очереди
+            /// </summary>
+ 
             virtual public int TimeLastChanged
             {
                 get;
                 protected set;
             }
 
-            // Сумма периодов ожиданий
+            /// <summary>
+            /// Сумма периодов ожиданий
+            /// </summary>
+ 
             virtual public int WaitingPeriodSum
             {
                 get;
                 protected set;
             }
 
-            // Сумма квадратов периодов ожиданий
+            /// <summary>
+            /// Сумма квадратов периодов ожиданий
+            /// </summary>
+ 
             virtual public int WaitingPeriodSq2Sum
             {
                 get;
                 protected set;
             }
 
-            // Сумма длин очереди * соответсвующие периоды изменения 
-            // Интерграл Q(t), где Q - длина очереди, t - модельное время
-            // Используется для вычисления средней длины очереди
+            // 
+        /// <summary>
+        /// Сумма длин очереди * соответсвующие периоды изменения. Интерграл Q(t), где Q - длина очереди, t - модельное время. Используется для вычисления средней длины очереди
+        /// </summary>
             virtual public int LengthOfTimeIntegral
             {
                 get;
                 protected set;
             }
 
-            // Очередь пуста?
+            /// <summary>
+            ///  Очередь пуста?
+            /// </summary>
+
             public bool IsEmpty
             {
                 get { return Length == 0; }
             }
 
-            // Элементы очереди
+            /// <summary>
+            /// Элементы очереди
+            /// </summary>
+ 
             virtual public ICollection<SmplQueueElement> Elements
             {
                 get { return elements; }
             }
 
-            // Модель, с которой связана очередь
+            /// <summary>
+            /// Модель, с которой связана очередь
+            /// </summary>
+ 
             public SmplModel Model
             {
                 get;
@@ -96,8 +127,12 @@ namespace SMPLSharp.Objects
 
         #region Constructors
 
-            // Конструктор очереди. 
-            // Экземпляры создаются через SMPLModel
+            /// <summary>
+            /// Конструктор очереди. Экземпляры создаются через SMPLModel
+            /// </summary>
+            /// <param name="model">модель</param>
+            /// <param name="name">имя очереди</param>
+ 
             internal SmplQueue(SmplModel model, string name)
             {
                 Model = model;
@@ -114,20 +149,34 @@ namespace SMPLSharp.Objects
             // 
             // При извлечении берем первый из элементов
             // При вставке добавляем в конец списка (пропускаем элементы с более низким приоритетом)
-            //
+            /// <summary>
+            /// Элементы очереди
+            /// [2][2][2][1][1] (Указаны приоритеты)
+            /// 
+            /// При извлечении берем первый из элементов
+            /// При вставке добавляем в конец списка (пропускаем элементы с более низким приоритетом)
+            /// </summary>
             private List<SmplQueueElement> elements;
 
         #endregion
 
         #region Public Methods
 
-            // Добавить новый элемент (1) в очередь
+            /// <summary>
+            /// Добавить новый элемент (1) в очередь
+            /// </summary>
+ 
             virtual public void Enqueue()
             {
                 Enqueue(1);
             }
 
-            // Добавить новый элемент token в очередь с заданным приоритетом
+            /// <summary>
+            /// Добавить новый элемент token в очередь с заданным приоритетом
+            /// </summary>
+            /// <param name="token">элемент</param>
+            /// <param name="priority">приоритет</param>
+ 
             virtual public void Enqueue(object token, int priority = 0)
             {
                 var new_element = new SmplQueueElement(token, priority);
@@ -145,8 +194,11 @@ namespace SMPLSharp.Objects
                 updateStatiscticIncrease(l);
             }
 
-            // Извлечь первый элемент очереди
-            // В случае пустой очереди генерирует исключение
+            
+        /// <summary>
+        /// Извлечь первый элемент очереди
+        /// </summary>
+        /// <returns>Возвращает элемент очереди. В случае пустой очереди генерирует исключение</returns>
             virtual public object Head()
             {
                 var l = Length;
@@ -168,7 +220,11 @@ namespace SMPLSharp.Objects
 
         #region Protected/Private Methods
 
-            // Обновление статистики при добавлении в очередь
+            /// <summary>
+            /// Обновление статистики при добавлении в очередь
+            /// </summary>
+            /// <param name="prev_length"></param>
+ 
             protected void updateStatiscticIncrease(int prev_length)
             {
                 if (MaxLength < Length) MaxLength = Length;
@@ -176,7 +232,12 @@ namespace SMPLSharp.Objects
                 TimeLastChanged = Model.Time;
             }
 
-            // Обновление статистики при извлечении из очереди
+            /// <summary>
+            /// Обновление статистики при извлечении из очереди
+            /// </summary>
+            /// <param name="prev_length"></param>
+            /// <param name="element"></param>
+ 
             protected void updateStatiscticDecrease(int prev_length, SmplQueueElement element)
             {
                 LengthOfTimeIntegral += prev_length * (Model.Time - TimeLastChanged);
@@ -196,21 +257,30 @@ namespace SMPLSharp.Objects
 
         #region Public Properties
 
-            // Содержимое элемента
+            /// <summary>
+            /// Содержимое элемента
+            /// </summary>
+ 
             virtual public object Value
             {
                 get;
                 protected set;
             }
 
-            // Приоритет элемента
+            /// <summary>
+            /// Приоритет элемента
+            /// </summary>
+ 
             virtual public int Priority
             {
                 get;
                 protected set;
             }
 
-            // Время добавления в очередь
+            /// <summary>
+            /// Время добавления в очередь
+            /// </summary>
+ 
             virtual public int TimeAdded
             {
                 get;
@@ -221,10 +291,12 @@ namespace SMPLSharp.Objects
 
         #region Constructors
 
-            // Конструктор элемента:
-            //  value    - содержимое элемента
-            //  priority - приоритет элемента
-            // Экземпляры создаются через SMPLModel
+            
+        /// <summary>
+        /// Конструктор элемента
+        /// </summary>
+        /// <param name="token">содержимое элемента</param>
+        /// <param name="priority">приоритет элемента</param>
             internal SmplQueueElement(object token, int priority)
             {
                 Value = token;

@@ -13,14 +13,20 @@ namespace SMPLSharp.Utils
     {
         #region Public Properties
         
-            // Текущее значение Seed
+            /// <summary>
+            /// Текущее значение Seed
+            /// </summary>
+ 
             public uint Seed
             {
                 get;
                 set;
             }
 
-            // Первоначальное значение Seed
+            /// <summary>
+            /// Первоначальное значение Seed
+            /// </summary>
+ 
             public uint StartSeed
             {
                 get;
@@ -31,14 +37,21 @@ namespace SMPLSharp.Utils
 
         #region Constructors
 
-            // Конструктор генератора, задающий seed от текущего времени 
+            /// <summary>
+            /// Конструктор генератора, задающий seed от текущего времени
+            /// </summary>
+  
             public SmplRandomGenerator()
             {
                 Random r = new Random();
                 Seed = StartSeed = (uint) r.Next();
             }
 
-            // Конструкутор генератора с заданным seed
+            /// <summary>
+            /// Конструкутор генератора с заданным seed
+            /// </summary>
+            /// <param name="seed"></param>
+ 
             public SmplRandomGenerator(uint seed)
             {
                 Seed = StartSeed = seed;
@@ -48,24 +61,37 @@ namespace SMPLSharp.Utils
 
         #region Public Methods
         
-            // Генерирует число по равномерному распределению 
-            // в диапозоне [0, a] включительно
+            /// <summary>
+            /// Генерирует число по равномерному распределению в диапозоне [0, a] включительно
+            /// </summary>
+            /// <param name="a"></param>
+            /// <returns></returns>
+ 
             public int IRandom(int a)
             {
                 Seed = Seed * 1664525 + 1013904223;
                 return (int)(Seed % (uint)(a + 1));
             }
 
-            // Генерирует число по равномерному распределению 
-            // в диапозоне [a, b] включительно
+            /// <summary>
+            /// Генерирует число по равномерному распределению в диапозоне [a, b] включительно
+            /// </summary>
+            /// <param name="a"></param>
+            /// <param name="b"></param>
+            /// <returns></returns>
+ 
             public int IRandom(int a, int b)
             {
                 Seed = Seed * 1664525 + 1013904223;
                 return (int)(Seed % (uint)(b - a + 1)) + a;
             }
 
-            // Генерирует число по отрицательному экспоненциальному распределению
-            // со средней точкой m
+            /// <summary>
+            /// Генерирует число по отрицательному экспоненциальному распределению со средней точкой m
+            /// </summary>
+            /// <param name="m"></param>
+            /// <returns></returns>
+ 
             public int NegExp(int m)
             {
                 Seed = Seed * 1664525 + 1013904223;
@@ -73,8 +99,12 @@ namespace SMPLSharp.Utils
                 return (int) Math.Round(-m  * Math.Log(rnd) + 0.5);
             }
             
-            // Генерирует число по распределению Пуассона
-            // со параметром lambda
+            /// <summary>
+            /// Генерирует число по распределению Пуассона со параметром lambda
+            /// </summary>
+            /// <param name="lambda"></param>
+            /// <returns></returns>
+ 
             public int Poisson(double lambda) {
                 double L = Math.Exp(-lambda);
                 double p = 1.0;

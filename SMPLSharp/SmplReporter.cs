@@ -10,33 +10,48 @@ using SMPLSharp.Objects;
 namespace SMPLSharp.Utils
 {
     
-    // Статистика по прибору
+    /// <summary>
+    /// Статистика по прибору
+    /// </summary>
+ 
     public class SmplRDeviceStatisic
     {
         #region Public Properties
 
-            // Имя
+            /// <summary>
+            /// Имя
+            /// </summary>
+ 
             public string Name
             {
                 get;
                 set;
             }
 
-            // Среднее время обслуживания заявки
+            /// <summary>
+            /// Среднее время обслуживания заявки
+            /// </summary>
+ 
             public double AverageTimeReserved
             {
                 get;
                 set;
             }
 
-            // Занятость прибора (0..1)
+            /// <summary>
+            /// Занятость прибора (0..1)
+            /// </summary>
+ 
             public double BusyIndex
             {
                 get;
                 set;
             }
 
-            // Количество обслужанных заявок
+            /// <summary>
+            /// Количество обслужанных заявок
+            /// </summary>
+ 
             public int QueryCount
             {
                 get;
@@ -46,12 +61,18 @@ namespace SMPLSharp.Utils
         #endregion
     }
 
-    // Статистика по многоканальному прибору
+    /// <summary>
+    /// Статистика по многоканальному прибору
+    /// </summary>
+ 
     public class SmplRMultiDeviceStatisic : SmplRDeviceStatisic
     {
         #region Public Properties
 
-        // Количество каналов
+        /// <summary>
+        /// Количество каналов
+        /// </summary>
+ 
         public int ChannelCount
         {
             get;
@@ -62,40 +83,58 @@ namespace SMPLSharp.Utils
     }
 
 
-    // Статистика по очереди
+    /// <summary>
+    /// Статистика по очереди
+    /// </summary>
+ 
     public class SmplRQueueStatisic
     {
         #region Public Properties
 
-            // Имя
+            /// <summary>
+            /// Имя
+            /// </summary>
+ 
             public string Name
             {
                 get;
                 set;
             }
 
-            // Среднее время ожидания
+            /// <summary>
+            /// Среднее время ожидания
+            /// </summary>
+ 
             public double AverageTimeWaiting
             {
                 get;
                 set;
             }
         
-            // Разброс времени ожидания
+            /// <summary>
+            /// Разброс времени ожидания
+            /// </summary>
+ 
             public double DispersalTimeWaiting
             {
                 get;
                 set;
             }
 
-            // Средняя длина очереди
+            /// <summary>
+            /// Средняя длина очереди
+            /// </summary>
+ 
             public double AverageLength
             {
                 get;
                 set;
             }
 
-            // Максимальная длина очереди
+            /// <summary>
+            /// Максимальная длина очереди
+            /// </summary>
+ 
             public int MaxLength
             {
                 get;
@@ -103,7 +142,10 @@ namespace SMPLSharp.Utils
             }
 
 
-            // Число заявок, попавших в очередь
+            /// <summary>
+            /// Число заявок, попавших в очередь
+            /// </summary>
+ 
             public int TotalCount
             {
                 get;
@@ -114,18 +156,27 @@ namespace SMPLSharp.Utils
         #endregion
     }
 
-    // Give model statistic
+    /// <summary>
+    /// Give model statistic
+    /// </summary>
+ 
     public class SmplReporter
     {
         #region Public Properties
 
-            // Время моделирования
+            /// <summary>
+            /// Время моделирования
+            /// </summary>
+ 
             public int ModelTime
             {
                 get { return Model.Time; }
             }
 
-            // Информация о приборах
+            /// <summary>
+            /// Информация о приборах
+            /// </summary>
+ 
             public List<SmplRDeviceStatisic> DeviceStatistic
             {
                 get
@@ -145,7 +196,10 @@ namespace SMPLSharp.Utils
                 }
             }
 
-            // Информация о многоканальных приборах
+            /// <summary>
+            /// Информация о многоканальных приборах
+            /// </summary>
+ 
             public List<SmplRMultiDeviceStatisic> MultiDeviceStatistic
             {
                 get
@@ -166,7 +220,10 @@ namespace SMPLSharp.Utils
                 }
             }
 
-            // Информация о очередях
+            /// <summary>
+            /// Информация о очередях
+            /// </summary>
+ 
             public List<SmplRQueueStatisic> QueueStatistic
             {
                 get
@@ -189,7 +246,10 @@ namespace SMPLSharp.Utils
             }
 
 
-            // Модель, с которой связан прибор
+            /// <summary>
+            /// Модель, с которой связан прибор
+            /// </summary>
+ 
             public SmplModel Model
             {
                 get;

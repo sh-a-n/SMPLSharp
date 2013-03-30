@@ -18,49 +18,62 @@ namespace SMPLSharp.Objects
 
         #region Public Properties
 
-            // Имя прибора
+            /// <summary>
+            /// Имя прибора
+            /// </summary> 
             virtual public string Name
             {
                 get;
                 private set;
             }
 
-            // Состояние прибора
-            // Если Status == null, прибор свободен
+            /// <summary>
+            /// Состояние прибора. Если Status == null, прибор свободен
+            /// </summary> 
             virtual public object Status
             {
                 get;
                 private set;
             }
         
-            // Прибор занят?
+            /// <summary>
+            ///  Прибор занят?
+            /// </summary>
             public bool IsBusy
             {
                 get { return Status != null; }
             }
 
-            // Время последнего вызова Reserve
+            /// <summary>
+            /// Время последнего вызова Reserve
+            /// </summary> 
             virtual public int TimeLastReserved
             {
                 get;
                 protected set;
             }
 
-            // Суммарное время, пока прибор занят
+            /// <summary>
+            /// Суммарное время, пока прибор занят
+            /// </summary> 
             virtual public int TimeTotalReserved
             {
                 get;
                 protected set;
             }
 
-            // Счетчик запросов (пар вызовов reserve/release)
+            /// <summary>
+            /// Счетчик запросов (пар вызовов reserve/release)
+            /// </summary> 
             virtual public int QueryCounter
             {
                 get;
                 protected set;
             }
 
-            // Модель, с которой связан прибор
+            /// <summary>
+            /// Модель, с которой связан прибор
+            /// </summary> 
             public SmplModel Model
             {
                 get;
@@ -71,8 +84,12 @@ namespace SMPLSharp.Objects
 
         #region Constructors
 
-            // Конструктор прибора. 
-            // Экземпляры создаются через SMPLModel
+            /// <summary>
+            /// Конструктор прибора. Экземпляры создаются через SMPLModel
+            /// </summary>
+            /// <param name="model">Модель</param>
+            /// <param name="name">Имя прибора</param>
+ 
             internal SmplDevice(SmplModel model, string name)
             {
                 Model = model;
@@ -87,14 +104,20 @@ namespace SMPLSharp.Objects
 
         #region Public Methods
 
-        // Зарезервировать прибор (param = 1)
+        /// <summary>
+        /// Зарезервировать прибор (param = 1)
+        /// </summary>
+ 
             public void Reserve()
             {
                 Reserve(1);
             }
 
-            // Зарезервировать прибор и поменять его статус на param
-            // В случае передачи token == null, прибор будет освобожден
+            /// <summary>
+            /// Зарезервировать прибор и поменять его статус на param. В случае передачи token == null, прибор будет освобожден
+            /// </summary>
+            /// <param name="token"></param>
+ 
             public void Reserve(object token)
             {
                 if (token != null)
@@ -107,7 +130,10 @@ namespace SMPLSharp.Objects
                     Release();
             }
 
-            // Освоболить прибор
+            /// <summary>
+            /// Освоболить прибор
+            /// </summary>
+ 
             public void Release()
             {
                 if (Status != null)

@@ -14,27 +14,43 @@ namespace SMPLSharp.Objects
         
         #region Public Properties
 
-            // Идентификатор типа события
+            /// <summary>
+            /// Идентификатор типа события
+            /// </summary>
+ 
             virtual public int EventID { get; set; }
 
-            // Время регистрации в модели
+            /// <summary>
+            /// Время регистрации в модели
+            /// </summary>
+ 
             virtual public int TimeRegistred { get; set; }
 
-            // Время возникновения в модели (TimeRegistred + время ожидания)
+            /// <summary>
+            /// Время возникновения в модели (TimeRegistred + время ожидания)
+            /// </summary>
+ 
             virtual public int TimeCaused { get; set; }
 
-            // Доп. параметр события 
+            /// <summary>
+            /// Доп. параметр события 
+            /// </summary>
+ 
             virtual public object Param { get; set; }
 
         #endregion
 
         #region Constructors
 
-            // Конструктор:
-            //  current_time - текущее модельное время
-            //  waiting_time - время ожидания возникновения
-            //  param        - доп. параметр события
-            // 
+             
+            /// <summary>
+            /// Конструктор:
+            /// </summary>
+            /// <param name="event_id">идентификатор события</param>
+            /// <param name="current_time">текущее модельное время</param>
+            /// <param name="waiting_time">время ожидания возникновения</param>
+            /// <param name="param">доп. параметр события</param>
+ 
             internal SmplEvent(int event_id, int current_time, int waiting_time, object param = null)
             {
                 EventID = event_id;

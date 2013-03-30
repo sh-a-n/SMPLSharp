@@ -18,35 +18,53 @@ namespace SMPLSharp.Objects
 
         #region Public Properties
 
-            // Имя прибора
+            /// <summary>
+            ///  Имя прибора
+            /// </summary>
+
             virtual public string Name
             {
                 get;
                 private set;
             }
 
-            // Канал прибора
+            /// <summary>
+            /// Канал прибора
+            /// </summary>
+ 
             public struct Ambary
             {
-                // Если Status == null, канал свободен
+                /// <summary>
+                /// Если Status == null, канал свободен
+                /// </summary>
+ 
                 public bool Status
                 {
                     get;
                     set;
                 }
-                // Время последнего резервирования
+                /// <summary>
+                /// Время последнего резервирования
+                /// </summary>
+ 
                 public int TimeLastReserved
                 {
                     get;
                     set;
                 }
-                // Суммарное время, пока канал занят
+                /// <summary>
+                /// Суммарное время, пока канал занят
+                /// </summary>
+ 
                 public int TimeTotalReserved
                 {
                     get;
                     set;
                 }
-                // Счетчик запросов (пар вызовов reserve/release)
+                /// <summary>
+                /// Счетчик запросов (пар вызовов reserve/release)
+                /// </summary>
+ 
                 public int QueryCounter
                 {
                     get;
@@ -55,17 +73,26 @@ namespace SMPLSharp.Objects
 
             }
             
-            // Количество каналов в приборе
+            /// <summary>
+            /// Количество каналов в приборе
+            /// </summary>
+ 
             public int CountAmbary
             {
                 get;
                 private set;
             }
 
-            // Массив каналов прибора
+            /// <summary>
+            /// Массив каналов прибора
+            /// </summary>
+ 
             public Ambary [] ArrAmbary;
         
-            // Все каналы прибора заняты?
+            /// <summary>
+            /// Все каналы прибора заняты?
+            /// </summary>
+ 
             public bool IsBusy
             {
                 get 
@@ -78,28 +105,40 @@ namespace SMPLSharp.Objects
                 }
             }
 
-            // Время последнего вызова Reserve
+            /// <summary>
+            /// Время последнего вызова Reserve
+            /// </summary>
+ 
             virtual public int TimeLastReserved
             {
                 get;
                 protected set;
             }
 
-            // Суммарное время, пока прибор занят
+            /// <summary>
+            /// Суммарное время, пока прибор занят
+            /// </summary>
+ 
             virtual public int TimeTotalReserved
             {
                 get;
                 protected set;
             }
 
-            // Счетчик запросов (пар вызовов reserve/release)
+            /// <summary>
+            /// Счетчик запросов (пар вызовов reserve/release)
+            /// </summary>
+ 
             virtual public int QueryCounter
             {
                 get;
                 protected set;
             }
 
-            // Модель, с которой связан прибор
+            /// <summary>
+            /// Модель, с которой связан прибор
+            /// </summary>
+ 
             public SmplModel Model
             {
                 get;
@@ -110,8 +149,13 @@ namespace SMPLSharp.Objects
 
         #region Constructors
 
-            // Конструктор прибора. 
-            // Экземпляры создаются через SMPLModel
+            /// <summary>
+            /// Конструктор прибора. Экземпляры создаются через SMPLModel
+            /// </summary>
+            /// <param name="model">модель</param>
+            /// <param name="name">имя прибора</param>
+            /// <param name="countAmbary">количество каналов</param>
+ 
             internal SmplMultiDevice(SmplModel model, string name, int countAmbary)
             {
                 Model = model;
@@ -127,14 +171,23 @@ namespace SMPLSharp.Objects
 
         #region Public Methods
 
-            // Зарезервировать прибор (param = 1)
+            /// <summary>
+            /// Зарезервировать прибор (param = 1)
+            /// </summary>
+            /// <returns></returns>
+ 
             public int Reserve()
             {
                 return Reserve(1);
             }
 
-            // Зарезервировать прибор и поменять статус первого свободного канала на true
-            // В случае передачи token == null, прибор будет освобожден
+            /// <summary>
+            /// Зарезервировать прибор и поменять статус первого свободного канала на true. В случае передачи token == null, прибор будет освобожден
+            /// </summary>
+            /// <param name="token"></param>
+            /// <param name="id">номер канала</param>
+            /// <returns>номер занятого канала прибора</returns>
+ 
             public int Reserve(object token, int id = -1)
             {
                 if ((id < 0) || (id > (CountAmbary - 1)))
@@ -169,7 +222,11 @@ namespace SMPLSharp.Objects
                 return -1;
             }
 
-            // Освоболить канал прибора с индексом id
+            /// <summary>
+            /// Освоболить канал прибора с индексом id
+            /// </summary>
+            /// <param name="id">индекс канала</param>
+ 
             public void Release(int id)
             {
                 if (ArrAmbary[id].Status != false)

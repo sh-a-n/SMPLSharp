@@ -21,21 +21,27 @@ namespace SMPLSharp
 
         #region Public Properties
 
-            // Генератор случайных чисел
+            /// <summary>
+            /// Генератор случайных чисел
+            /// </summary> 
             virtual public SmplRandomGenerator RandGen
             {
                 get;
                 protected set;
             }
 
-            // Модельное время
+            /// <summary>
+            /// Модельное время
+            /// </summary> 
             virtual public int Time
             {
                 get;
                 protected set;
             }
 
-            // Время следующего события
+            /// <summary>
+            /// Время следующего события
+            /// </summary>
             virtual public int NextEventTime
             {
                 get
@@ -45,26 +51,34 @@ namespace SMPLSharp
                 }
             }
 
-            // Модель была остановлена
+            /// <summary>
+            /// Модель была остановлена
+            /// </summary>
             virtual public bool IsStopped
             {
                 get;
                 protected set;
             }
             
-            // Очереди
+            /// <summary>
+            /// Очереди
+            /// </summary>
             virtual public Dictionary<string, SmplQueue> Queues
             {
                 get { return queues; }
             }
 
-            // Приборы
+            /// <summary>
+            ///  Приборы
+            /// </summary>
             virtual public Dictionary<string, SmplDevice> Devices
             {
                 get { return devices; }
             }
 
-            // Многоканальные приборы
+            /// <summary>
+            /// Многоканальные приборы
+            /// </summary> 
             virtual public Dictionary<string, SmplMultiDevice> MultiDevices
             {
                 get { return multiDevices; }
@@ -75,7 +89,9 @@ namespace SMPLSharp
 
         #region Constructors
 
-            // Конструктор
+            /// <summary>
+            /// Конструктор
+            /// </summary>
             public SmplModel()
             {
                 RandGen = new SmplRandomGenerator();
@@ -91,25 +107,37 @@ namespace SMPLSharp
 
         #region Protected/Private Data Fields
 
-            // Очереди модели
+            /// <summary>
+            /// Очереди модели
+            /// </summary> 
             protected Dictionary<string, SmplQueue> queues;
 
-            // Приборы модели
+            /// <summary>
+            /// Приборы модели
+            /// </summary> 
             protected Dictionary<string, SmplDevice> devices;
 
-            // Журнал будущих событий модели
+            /// <summary>
+            /// Журнал будущих событий модели
+            /// </summary>
             protected List<SmplEvent> futureEvents;
 
-            // Многоканальные приборы модели
+            /// <summary>
+            /// Многоканальные приборы модели
+            /// </summary> 
             protected Dictionary<string, SmplMultiDevice> multiDevices;
 
         #endregion
 
         #region Events
 
-            // Событие возникновения события модели
-            // Возникает при вызове Cause
+            
             public event EventCausedHandler EventCaused;
+        /// <summary>
+        /// Событие возникновения события модели. Возникает при вызове Cause
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
             protected virtual bool OnEventCaused(EventCausedEventArgs e)
             {
                 if (EventCaused != null)
@@ -124,7 +152,12 @@ namespace SMPLSharp
 
         #region Public Methods
 
-            // Добавить очередь в модель
+            /// <summary>
+            /// Добавить очередь в модель
+            /// </summary>
+            /// <param name="name">Имя очереди</param>
+            /// <returns>Новая очередь</returns>
+ 
             virtual public SmplQueue CreateQueue(string name)
             {
                 if (!queues.ContainsKey(name))
@@ -136,14 +169,24 @@ namespace SMPLSharp
                 else throw new Exception("Queue '" + name + "' already exist");
             }
 
-            // Возвратить существующую очередь
+            /// <summary>
+            /// Возвратить существующую очередь
+            /// </summary>
+            /// <param name="name">Имя очереди</param>
+            /// <returns>Новая очередь</returns>
+ 
             virtual public SmplQueue Queue(string name)
             {
                 if (queues.ContainsKey(name)) return queues[name];
                 else throw new Exception("Queue '" + name + "' is not exist");
             }
 
-            // Добавить прибор в модель
+            /// <summary>
+            /// Добавить прибор в модель
+            /// </summary>
+            /// <param name="name">Имя прибора</param>
+            /// <returns>Новый прибор</returns>
+ 
             virtual public SmplDevice CreateDevice(string name)
             {
                 if (!devices.ContainsKey(name))
@@ -155,7 +198,12 @@ namespace SMPLSharp
                 else throw new Exception("Device '" + name + "' already exist");
             }
 
-            // Возвратить существующий прибор
+            /// <summary>
+            /// Возвратить существующий прибор
+            /// </summary>
+            /// <param name="name">Имя прибора</param>
+            /// <returns>Прибор</returns>
+ 
             virtual public SmplDevice Device(string name)
             {
                 if (devices.ContainsKey(name)) return devices[name];
@@ -163,7 +211,13 @@ namespace SMPLSharp
             }
 
 
-            // Добавить многоканальный прибор в модель
+            /// <summary>
+            /// Добавить многоканальный прибор в модель
+            /// </summary>
+            /// <param name="name">Имя многоканального прибора</param>
+            /// <param name="countAmbary">Количество каналов</param>
+            /// <returns>Новый многоканальный прибор</returns>
+ 
             virtual public SmplMultiDevice CreateMultiDevice(string name, int countAmbary)
             {
                 if (!multiDevices.ContainsKey(name))
@@ -176,17 +230,25 @@ namespace SMPLSharp
             }
 
 
-            // Возвратить существующий многоканальный прибор
+            /// <summary>
+            /// Возвратить существующий многоканальный прибор
+            /// </summary>
+            /// <param name="name">имя прибора</param>
+            /// <returns>Многоканаьный прибор</returns>
+ 
             virtual public SmplMultiDevice MultiDevice(string name)
             {
                 if (multiDevices.ContainsKey(name)) return multiDevices[name];
                 else throw new Exception("MultiDevice '" + name + "' is not exist");
             }
 
-            // Запланировать событие:
-            //  event_id  - идентификатор типа события
-            //  wait_time - время, через которе событие вызовется
-            //  param     - параметр, передаваемый событию
+            
+        /// <summary>
+        /// Запланировать событие
+        /// </summary>
+        /// <param name="event_id">идентификатор типа события</param>
+        /// <param name="wait_time">время, через которе событие вызовется</param>
+        /// <param name="param">параметр, передаваемый событию</param>
             public void Schedule(int event_id, int wait_time, object param = null)
             {
                 var e = new SmplEvent(event_id, Time, wait_time, param);
@@ -202,14 +264,12 @@ namespace SMPLSharp
                 futureEvents.Insert(0, e);
             }
         
-            // Вызвать ближайшее событие модели
-            // Через параметры возвращается:
-            //  model_event - вызванное событие модели
-            // 
-            // Вызывает событие EventCaused
-            // Если обработчик EventCaused задаст в e.StopModel значение false, функция возвратит false
-            //
-            // В случае, если ни одно событие не запланировано, кидается исключение
+            
+        /// <summary>
+        /// Вызвать ближайшее событие модели
+        /// </summary>
+        /// <param name="model_event">вызванное событие модели</param>
+            /// <returns>Если обработчик EventCaused задаст в e.StopModel значение false, функция возвратит false. true, если событие существует. В случае, если ни одно событие не запланировано, кидается исключение</returns>
             public bool Cause(out SmplEvent model_event)
             {
                 if (futureEvents.Count > 0)
@@ -225,27 +285,24 @@ namespace SMPLSharp
             }
 
 
-            // Вызвать ближайшее событие модели
-            //
-            // Вызывает событие EventCaused
-            // Если обработчик EventCaused задаст в e.StopModel значение false, функция возвратит false
-            //
-            // В случае, если ни одно событие не запланировано, кидается исключение
+            
+        /// <summary>
+        /// Вызвать ближайшее событие модели
+        /// </summary>
+            /// <returns>Если обработчик EventCaused задаст в e.StopModel значение false, функция возвратит false. true, если событие существует. В случае, если ни одно событие не запланировано, кидается исключение</returns>
             public bool Cause()
             {
                 SmplEvent e;
                 return Cause(out e);
             }
 
-            // Вызвать ближайшее событие модели
-            // Через параметры возвращается:
-            //  event_id - идентификатор вызванного события
-            //  param    - параметр вызванного события
-            // 
-            // Вызывает событие EventCaused
-            // Если обработчик EventCaused задаст в e.StopModel значение false, функция возвратит false
-            //
-            // В случае, если ни одно событие не запланировано, кидается исключение
+            
+        /// <summary>
+        /// Вызвать ближайшее событие модели
+        /// </summary>
+        /// <param name="event_id">идентификатор вызванного события</param>
+        /// <param name="param">параметр вызванного события</param>
+            /// <returns>Если обработчик EventCaused задаст в e.StopModel значение false, функция возвратит false. true, если событие существует. В случае, если ни одно событие не запланировано, кидается исключение</returns>
             public bool Cause(out int event_id, out object param)
             {
                 SmplEvent e;
@@ -255,52 +312,66 @@ namespace SMPLSharp
                 return res;
             }
 
-            // Отменить ближайшее запланированное событие с указанными параметрами
-            public void Cancel(int event_id, object param = null)
+            /// <summary>
+            /// Отменить ближайшее запланированное событие с указанными параметрами
+            /// </summary>
+            /// <param name="event_id">Идентификатор события</param>
+            /// <param name="param">Параметры события</param>
+            /// <returns></returns>
+ 
+            public int Cancel(int event_id, object param = null)
             {
-                //foreach (SmplEvent e in futureEvents) 
-                //{
-                //    if ((e.EventID == event_id) && (e.Param == param))
-                //    {
-                //        int ind = futureEvents.IndexOf(e);
-                //        futureEvents.RemoveAt(ind);
-                //    }
-                //}
-                int i=0;
-                while (i < futureEvents.Count())
+                foreach (SmplEvent e in futureEvents)
                 {
-                    if ((futureEvents[i].EventID == event_id) && (futureEvents[i].Param == param))
-                        break;
-                    i++;
+                    if ((e.EventID == event_id) && (e.Param == param))
+                    {
+                        int ind = futureEvents.IndexOf(e);
+                        futureEvents.RemoveAt(ind);
+                        return e.TimeCaused - this.Time;
+                    }
                 }
-                if (i < futureEvents.Count())
-                {
-                    futureEvents.RemoveAt(i);
-                }
+                return -1;
+                
             }
 
-            // Генерирует число по равномерному распределению 
-            // в диапозоне [a, b] включительно
+            // 
+        /// <summary>
+        /// Генерирует число по равномерному распределению в диапозоне [a, b] включительно
+        /// </summary>
+        /// <param name="a">Левая граница диапазона</param>
+        /// <param name="b">Правая граница диапазона</param>
+        /// <returns></returns>
             public int IRandom(int a, int b)
             {
                 return RandGen.IRandom(a, b);
             }
 
-            // Генерирует число по равномерному распределению 
-            // в диапозоне [0, a] включительно
+            /// <summary>
+            /// Генерирует число по равномерному распределению в диапозоне [0, a] включительно
+            /// </summary>
+            /// <param name="a">Правая граница диапазона</param>
+            /// <returns></returns>
             public int IRandom(int a)
             {
                 return RandGen.IRandom(a);
             }
 
-            // Генерирует число по отрицательному экспоненциальному распределению
-            // со средней точкой m
+            /// <summary>
+            /// Генерирует число по отрицательному экспоненциальному распределению со средней точкой m
+            /// </summary>
+            /// <param name="m">Средняя точка</param>
+            /// <returns></returns>
+ 
             public int NexExp(int m)
             {
                 return RandGen.NegExp(m);
             }
 
-            // Генерирует стандартный отчет о модели
+            /// <summary>
+            /// Генерирует стандартный отчет о модели
+            /// </summary>
+            /// <returns>Строка, содержащая весь отчет</returns>
+ 
             public string Report()
             {
                 var ret = "";
@@ -364,15 +435,20 @@ namespace SMPLSharp
 
         #region Public Properties
 
-            // Событие модели
+            /// <summary>
+            /// Событие модели
+            /// </summary>
+ 
             public SmplEvent Event
             {
                 get;
                 private set;
             }
 
-            // Если StopModel == false, остановить выполнение модели
-            // (SmplModel.Cause вернет false)
+            /// <summary>
+            /// Если StopModel == false, остановить выполнение модели (SmplModel.Cause вернет false)
+            /// </summary>
+ 
             public bool StopModel
             {
                 get;
