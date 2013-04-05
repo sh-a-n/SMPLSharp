@@ -12,7 +12,12 @@ namespace SMPLSharp.Objects
     // Typically represents some work-performing resource of system being modeled
     // The Interconnection of facilities is not explicit, but can be determined 
     //   by the model’s routing of tokens between facilities
-    //
+    /// <summary>
+    /// Equipment or facility
+    /// Typically represents some work-performing resource of system being modeled
+    /// The Interconnection of facilities is not explicit, but can be determined 
+    ///   by the model’s routing of tokens between facilities
+    /// </summary>
     public class SmplMultiDevice
     {
 

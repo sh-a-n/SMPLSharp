@@ -1,0 +1,169 @@
+\hypertarget{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator}{\section{Класс S\-M\-P\-L\-Sharp.\-Utils.\-Smpl\-Random\-Generator}
+\label{d0/d33/class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator}\index{S\-M\-P\-L\-Sharp.\-Utils.\-Smpl\-Random\-Generator@{S\-M\-P\-L\-Sharp.\-Utils.\-Smpl\-Random\-Generator}}
+}
+
+
+Генератор случайных чисел  
+
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_a9d439665f33bcdfe0fdbbbfb9c5fc1cc}{Smpl\-Random\-Generator} ()
+\begin{DoxyCompactList}\small\item\em Конструктор генератора, задающий seed от текущего времени \end{DoxyCompactList}\item 
+\hyperlink{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_acad36ef628128994cdc3794e446a2270}{Smpl\-Random\-Generator} (uint seed)
+\begin{DoxyCompactList}\small\item\em Конструкутор генератора с заданным seed \end{DoxyCompactList}\item 
+int \hyperlink{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_a994f652133d2e2fa3376b1f1fe9a92f3}{I\-Random} (int a)
+\begin{DoxyCompactList}\small\item\em Генерирует число по равномерному распределению в диапозоне \mbox{[}0, a\mbox{]} включительно \end{DoxyCompactList}\item 
+int \hyperlink{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_a035b90ad53dd8554179838eecbc2eca9}{I\-Random} (int a, int b)
+\begin{DoxyCompactList}\small\item\em Генерирует число по равномерному распределению в диапозоне \mbox{[}a, b\mbox{]} включительно \end{DoxyCompactList}\item 
+int \hyperlink{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_ada324a6e67bc2efe383ac8747786cacd}{Neg\-Exp} (int m)
+\begin{DoxyCompactList}\small\item\em Генерирует число по отрицательному экспоненциальному распределению со средней точкой m \end{DoxyCompactList}\item 
+int \hyperlink{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_af9c5a792d8012238970623e06ccca615}{Poisson} (double lambda)
+\begin{DoxyCompactList}\small\item\em Генерирует число по распределению Пуассона со параметром lambda \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+uint \hyperlink{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_a504f2e98704d7f18cfacc0d36be02eaf}{Seed}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Текущее значение Seed \end{DoxyCompactList}\item 
+uint \hyperlink{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_a87ae75f71d8390f0980feef6e82b7d87}{Start\-Seed}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Первоначальное значение Seed \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Генератор случайных чисел 
+
+
+
+\subsection{Конструктор(ы)}
+\hypertarget{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_a9d439665f33bcdfe0fdbbbfb9c5fc1cc}{\index{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}!Smpl\-Random\-Generator@{Smpl\-Random\-Generator}}
+\index{Smpl\-Random\-Generator@{Smpl\-Random\-Generator}!SMPLSharp::Utils::SmplRandomGenerator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}}
+\subsubsection[{Smpl\-Random\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}S\-M\-P\-L\-Sharp.\-Utils.\-Smpl\-Random\-Generator.\-Smpl\-Random\-Generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d0/d33/class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_a9d439665f33bcdfe0fdbbbfb9c5fc1cc}
+
+
+Конструктор генератора, задающий seed от текущего времени 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_acad36ef628128994cdc3794e446a2270}{\index{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}!Smpl\-Random\-Generator@{Smpl\-Random\-Generator}}
+\index{Smpl\-Random\-Generator@{Smpl\-Random\-Generator}!SMPLSharp::Utils::SmplRandomGenerator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}}
+\subsubsection[{Smpl\-Random\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}S\-M\-P\-L\-Sharp.\-Utils.\-Smpl\-Random\-Generator.\-Smpl\-Random\-Generator (
+\begin{DoxyParamCaption}
+\item[{uint}]{seed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d0/d33/class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_acad36ef628128994cdc3794e446a2270}
+
+
+Конструкутор генератора с заданным seed 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em seed} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Методы}
+\hypertarget{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_a994f652133d2e2fa3376b1f1fe9a92f3}{\index{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}!I\-Random@{I\-Random}}
+\index{I\-Random@{I\-Random}!SMPLSharp::Utils::SmplRandomGenerator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}}
+\subsubsection[{I\-Random}]{\setlength{\rightskip}{0pt plus 5cm}int S\-M\-P\-L\-Sharp.\-Utils.\-Smpl\-Random\-Generator.\-I\-Random (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d0/d33/class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_a994f652133d2e2fa3376b1f1fe9a92f3}
+
+
+Генерирует число по равномерному распределению в диапозоне \mbox{[}0, a\mbox{]} включительно 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_a035b90ad53dd8554179838eecbc2eca9}{\index{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}!I\-Random@{I\-Random}}
+\index{I\-Random@{I\-Random}!SMPLSharp::Utils::SmplRandomGenerator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}}
+\subsubsection[{I\-Random}]{\setlength{\rightskip}{0pt plus 5cm}int S\-M\-P\-L\-Sharp.\-Utils.\-Smpl\-Random\-Generator.\-I\-Random (
+\begin{DoxyParamCaption}
+\item[{int}]{a, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d0/d33/class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_a035b90ad53dd8554179838eecbc2eca9}
+
+
+Генерирует число по равномерному распределению в диапозоне \mbox{[}a, b\mbox{]} включительно 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_ada324a6e67bc2efe383ac8747786cacd}{\index{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}!Neg\-Exp@{Neg\-Exp}}
+\index{Neg\-Exp@{Neg\-Exp}!SMPLSharp::Utils::SmplRandomGenerator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}}
+\subsubsection[{Neg\-Exp}]{\setlength{\rightskip}{0pt plus 5cm}int S\-M\-P\-L\-Sharp.\-Utils.\-Smpl\-Random\-Generator.\-Neg\-Exp (
+\begin{DoxyParamCaption}
+\item[{int}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d0/d33/class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_ada324a6e67bc2efe383ac8747786cacd}
+
+
+Генерирует число по отрицательному экспоненциальному распределению со средней точкой m 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em m} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_af9c5a792d8012238970623e06ccca615}{\index{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}!Poisson@{Poisson}}
+\index{Poisson@{Poisson}!SMPLSharp::Utils::SmplRandomGenerator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}}
+\subsubsection[{Poisson}]{\setlength{\rightskip}{0pt plus 5cm}int S\-M\-P\-L\-Sharp.\-Utils.\-Smpl\-Random\-Generator.\-Poisson (
+\begin{DoxyParamCaption}
+\item[{double}]{lambda}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d0/d33/class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_af9c5a792d8012238970623e06ccca615}
+
+
+Генерирует число по распределению Пуассона со параметром lambda 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em lambda} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+\subsection{Полный список свойств}
+\hypertarget{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_a504f2e98704d7f18cfacc0d36be02eaf}{\index{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}!Seed@{Seed}}
+\index{Seed@{Seed}!SMPLSharp::Utils::SmplRandomGenerator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}}
+\subsubsection[{Seed}]{\setlength{\rightskip}{0pt plus 5cm}uint S\-M\-P\-L\-Sharp.\-Utils.\-Smpl\-Random\-Generator.\-Seed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d0/d33/class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_a504f2e98704d7f18cfacc0d36be02eaf}
+
+
+Текущее значение Seed 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_a87ae75f71d8390f0980feef6e82b7d87}{\index{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}!Start\-Seed@{Start\-Seed}}
+\index{Start\-Seed@{Start\-Seed}!SMPLSharp::Utils::SmplRandomGenerator@{S\-M\-P\-L\-Sharp\-::\-Utils\-::\-Smpl\-Random\-Generator}}
+\subsubsection[{Start\-Seed}]{\setlength{\rightskip}{0pt plus 5cm}uint S\-M\-P\-L\-Sharp.\-Utils.\-Smpl\-Random\-Generator.\-Start\-Seed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d0/d33/class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator_a87ae75f71d8390f0980feef6e82b7d87}
+
+
+Первоначальное значение Seed 
+
+
+
+Объявления и описания членов класса находятся в файле\-:\begin{DoxyCompactItemize}
+\item 
+D\-:/\-My Documents/\-Git\-Hub/\-S\-M\-P\-L\-Sharp/\-S\-M\-P\-L\-Sharp/Smpl\-Random\-Generator.\-cs\end{DoxyCompactItemize}

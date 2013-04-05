@@ -1,0 +1,95 @@
+\documentclass{book}
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{makeidx}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{ifthen}
+\usepackage[table]{xcolor}
+\usepackage{textcomp}
+\usepackage{alltt}
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\else
+\usepackage[ps2pdf,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\usepackage{pspicture}
+\fi
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+
+\usepackage{mathptmx}
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\usepackage{sectsty}
+\usepackage{amssymb}
+\usepackage[titles]{tocloft}
+\usepackage{doxygen}
+\lstset{language=C++,inputencoding=utf8,basicstyle=\footnotesize,breaklines=true,breakatwhitespace=true,tabsize=10,numbers=left }
+\makeindex
+\setcounter{tocdepth}{3}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\familydefault}{\sfdefault}
+\hfuzz=15pt
+\setlength{\emergencystretch}{15pt}
+\hbadness=750
+\tolerance=750
+\begin{document}
+\hypersetup{pageanchor=false,citecolor=blue}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}
+{\Large S\-M\-P\-L\-Sharp }\\
+\vspace*{1cm}
+{\large Создано системой Doxygen 1.8.3.1}\\
+\vspace*{0.5cm}
+{\small Пт 5 Апр 2013 16:01:31}\\
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+\pagenumbering{roman}
+\tableofcontents
+\clearemptydoublepage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true,citecolor=blue}
+\chapter{Алфавитный указатель пространств имен}
+\input{namespaces}
+\chapter{Иерархический список классов}
+\input{hierarchy}
+\chapter{Алфавитный указатель классов}
+\input{annotated}
+\chapter{Пространства имен}
+\input{dd/d3b/namespace_s_m_p_l_sharp}
+\input{d9/d75/namespace_s_m_p_l_sharp_1_1_objects}
+\input{d4/de6/namespace_s_m_p_l_sharp_1_1_utils}
+\chapter{Классы}
+\input{d1/df4/struct_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_1_1_ambary}
+\input{d0/dff/class_s_m_p_l_sharp_1_1_event_caused_event_args}
+\input{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device}
+\input{de/d57/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_event}
+\input{df/d34/class_s_m_p_l_sharp_1_1_smpl_model}
+\input{d8/d23/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device}
+\input{d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue}
+\input{d3/d48/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue_element}
+\input{d0/d33/class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator}
+\input{d7/d3b/class_s_m_p_l_sharp_1_1_utils_1_1_smpl_r_device_statisic}
+\input{d2/d18/class_s_m_p_l_sharp_1_1_utils_1_1_smpl_reporter}
+\input{de/d2e/class_s_m_p_l_sharp_1_1_utils_1_1_smpl_r_multi_device_statisic}
+\input{de/de9/class_s_m_p_l_sharp_1_1_utils_1_1_smpl_r_queue_statisic}
+\addcontentsline{toc}{part}{Алфавитный указатель}
+\printindex
+\end{document}

@@ -158,16 +158,14 @@ namespace SMPLSharp.Utils
 
     /// <summary>
     /// Give model statistic
-    /// </summary>
- 
+    /// </summary> 
     public class SmplReporter
     {
         #region Public Properties
 
             /// <summary>
             /// Время моделирования
-            /// </summary>
- 
+            /// </summary> 
             public int ModelTime
             {
                 get { return Model.Time; }
@@ -175,8 +173,7 @@ namespace SMPLSharp.Utils
 
             /// <summary>
             /// Информация о приборах
-            /// </summary>
- 
+            /// </summary> 
             public List<SmplRDeviceStatisic> DeviceStatistic
             {
                 get
@@ -261,7 +258,10 @@ namespace SMPLSharp.Utils
 
 
         #region Constructors
-
+        /// <summary>
+        /// Конструктор для SmplReporter
+        /// </summary>
+        /// <param name="model">Модель</param>
             public SmplReporter(SmplModel model)
             {
                 Model = model;

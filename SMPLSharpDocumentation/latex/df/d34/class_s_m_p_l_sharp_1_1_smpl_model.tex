@@ -1,0 +1,514 @@
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model}{\section{Класс S\-M\-P\-L\-Sharp.\-Smpl\-Model}
+\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model}\index{S\-M\-P\-L\-Sharp.\-Smpl\-Model@{S\-M\-P\-L\-Sharp.\-Smpl\-Model}}
+}
+
+
+Simulation model. Provides set of function for building event-\/based, discrete-\/event simulation model  
+
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_af44997fa13bc821115726c45c7aaad7a}{Smpl\-Model} ()
+\begin{DoxyCompactList}\small\item\em Конструктор \end{DoxyCompactList}\item 
+virtual \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue}{Smpl\-Queue} \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_ac95017a5bdb0500bb655791303d7cbb2}{Create\-Queue} (string name)
+\begin{DoxyCompactList}\small\item\em Добавить очередь в модель \end{DoxyCompactList}\item 
+virtual \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue}{Smpl\-Queue} \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a8c61642d973fd1da0996a3ab0e04b3cc}{Queue} (string name)
+\begin{DoxyCompactList}\small\item\em Возвратить существующую очередь \end{DoxyCompactList}\item 
+virtual \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device}{Smpl\-Device} \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a1a36f287db98f6e73760dc8f7c2d0497}{Create\-Device} (string name)
+\begin{DoxyCompactList}\small\item\em Добавить прибор в модель \end{DoxyCompactList}\item 
+virtual \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device}{Smpl\-Device} \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a0c48f93d0d086ef9e340f29a3664fb55}{Device} (string name)
+\begin{DoxyCompactList}\small\item\em Возвратить существующий прибор \end{DoxyCompactList}\item 
+virtual \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device}{Smpl\-Multi\-Device} \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a661c9fcf2482f3961c594b4a8d8b5f96}{Create\-Multi\-Device} (string name, int count\-Ambary)
+\begin{DoxyCompactList}\small\item\em Добавить многоканальный прибор в модель \end{DoxyCompactList}\item 
+virtual \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device}{Smpl\-Multi\-Device} \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a42d73f3d756bbf0375ba2012c708441d}{Multi\-Device} (string name)
+\begin{DoxyCompactList}\small\item\em Возвратить существующий многоканальный прибор \end{DoxyCompactList}\item 
+void \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_af567f319b044a2c6c98a80bff589ad04}{Schedule} (int event\-\_\-id, int wait\-\_\-time, object param=null)
+\begin{DoxyCompactList}\small\item\em Запланировать событие \end{DoxyCompactList}\item 
+bool \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a1101457a63f40e7d80e707d7793f35ee}{Cause} (out \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_event}{Smpl\-Event} model\-\_\-event)
+\begin{DoxyCompactList}\small\item\em Вызвать ближайшее событие модели \end{DoxyCompactList}\item 
+bool \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_ae2da4d875550fe62753443c0a7a276ee}{Cause} ()
+\begin{DoxyCompactList}\small\item\em Вызвать ближайшее событие модели \end{DoxyCompactList}\item 
+bool \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a033dfe1b24a1864b7a4c8a85831aafd3}{Cause} (out int event\-\_\-id, out object param)
+\begin{DoxyCompactList}\small\item\em Вызвать ближайшее событие модели \end{DoxyCompactList}\item 
+int \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a2af716a4608f04a0ec2814d921c5197e}{Cancel} (int event\-\_\-id, object param=null)
+\begin{DoxyCompactList}\small\item\em Отменить ближайшее запланированное событие с указанными параметрами \end{DoxyCompactList}\item 
+int \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a77390fc51749077e44b0285a76faf5cc}{I\-Random} (int a, int b)
+\begin{DoxyCompactList}\small\item\em Генерирует число по равномерному распределению в диапозоне \mbox{[}a, b\mbox{]} включительно \end{DoxyCompactList}\item 
+int \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_aa89b976daa026bf83a1a2818d34abfa0}{I\-Random} (int a)
+\begin{DoxyCompactList}\small\item\em Генерирует число по равномерному распределению в диапозоне \mbox{[}0, a\mbox{]} включительно \end{DoxyCompactList}\item 
+int \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a2a899ce5ab2a8a7b127a962c33b047e4}{Nex\-Exp} (int m)
+\begin{DoxyCompactList}\small\item\em Генерирует число по отрицательному экспоненциальному распределению со средней точкой m \end{DoxyCompactList}\item 
+string \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a221aa0af22ddc3dcc9860df9a76eb96e}{Report} ()
+\begin{DoxyCompactList}\small\item\em Генерирует стандартный отчет о модели \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a855ce8850f451bb372a12c9a02c2b422}{On\-Event\-Caused} (\hyperlink{class_s_m_p_l_sharp_1_1_event_caused_event_args}{Event\-Caused\-Event\-Args} e)
+\begin{DoxyCompactList}\small\item\em Событие возникновения события модели. Возникает при вызове Cause \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ string, \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue}{Smpl\-Queue} $>$ \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_ace458c3e9bb07de68137027426eeee82}{queues}
+\begin{DoxyCompactList}\small\item\em Очереди модели \end{DoxyCompactList}\item 
+Dictionary$<$ string, \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device}{Smpl\-Device} $>$ \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a1dcd953a3d955e2fde2edc4101a7d0cf}{devices}
+\begin{DoxyCompactList}\small\item\em Приборы модели \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_event}{Smpl\-Event} $>$ \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_ac57b9b5e15eb34682873492bab42445f}{future\-Events}
+\begin{DoxyCompactList}\small\item\em Журнал будущих событий модели \end{DoxyCompactList}\item 
+Dictionary$<$ string, \\*
+\hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device}{Smpl\-Multi\-Device} $>$ \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a711b2226de9b75bd541ddca587fb5e45}{multi\-Devices}
+\begin{DoxyCompactList}\small\item\em Многоканальные приборы модели \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_s_m_p_l_sharp_1_1_utils_1_1_smpl_random_generator}{Smpl\-Random\-Generator} \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a0f7a947d68471f69ba6afaf03ec15093}{Rand\-Gen}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Генератор случайных чисел \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a091e0759cad46e82a02ff253a232a37d}{Time}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Модельное время \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a83863cdbfb43901325e891a65fd27d40}{Next\-Event\-Time}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Время следующего события \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a5427e31d8b72ff5823518e5eff801fd3}{Is\-Stopped}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Модель была остановлена \end{DoxyCompactList}\item 
+virtual Dictionary$<$ string, \\*
+\hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue}{Smpl\-Queue} $>$ \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a1bbb9a6e7a49ca06902fa90aa611c719}{Queues}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Очереди \end{DoxyCompactList}\item 
+virtual Dictionary$<$ string, \\*
+\hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device}{Smpl\-Device} $>$ \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_af79bc37f93c34d07abbdf36028581640}{Devices}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Приборы \end{DoxyCompactList}\item 
+virtual Dictionary$<$ string, \\*
+\hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device}{Smpl\-Multi\-Device} $>$ \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_a6a37ccf8af439fc11b156eff04514e2e}{Multi\-Devices}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Многоканальные приборы \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{События}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_s_m_p_l_sharp_a33fb2904b12541599362cddd40c71357}{Event\-Caused\-Handler} \hyperlink{class_s_m_p_l_sharp_1_1_smpl_model_abfa9344a73f4845e02be97fd5b963ed3}{Event\-Caused}
+\begin{DoxyCompactList}\small\item\em Событие соершено \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Simulation model. Provides set of function for building event-\/based, discrete-\/event simulation model 
+
+
+
+\subsection{Конструктор(ы)}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_af44997fa13bc821115726c45c7aaad7a}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Smpl\-Model@{Smpl\-Model}}
+\index{Smpl\-Model@{Smpl\-Model}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Smpl\-Model}]{\setlength{\rightskip}{0pt plus 5cm}S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Smpl\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_af44997fa13bc821115726c45c7aaad7a}
+
+
+Конструктор 
+
+
+
+\subsection{Методы}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a2af716a4608f04a0ec2814d921c5197e}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Cancel@{Cancel}}
+\index{Cancel@{Cancel}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Cancel}]{\setlength{\rightskip}{0pt plus 5cm}int S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Cancel (
+\begin{DoxyParamCaption}
+\item[{int}]{event\-\_\-id, }
+\item[{object}]{param = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a2af716a4608f04a0ec2814d921c5197e}
+
+
+Отменить ближайшее запланированное событие с указанными параметрами 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event\-\_\-id} & Идентификатор события\\
+\hline
+{\em param} & Параметры события\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Время до окончания отменяемого события или -\/1 в случае, если событие не найдено
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a1101457a63f40e7d80e707d7793f35ee}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Cause@{Cause}}
+\index{Cause@{Cause}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Cause}]{\setlength{\rightskip}{0pt plus 5cm}bool S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Cause (
+\begin{DoxyParamCaption}
+\item[{out {\bf Smpl\-Event}}]{model\-\_\-event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a1101457a63f40e7d80e707d7793f35ee}
+
+
+Вызвать ближайшее событие модели 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em model\-\_\-event} & вызванное событие модели\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Если обработчик Event\-Caused задаст в e.\-Stop\-Model значение false, функция возвратит false. true, если событие существует. В случае, если ни одно событие не запланировано, кидается исключение
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_ae2da4d875550fe62753443c0a7a276ee}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Cause@{Cause}}
+\index{Cause@{Cause}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Cause}]{\setlength{\rightskip}{0pt plus 5cm}bool S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Cause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_ae2da4d875550fe62753443c0a7a276ee}
+
+
+Вызвать ближайшее событие модели 
+
+\begin{DoxyReturn}{Возвращает}
+Если обработчик Event\-Caused задаст в e.\-Stop\-Model значение false, функция возвратит false. true, если событие существует. В случае, если ни одно событие не запланировано, кидается исключение
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a033dfe1b24a1864b7a4c8a85831aafd3}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Cause@{Cause}}
+\index{Cause@{Cause}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Cause}]{\setlength{\rightskip}{0pt plus 5cm}bool S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Cause (
+\begin{DoxyParamCaption}
+\item[{out int}]{event\-\_\-id, }
+\item[{out object}]{param}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a033dfe1b24a1864b7a4c8a85831aafd3}
+
+
+Вызвать ближайшее событие модели 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event\-\_\-id} & идентификатор вызванного события\\
+\hline
+{\em param} & параметр вызванного события\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Если обработчик Event\-Caused задаст в e.\-Stop\-Model значение false, функция возвратит false. true, если событие существует. В случае, если ни одно событие не запланировано, кидается исключение
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a1a36f287db98f6e73760dc8f7c2d0497}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Create\-Device@{Create\-Device}}
+\index{Create\-Device@{Create\-Device}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Create\-Device}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Smpl\-Device} S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Create\-Device (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a1a36f287db98f6e73760dc8f7c2d0497}
+
+
+Добавить прибор в модель 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя прибора\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Новый прибор
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a661c9fcf2482f3961c594b4a8d8b5f96}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Create\-Multi\-Device@{Create\-Multi\-Device}}
+\index{Create\-Multi\-Device@{Create\-Multi\-Device}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Create\-Multi\-Device}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Smpl\-Multi\-Device} S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Create\-Multi\-Device (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{int}]{count\-Ambary}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a661c9fcf2482f3961c594b4a8d8b5f96}
+
+
+Добавить многоканальный прибор в модель 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя многоканального прибора\\
+\hline
+{\em count\-Ambary} & Количество каналов\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Новый многоканальный прибор
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_ac95017a5bdb0500bb655791303d7cbb2}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Create\-Queue@{Create\-Queue}}
+\index{Create\-Queue@{Create\-Queue}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Create\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Smpl\-Queue} S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Create\-Queue (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_ac95017a5bdb0500bb655791303d7cbb2}
+
+
+Добавить очередь в модель 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя очереди\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Новая очередь
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a0c48f93d0d086ef9e340f29a3664fb55}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Device@{Device}}
+\index{Device@{Device}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Device}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Smpl\-Device} S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Device (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a0c48f93d0d086ef9e340f29a3664fb55}
+
+
+Возвратить существующий прибор 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя прибора\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Прибор
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a77390fc51749077e44b0285a76faf5cc}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!I\-Random@{I\-Random}}
+\index{I\-Random@{I\-Random}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{I\-Random}]{\setlength{\rightskip}{0pt plus 5cm}int S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-I\-Random (
+\begin{DoxyParamCaption}
+\item[{int}]{a, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a77390fc51749077e44b0285a76faf5cc}
+
+
+Генерирует число по равномерному распределению в диапозоне \mbox{[}a, b\mbox{]} включительно 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em a} & Левая граница диапазона\\
+\hline
+{\em b} & Правая граница диапазона\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_aa89b976daa026bf83a1a2818d34abfa0}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!I\-Random@{I\-Random}}
+\index{I\-Random@{I\-Random}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{I\-Random}]{\setlength{\rightskip}{0pt plus 5cm}int S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-I\-Random (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_aa89b976daa026bf83a1a2818d34abfa0}
+
+
+Генерирует число по равномерному распределению в диапозоне \mbox{[}0, a\mbox{]} включительно 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em a} & Правая граница диапазона\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a42d73f3d756bbf0375ba2012c708441d}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Multi\-Device@{Multi\-Device}}
+\index{Multi\-Device@{Multi\-Device}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Multi\-Device}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Smpl\-Multi\-Device} S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Multi\-Device (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a42d73f3d756bbf0375ba2012c708441d}
+
+
+Возвратить существующий многоканальный прибор 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & имя прибора\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Многоканаьный прибор
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a2a899ce5ab2a8a7b127a962c33b047e4}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Nex\-Exp@{Nex\-Exp}}
+\index{Nex\-Exp@{Nex\-Exp}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Nex\-Exp}]{\setlength{\rightskip}{0pt plus 5cm}int S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Nex\-Exp (
+\begin{DoxyParamCaption}
+\item[{int}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a2a899ce5ab2a8a7b127a962c33b047e4}
+
+
+Генерирует число по отрицательному экспоненциальному распределению со средней точкой m 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em m} & Средняя точка\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a855ce8850f451bb372a12c9a02c2b422}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!On\-Event\-Caused@{On\-Event\-Caused}}
+\index{On\-Event\-Caused@{On\-Event\-Caused}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{On\-Event\-Caused}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-On\-Event\-Caused (
+\begin{DoxyParamCaption}
+\item[{{\bf Event\-Caused\-Event\-Args}}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a855ce8850f451bb372a12c9a02c2b422}
+
+
+Событие возникновения события модели. Возникает при вызове Cause 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a8c61642d973fd1da0996a3ab0e04b3cc}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Queue@{Queue}}
+\index{Queue@{Queue}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Queue}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Smpl\-Queue} S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Queue (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a8c61642d973fd1da0996a3ab0e04b3cc}
+
+
+Возвратить существующую очередь 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя очереди\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Новая очередь
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a221aa0af22ddc3dcc9860df9a76eb96e}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Report@{Report}}
+\index{Report@{Report}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Report}]{\setlength{\rightskip}{0pt plus 5cm}string S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Report (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a221aa0af22ddc3dcc9860df9a76eb96e}
+
+
+Генерирует стандартный отчет о модели 
+
+\begin{DoxyReturn}{Возвращает}
+Строка, содержащая весь отчет
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_af567f319b044a2c6c98a80bff589ad04}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Schedule@{Schedule}}
+\index{Schedule@{Schedule}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Schedule}]{\setlength{\rightskip}{0pt plus 5cm}void S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Schedule (
+\begin{DoxyParamCaption}
+\item[{int}]{event\-\_\-id, }
+\item[{int}]{wait\-\_\-time, }
+\item[{object}]{param = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_af567f319b044a2c6c98a80bff589ad04}
+
+
+Запланировать событие 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em event\-\_\-id} & идентификатор типа события\\
+\hline
+{\em wait\-\_\-time} & время, через которе событие вызовется\\
+\hline
+{\em param} & параметр, передаваемый событию\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Данные класса}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a1dcd953a3d955e2fde2edc4101a7d0cf}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!devices@{devices}}
+\index{devices@{devices}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{devices}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$string, {\bf Smpl\-Device}$>$ S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-devices\hspace{0.3cm}{\ttfamily [protected]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a1dcd953a3d955e2fde2edc4101a7d0cf}
+
+
+Приборы модели 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_ac57b9b5e15eb34682873492bab42445f}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!future\-Events@{future\-Events}}
+\index{future\-Events@{future\-Events}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{future\-Events}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Smpl\-Event}$>$ S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-future\-Events\hspace{0.3cm}{\ttfamily [protected]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_ac57b9b5e15eb34682873492bab42445f}
+
+
+Журнал будущих событий модели 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a711b2226de9b75bd541ddca587fb5e45}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!multi\-Devices@{multi\-Devices}}
+\index{multi\-Devices@{multi\-Devices}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{multi\-Devices}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$string, {\bf Smpl\-Multi\-Device}$>$ S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-multi\-Devices\hspace{0.3cm}{\ttfamily [protected]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a711b2226de9b75bd541ddca587fb5e45}
+
+
+Многоканальные приборы модели 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_ace458c3e9bb07de68137027426eeee82}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!queues@{queues}}
+\index{queues@{queues}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{queues}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$string, {\bf Smpl\-Queue}$>$ S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-queues\hspace{0.3cm}{\ttfamily [protected]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_ace458c3e9bb07de68137027426eeee82}
+
+
+Очереди модели 
+
+
+
+\subsection{Полный список свойств}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_af79bc37f93c34d07abbdf36028581640}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Devices@{Devices}}
+\index{Devices@{Devices}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Devices}]{\setlength{\rightskip}{0pt plus 5cm}virtual Dictionary$<$string, {\bf Smpl\-Device}$>$ S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Devices\hspace{0.3cm}{\ttfamily [get]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_af79bc37f93c34d07abbdf36028581640}
+
+
+Приборы 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a5427e31d8b72ff5823518e5eff801fd3}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Is\-Stopped@{Is\-Stopped}}
+\index{Is\-Stopped@{Is\-Stopped}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Is\-Stopped}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Is\-Stopped\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a5427e31d8b72ff5823518e5eff801fd3}
+
+
+Модель была остановлена 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a6a37ccf8af439fc11b156eff04514e2e}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Multi\-Devices@{Multi\-Devices}}
+\index{Multi\-Devices@{Multi\-Devices}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Multi\-Devices}]{\setlength{\rightskip}{0pt plus 5cm}virtual Dictionary$<$string, {\bf Smpl\-Multi\-Device}$>$ S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Multi\-Devices\hspace{0.3cm}{\ttfamily [get]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a6a37ccf8af439fc11b156eff04514e2e}
+
+
+Многоканальные приборы 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a83863cdbfb43901325e891a65fd27d40}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Next\-Event\-Time@{Next\-Event\-Time}}
+\index{Next\-Event\-Time@{Next\-Event\-Time}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Next\-Event\-Time}]{\setlength{\rightskip}{0pt plus 5cm}virtual int S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Next\-Event\-Time\hspace{0.3cm}{\ttfamily [get]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a83863cdbfb43901325e891a65fd27d40}
+
+
+Время следующего события 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a1bbb9a6e7a49ca06902fa90aa611c719}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Queues@{Queues}}
+\index{Queues@{Queues}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Queues}]{\setlength{\rightskip}{0pt plus 5cm}virtual Dictionary$<$string, {\bf Smpl\-Queue}$>$ S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Queues\hspace{0.3cm}{\ttfamily [get]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a1bbb9a6e7a49ca06902fa90aa611c719}
+
+
+Очереди 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a0f7a947d68471f69ba6afaf03ec15093}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Rand\-Gen@{Rand\-Gen}}
+\index{Rand\-Gen@{Rand\-Gen}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Rand\-Gen}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Smpl\-Random\-Generator} S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Rand\-Gen\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a0f7a947d68471f69ba6afaf03ec15093}
+
+
+Генератор случайных чисел 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_a091e0759cad46e82a02ff253a232a37d}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Time@{Time}}
+\index{Time@{Time}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Time}]{\setlength{\rightskip}{0pt plus 5cm}virtual int S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_a091e0759cad46e82a02ff253a232a37d}
+
+
+Модельное время 
+
+
+
+\subsection{Cобытия}
+\hypertarget{class_s_m_p_l_sharp_1_1_smpl_model_abfa9344a73f4845e02be97fd5b963ed3}{\index{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}!Event\-Caused@{Event\-Caused}}
+\index{Event\-Caused@{Event\-Caused}!SMPLSharp::SmplModel@{S\-M\-P\-L\-Sharp\-::\-Smpl\-Model}}
+\subsubsection[{Event\-Caused}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Event\-Caused\-Handler} S\-M\-P\-L\-Sharp.\-Smpl\-Model.\-Event\-Caused}}\label{df/d34/class_s_m_p_l_sharp_1_1_smpl_model_abfa9344a73f4845e02be97fd5b963ed3}
+
+
+Событие соершено 
+
+
+
+Объявления и описания членов класса находятся в файле\-:\begin{DoxyCompactItemize}
+\item 
+D\-:/\-My Documents/\-Git\-Hub/\-S\-M\-P\-L\-Sharp/\-S\-M\-P\-L\-Sharp/Smpl\-Model.\-cs\end{DoxyCompactItemize}

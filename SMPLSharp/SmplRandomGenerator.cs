@@ -8,7 +8,9 @@ using System.Text;
 
 namespace SMPLSharp.Utils
 {
-    // Random Number Generator
+    /// <summary>
+    /// Генератор случайных чисел
+    /// </summary> 
     public class SmplRandomGenerator
     {
         #region Public Properties

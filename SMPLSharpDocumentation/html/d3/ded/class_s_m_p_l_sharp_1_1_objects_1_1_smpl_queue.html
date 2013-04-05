@@ -1,0 +1,585 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>SMPLSharp: Класс SMPLSharp.Objects.SmplQueue</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">SMPLSharp
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="../../hierarchy.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="../../functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Свойства</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>События</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dd/d3b/namespace_s_m_p_l_sharp.html">SMPLSharp</a></li><li class="navelem"><a class="el" href="../../d9/d75/namespace_s_m_p_l_sharp_1_1_objects.html">Objects</a></li><li class="navelem"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html">SmplQueue</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#properties">Свойства</a> &#124;
+<a href="../../dc/d33/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс SMPLSharp.Objects.SmplQueue</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Очередь. Represents place where tokens are waiting when equipment is busy  
+ <a href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#details">Подробнее...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ab86ec6d2ecebdd085ec143f42ca9e480"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#ab86ec6d2ecebdd085ec143f42ca9e480">Enqueue</a> ()</td></tr>
+<tr class="memdesc:ab86ec6d2ecebdd085ec143f42ca9e480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить новый элемент (1) в очередь  <a href="#ab86ec6d2ecebdd085ec143f42ca9e480">Подробнее...</a><br/></td></tr>
+<tr class="separator:ab86ec6d2ecebdd085ec143f42ca9e480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04a64c0b084018a7cd8663a92b88ca7c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#a04a64c0b084018a7cd8663a92b88ca7c">Enqueue</a> (object token, int priority=0)</td></tr>
+<tr class="memdesc:a04a64c0b084018a7cd8663a92b88ca7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить новый элемент token в очередь с заданным приоритетом  <a href="#a04a64c0b084018a7cd8663a92b88ca7c">Подробнее...</a><br/></td></tr>
+<tr class="separator:a04a64c0b084018a7cd8663a92b88ca7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ab87b29c3b89fc549aa1142d3deeeb"><td class="memItemLeft" align="right" valign="top">virtual object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#a92ab87b29c3b89fc549aa1142d3deeeb">Head</a> ()</td></tr>
+<tr class="memdesc:a92ab87b29c3b89fc549aa1142d3deeeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Извлечь первый элемент очереди  <a href="#a92ab87b29c3b89fc549aa1142d3deeeb">Подробнее...</a><br/></td></tr>
+<tr class="separator:a92ab87b29c3b89fc549aa1142d3deeeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:ae263ed3919f391ee553381f87bc261af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#ae263ed3919f391ee553381f87bc261af">updateStatiscticIncrease</a> (int prev_length)</td></tr>
+<tr class="memdesc:ae263ed3919f391ee553381f87bc261af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновление статистики при добавлении в очередь  <a href="#ae263ed3919f391ee553381f87bc261af">Подробнее...</a><br/></td></tr>
+<tr class="separator:ae263ed3919f391ee553381f87bc261af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9b81ec8414f245f3fa5d1fd00283984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#ae9b81ec8414f245f3fa5d1fd00283984">updateStatiscticDecrease</a> (int prev_length, <a class="el" href="../../d3/d48/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue_element.html">SmplQueueElement</a> element)</td></tr>
+<tr class="memdesc:ae9b81ec8414f245f3fa5d1fd00283984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновление статистики при извлечении из очереди  <a href="#ae9b81ec8414f245f3fa5d1fd00283984">Подробнее...</a><br/></td></tr>
+<tr class="separator:ae9b81ec8414f245f3fa5d1fd00283984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Свойства</h2></td></tr>
+<tr class="memitem:af8121cfdf0a8b265c860ae764af1ab33"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#af8121cfdf0a8b265c860ae764af1ab33">Name</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:af8121cfdf0a8b265c860ae764af1ab33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Имя очереди  <a href="#af8121cfdf0a8b265c860ae764af1ab33">Подробнее...</a><br/></td></tr>
+<tr class="separator:af8121cfdf0a8b265c860ae764af1ab33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90750620f30441f6df56f42072648e45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#a90750620f30441f6df56f42072648e45">Length</a><code> [get]</code></td></tr>
+<tr class="memdesc:a90750620f30441f6df56f42072648e45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Длина очереди  <a href="#a90750620f30441f6df56f42072648e45">Подробнее...</a><br/></td></tr>
+<tr class="separator:a90750620f30441f6df56f42072648e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac807329d1f3d17f6e651fc20ad50c06c"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#ac807329d1f3d17f6e651fc20ad50c06c">MaxLength</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac807329d1f3d17f6e651fc20ad50c06c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Максимальная длина очереди  <a href="#ac807329d1f3d17f6e651fc20ad50c06c">Подробнее...</a><br/></td></tr>
+<tr class="separator:ac807329d1f3d17f6e651fc20ad50c06c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad1f14d3d385b42ab0312a20826040cb"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#aad1f14d3d385b42ab0312a20826040cb">CountPassed</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aad1f14d3d385b42ab0312a20826040cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество элементов, удаленных из очереди  <a href="#aad1f14d3d385b42ab0312a20826040cb">Подробнее...</a><br/></td></tr>
+<tr class="separator:aad1f14d3d385b42ab0312a20826040cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a68f8fefe39b5dafa2145e6ec3fa99"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#a93a68f8fefe39b5dafa2145e6ec3fa99">TimeLastChanged</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a93a68f8fefe39b5dafa2145e6ec3fa99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Время последнего изменения длины очереди  <a href="#a93a68f8fefe39b5dafa2145e6ec3fa99">Подробнее...</a><br/></td></tr>
+<tr class="separator:a93a68f8fefe39b5dafa2145e6ec3fa99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac51a6ce05e36a4e6bb32462339a172e6"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#ac51a6ce05e36a4e6bb32462339a172e6">WaitingPeriodSum</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac51a6ce05e36a4e6bb32462339a172e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сумма периодов ожиданий  <a href="#ac51a6ce05e36a4e6bb32462339a172e6">Подробнее...</a><br/></td></tr>
+<tr class="separator:ac51a6ce05e36a4e6bb32462339a172e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadbd85e6bd504c71fb38c568c771c49b"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#aadbd85e6bd504c71fb38c568c771c49b">WaitingPeriodSq2Sum</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aadbd85e6bd504c71fb38c568c771c49b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сумма квадратов периодов ожиданий  <a href="#aadbd85e6bd504c71fb38c568c771c49b">Подробнее...</a><br/></td></tr>
+<tr class="separator:aadbd85e6bd504c71fb38c568c771c49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a157275049efc507053a44cbd72d7ba2f"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#a157275049efc507053a44cbd72d7ba2f">LengthOfTimeIntegral</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a157275049efc507053a44cbd72d7ba2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сумма длин очереди * соответсвующие периоды изменения. Интерграл Q(t), где Q - длина очереди, t - модельное время. Используется для вычисления средней длины очереди  <a href="#a157275049efc507053a44cbd72d7ba2f">Подробнее...</a><br/></td></tr>
+<tr class="separator:a157275049efc507053a44cbd72d7ba2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a740725209155ade0c50d3e259967dbd1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#a740725209155ade0c50d3e259967dbd1">IsEmpty</a><code> [get]</code></td></tr>
+<tr class="memdesc:a740725209155ade0c50d3e259967dbd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очередь пуста?  <a href="#a740725209155ade0c50d3e259967dbd1">Подробнее...</a><br/></td></tr>
+<tr class="separator:a740725209155ade0c50d3e259967dbd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a615e74aa9a4f6d4c82468cafcf20bc71"><td class="memItemLeft" align="right" valign="top">virtual ICollection<br class="typebreak"/>
+&lt; <a class="el" href="../../d3/d48/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue_element.html">SmplQueueElement</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#a615e74aa9a4f6d4c82468cafcf20bc71">Elements</a><code> [get]</code></td></tr>
+<tr class="memdesc:a615e74aa9a4f6d4c82468cafcf20bc71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Элементы очереди  <a href="#a615e74aa9a4f6d4c82468cafcf20bc71">Подробнее...</a><br/></td></tr>
+<tr class="separator:a615e74aa9a4f6d4c82468cafcf20bc71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fd05b0b855d569bd43a71c738b9bb7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html">SmplModel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html#a4fd05b0b855d569bd43a71c738b9bb7f">Model</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a4fd05b0b855d569bd43a71c738b9bb7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Модель, с которой связана очередь  <a href="#a4fd05b0b855d569bd43a71c738b9bb7f">Подробнее...</a><br/></td></tr>
+<tr class="separator:a4fd05b0b855d569bd43a71c738b9bb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Очередь. Represents place where tokens are waiting when equipment is busy </p>
+</div><h2 class="groupheader">Методы</h2>
+<a class="anchor" id="ab86ec6d2ecebdd085ec143f42ca9e480"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void SMPLSharp.Objects.SmplQueue.Enqueue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить новый элемент (1) в очередь </p>
+
+</div>
+</div>
+<a class="anchor" id="a04a64c0b084018a7cd8663a92b88ca7c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void SMPLSharp.Objects.SmplQueue.Enqueue </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>token</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>priority</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить новый элемент token в очередь с заданным приоритетом </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">token</td><td>элемент</td></tr>
+    <tr><td class="paramname">priority</td><td>приоритет</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a92ab87b29c3b89fc549aa1142d3deeeb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual object SMPLSharp.Objects.SmplQueue.Head </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Извлечь первый элемент очереди </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает элемент очереди. В случае пустой очереди генерирует исключение</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae9b81ec8414f245f3fa5d1fd00283984"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SMPLSharp.Objects.SmplQueue.updateStatiscticDecrease </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prev_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/d48/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue_element.html">SmplQueueElement</a>&#160;</td>
+          <td class="paramname"><em>element</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновление статистики при извлечении из очереди </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prev_length</td><td></td></tr>
+    <tr><td class="paramname">element</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae263ed3919f391ee553381f87bc261af"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SMPLSharp.Objects.SmplQueue.updateStatiscticIncrease </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prev_length</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновление статистики при добавлении в очередь </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prev_length</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Полный список свойств</h2>
+<a class="anchor" id="aad1f14d3d385b42ab0312a20826040cb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int SMPLSharp.Objects.SmplQueue.CountPassed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Количество элементов, удаленных из очереди </p>
+
+</div>
+</div>
+<a class="anchor" id="a615e74aa9a4f6d4c82468cafcf20bc71"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ICollection&lt;<a class="el" href="../../d3/d48/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue_element.html">SmplQueueElement</a>&gt; SMPLSharp.Objects.SmplQueue.Elements</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Элементы очереди </p>
+
+</div>
+</div>
+<a class="anchor" id="a740725209155ade0c50d3e259967dbd1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SMPLSharp.Objects.SmplQueue.IsEmpty</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Очередь пуста? </p>
+
+</div>
+</div>
+<a class="anchor" id="a90750620f30441f6df56f42072648e45"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SMPLSharp.Objects.SmplQueue.Length</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Длина очереди </p>
+
+</div>
+</div>
+<a class="anchor" id="a157275049efc507053a44cbd72d7ba2f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int SMPLSharp.Objects.SmplQueue.LengthOfTimeIntegral</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сумма длин очереди * соответсвующие периоды изменения. Интерграл Q(t), где Q - длина очереди, t - модельное время. Используется для вычисления средней длины очереди </p>
+
+</div>
+</div>
+<a class="anchor" id="ac807329d1f3d17f6e651fc20ad50c06c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int SMPLSharp.Objects.SmplQueue.MaxLength</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Максимальная длина очереди </p>
+
+</div>
+</div>
+<a class="anchor" id="a4fd05b0b855d569bd43a71c738b9bb7f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html">SmplModel</a> SMPLSharp.Objects.SmplQueue.Model</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Модель, с которой связана очередь </p>
+
+</div>
+</div>
+<a class="anchor" id="af8121cfdf0a8b265c860ae764af1ab33"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual string SMPLSharp.Objects.SmplQueue.Name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Имя очереди </p>
+
+</div>
+</div>
+<a class="anchor" id="a93a68f8fefe39b5dafa2145e6ec3fa99"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int SMPLSharp.Objects.SmplQueue.TimeLastChanged</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Время последнего изменения длины очереди </p>
+
+</div>
+</div>
+<a class="anchor" id="aadbd85e6bd504c71fb38c568c771c49b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int SMPLSharp.Objects.SmplQueue.WaitingPeriodSq2Sum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сумма квадратов периодов ожиданий </p>
+
+</div>
+</div>
+<a class="anchor" id="ac51a6ce05e36a4e6bb32462339a172e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int SMPLSharp.Objects.SmplQueue.WaitingPeriodSum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сумма периодов ожиданий </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>D:/My Documents/GitHub/SMPLSharp/SMPLSharp/SmplQueue.cs</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по SMPLSharp. Последние изменения: Пт 5 Апр 2013 16:01:31. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

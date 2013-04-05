@@ -15,7 +15,9 @@ namespace SMPLSharp
 {
     // Simulation model
     // Provides set of function for building event-based, discrete-event simulation model
-    //
+    /// <summary>
+    /// Simulation model. Provides set of function for building event-based, discrete-event simulation model
+    /// </summary>
     public class SmplModel
     {
 
@@ -131,7 +133,9 @@ namespace SMPLSharp
 
         #region Events
 
-            
+            /// <summary>
+            /// Событие соершено
+            /// </summary>
             public event EventCausedHandler EventCaused;
         /// <summary>
         /// Событие возникновения события модели. Возникает при вызове Cause
@@ -317,7 +321,7 @@ namespace SMPLSharp
             /// </summary>
             /// <param name="event_id">Идентификатор события</param>
             /// <param name="param">Параметры события</param>
-            /// <returns></returns>
+            /// <returns>Время до окончания отменяемого события или -1 в случае, если событие не найдено</returns>
  
             public int Cancel(int event_id, object param = null)
             {
@@ -426,10 +430,16 @@ namespace SMPLSharp
 
     }
 
-    // Delegate for EventCaused
+    /// <summary>
+    /// Delegate for EventCaused
+    /// </summary>
+    /// <param name="o"></param>
+    /// <param name="e"></param> 
     public delegate void EventCausedHandler(object o, EventCausedEventArgs e);
 
-    // Event when model's event is caused
+    /// <summary>
+    /// Event when model's event is caused
+    /// </summary> 
     public class EventCausedEventArgs : EventArgs
     {
 
@@ -462,6 +472,10 @@ namespace SMPLSharp
             // Конструктор:
             //  event_id - идентификатор события модели
             //  param    - параметр события
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="model_event">Событие</param>
             public EventCausedEventArgs(SmplEvent model_event)
             {
                 Event = model_event;

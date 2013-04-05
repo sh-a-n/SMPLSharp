@@ -8,7 +8,11 @@ namespace SMPLSharp.Objects
     // Model's event
     // A change of state of any system entity, active or passive
     // Can be, for example, Arrival of task or Computing completion
-    //
+    /// <summary>
+    /// Model's event
+    /// A change of state of any system entity, active or passive
+    /// Can be, for example, Arrival of task or Computing completion 
+    /// </summary>
     public class SmplEvent
     {
         

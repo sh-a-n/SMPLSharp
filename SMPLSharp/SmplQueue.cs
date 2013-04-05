@@ -10,7 +10,10 @@ using System.Text;
 namespace SMPLSharp.Objects
 {
     // Queue
-    // Represents place where tokens are waiting when equipment is busy
+    /// <summary>
+    /// Очередь. Represents place where tokens are waiting when equipment is busy
+    /// </summary>
+ 
     public class SmplQueue
     {
 
@@ -251,7 +254,9 @@ namespace SMPLSharp.Objects
         #endregion
     }
 
-    // One queue element
+    /// <summary>
+    /// Элемент очереди
+    /// </summary>
     public class SmplQueueElement
     {
 

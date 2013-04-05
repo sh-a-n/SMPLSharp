@@ -1,0 +1,137 @@
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device}{\section{Класс S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device}
+\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device}\index{S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device@{S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device}}
+}
+
+
+Equipment or facility Typically represents some work-\/performing resource of system being modeled The Interconnection of facilities is not explicit, but can be determined by the model’s routing of tokens between facilities  
+
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a43be17c0606bf8f720149c2777a33e31}{Reserve} ()
+\begin{DoxyCompactList}\small\item\em Зарезервировать прибор (param = 1) \end{DoxyCompactList}\item 
+void \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a8fac05272f1a7e1213336639e3453512}{Reserve} (object token)
+\begin{DoxyCompactList}\small\item\em Зарезервировать прибор и поменять его статус на param. В случае передачи token == null, прибор будет освобожден \end{DoxyCompactList}\item 
+void \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a81feb298bcfe5e7c87cd0e91a1a329ce}{Release} ()
+\begin{DoxyCompactList}\small\item\em Освободить прибор \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a3525605581b83649d988ca1326b4732f}{Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Имя прибора \end{DoxyCompactList}\item 
+virtual object \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a2e79fee0f480adec487fdf013ed52b2a}{Status}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Состояние прибора. Если Status == null, прибор свободен \end{DoxyCompactList}\item 
+bool \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a7e6939193f240d5f5642e07ef7d6b73e}{Is\-Busy}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Прибор занят? \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a8757abb401c1dfa7093ced84f715a2d2}{Time\-Last\-Reserved}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Время последнего вызова Reserve \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_afe478b9c4ec74e462f5af5d3a51f4131}{Time\-Total\-Reserved}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Суммарное время, пока прибор занят \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a675ca052cc3996e38aec7ccc1dd7ca8c}{Query\-Counter}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Счетчик запросов (пар вызовов reserve/release) \end{DoxyCompactList}\item 
+\hyperlink{class_s_m_p_l_sharp_1_1_smpl_model}{Smpl\-Model} \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_ad4036c2596ab7029b778ad45090df69b}{Model}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Модель, с которой связан прибор \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Equipment or facility Typically represents some work-\/performing resource of system being modeled The Interconnection of facilities is not explicit, but can be determined by the model’s routing of tokens between facilities 
+
+
+
+\subsection{Методы}
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a81feb298bcfe5e7c87cd0e91a1a329ce}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Release@{Release}}
+\index{Release@{Release}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
+\subsubsection[{Release}]{\setlength{\rightskip}{0pt plus 5cm}void S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device.\-Release (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a81feb298bcfe5e7c87cd0e91a1a329ce}
+
+
+Освободить прибор 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a43be17c0606bf8f720149c2777a33e31}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Reserve@{Reserve}}
+\index{Reserve@{Reserve}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
+\subsubsection[{Reserve}]{\setlength{\rightskip}{0pt plus 5cm}void S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device.\-Reserve (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a43be17c0606bf8f720149c2777a33e31}
+
+
+Зарезервировать прибор (param = 1) 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a8fac05272f1a7e1213336639e3453512}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Reserve@{Reserve}}
+\index{Reserve@{Reserve}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
+\subsubsection[{Reserve}]{\setlength{\rightskip}{0pt plus 5cm}void S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device.\-Reserve (
+\begin{DoxyParamCaption}
+\item[{object}]{token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a8fac05272f1a7e1213336639e3453512}
+
+
+Зарезервировать прибор и поменять его статус на param. В случае передачи token == null, прибор будет освобожден 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em token} & параметр\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Полный список свойств}
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a7e6939193f240d5f5642e07ef7d6b73e}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Is\-Busy@{Is\-Busy}}
+\index{Is\-Busy@{Is\-Busy}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
+\subsubsection[{Is\-Busy}]{\setlength{\rightskip}{0pt plus 5cm}bool S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device.\-Is\-Busy\hspace{0.3cm}{\ttfamily [get]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a7e6939193f240d5f5642e07ef7d6b73e}
+
+
+Прибор занят? 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_ad4036c2596ab7029b778ad45090df69b}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Model@{Model}}
+\index{Model@{Model}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
+\subsubsection[{Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Smpl\-Model} S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device.\-Model\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_ad4036c2596ab7029b778ad45090df69b}
+
+
+Модель, с которой связан прибор 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a3525605581b83649d988ca1326b4732f}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Name@{Name}}
+\index{Name@{Name}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
+\subsubsection[{Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual string S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device.\-Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a3525605581b83649d988ca1326b4732f}
+
+
+Имя прибора 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a675ca052cc3996e38aec7ccc1dd7ca8c}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Query\-Counter@{Query\-Counter}}
+\index{Query\-Counter@{Query\-Counter}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
+\subsubsection[{Query\-Counter}]{\setlength{\rightskip}{0pt plus 5cm}virtual int S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device.\-Query\-Counter\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a675ca052cc3996e38aec7ccc1dd7ca8c}
+
+
+Счетчик запросов (пар вызовов reserve/release) 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a2e79fee0f480adec487fdf013ed52b2a}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Status@{Status}}
+\index{Status@{Status}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
+\subsubsection[{Status}]{\setlength{\rightskip}{0pt plus 5cm}virtual object S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device.\-Status\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a2e79fee0f480adec487fdf013ed52b2a}
+
+
+Состояние прибора. Если Status == null, прибор свободен 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a8757abb401c1dfa7093ced84f715a2d2}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Time\-Last\-Reserved@{Time\-Last\-Reserved}}
+\index{Time\-Last\-Reserved@{Time\-Last\-Reserved}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
+\subsubsection[{Time\-Last\-Reserved}]{\setlength{\rightskip}{0pt plus 5cm}virtual int S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device.\-Time\-Last\-Reserved\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a8757abb401c1dfa7093ced84f715a2d2}
+
+
+Время последнего вызова Reserve 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_afe478b9c4ec74e462f5af5d3a51f4131}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Time\-Total\-Reserved@{Time\-Total\-Reserved}}
+\index{Time\-Total\-Reserved@{Time\-Total\-Reserved}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
+\subsubsection[{Time\-Total\-Reserved}]{\setlength{\rightskip}{0pt plus 5cm}virtual int S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device.\-Time\-Total\-Reserved\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_afe478b9c4ec74e462f5af5d3a51f4131}
+
+
+Суммарное время, пока прибор занят 
+
+
+
+Объявления и описания членов класса находятся в файле\-:\begin{DoxyCompactItemize}
+\item 
+D\-:/\-My Documents/\-Git\-Hub/\-S\-M\-P\-L\-Sharp/\-S\-M\-P\-L\-Sharp/Smpl\-Device.\-cs\end{DoxyCompactItemize}

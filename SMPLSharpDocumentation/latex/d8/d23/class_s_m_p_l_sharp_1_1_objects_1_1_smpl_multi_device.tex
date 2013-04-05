@@ -1,0 +1,171 @@
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device}{\section{Класс S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Multi\-Device}
+\label{d8/d23/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device}\index{S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Multi\-Device@{S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Multi\-Device}}
+}
+
+
+Equipment or facility Typically represents some work-\/performing resource of system being modeled The Interconnection of facilities is not explicit, but can be determined by the model’s routing of tokens between facilities  
+
+
+\subsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_1_1_ambary}{Ambary}
+\begin{DoxyCompactList}\small\item\em Канал прибора \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_af58fc9219c338c818848574937481e16}{Reserve} ()
+\begin{DoxyCompactList}\small\item\em Зарезервировать прибор (param = 1) \end{DoxyCompactList}\item 
+int \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a2749dda4f3731c1d9a5caf2e13448eea}{Reserve} (object token, int id=-\/1)
+\begin{DoxyCompactList}\small\item\em Зарезервировать прибор и поменять статус первого свободного канала на true. В случае передачи token == null, прибор будет освобожден \end{DoxyCompactList}\item 
+void \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_afcdb358ca4ae1e32c383a594cd8e10b1}{Release} (int id)
+\begin{DoxyCompactList}\small\item\em Освоболить канал прибора с индексом id \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_1_1_ambary}{Ambary}\mbox{[}$\,$\mbox{]} \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a79eb6ab1f7b988772404220d27fa78b0}{Arr\-Ambary}
+\begin{DoxyCompactList}\small\item\em Массив каналов прибора \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a8120bc9019cef69077019bc59c0acfa6}{Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Имя прибора \end{DoxyCompactList}\item 
+int \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_aefb2897375082ae37730737eedf4c1ec}{Count\-Ambary}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Количество каналов в приборе \end{DoxyCompactList}\item 
+bool \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a20702c1214e518d92f2f9e2e8c66550e}{Is\-Busy}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Все каналы прибора заняты? \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a2194a701f0588035a4d3365211a23b3b}{Time\-Last\-Reserved}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Время последнего вызова Reserve \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a1d6b0142376d56ac7e2dc9bd977fe338}{Time\-Total\-Reserved}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Суммарное время, пока прибор занят \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a1d76170364b223e8e36d93ae178ab915}{Query\-Counter}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Счетчик запросов (пар вызовов reserve/release) \end{DoxyCompactList}\item 
+\hyperlink{class_s_m_p_l_sharp_1_1_smpl_model}{Smpl\-Model} \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_aa5f9548873f61a77d0eda3d1a94b555d}{Model}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Модель, с которой связан прибор \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Equipment or facility Typically represents some work-\/performing resource of system being modeled The Interconnection of facilities is not explicit, but can be determined by the model’s routing of tokens between facilities 
+
+
+
+\subsection{Методы}
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_afcdb358ca4ae1e32c383a594cd8e10b1}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}!Release@{Release}}
+\index{Release@{Release}!SMPLSharp::Objects::SmplMultiDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}}
+\subsubsection[{Release}]{\setlength{\rightskip}{0pt plus 5cm}void S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Multi\-Device.\-Release (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d8/d23/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_afcdb358ca4ae1e32c383a594cd8e10b1}
+
+
+Освоболить канал прибора с индексом id 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em id} & индекс канала\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_af58fc9219c338c818848574937481e16}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}!Reserve@{Reserve}}
+\index{Reserve@{Reserve}!SMPLSharp::Objects::SmplMultiDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}}
+\subsubsection[{Reserve}]{\setlength{\rightskip}{0pt plus 5cm}int S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Multi\-Device.\-Reserve (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d8/d23/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_af58fc9219c338c818848574937481e16}
+
+
+Зарезервировать прибор (param = 1) 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a2749dda4f3731c1d9a5caf2e13448eea}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}!Reserve@{Reserve}}
+\index{Reserve@{Reserve}!SMPLSharp::Objects::SmplMultiDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}}
+\subsubsection[{Reserve}]{\setlength{\rightskip}{0pt plus 5cm}int S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Multi\-Device.\-Reserve (
+\begin{DoxyParamCaption}
+\item[{object}]{token, }
+\item[{int}]{id = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d8/d23/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a2749dda4f3731c1d9a5caf2e13448eea}
+
+
+Зарезервировать прибор и поменять статус первого свободного канала на true. В случае передачи token == null, прибор будет освобожден 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em token} & \\
+\hline
+{\em id} & номер канала\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+номер занятого канала прибора
+\end{DoxyReturn}
+
+
+\subsection{Данные класса}
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a79eb6ab1f7b988772404220d27fa78b0}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}!Arr\-Ambary@{Arr\-Ambary}}
+\index{Arr\-Ambary@{Arr\-Ambary}!SMPLSharp::Objects::SmplMultiDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}}
+\subsubsection[{Arr\-Ambary}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ambary} \mbox{[}$\,$\mbox{]} S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Multi\-Device.\-Arr\-Ambary}}\label{d8/d23/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a79eb6ab1f7b988772404220d27fa78b0}
+
+
+Массив каналов прибора 
+
+
+
+\subsection{Полный список свойств}
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_aefb2897375082ae37730737eedf4c1ec}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}!Count\-Ambary@{Count\-Ambary}}
+\index{Count\-Ambary@{Count\-Ambary}!SMPLSharp::Objects::SmplMultiDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}}
+\subsubsection[{Count\-Ambary}]{\setlength{\rightskip}{0pt plus 5cm}int S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Multi\-Device.\-Count\-Ambary\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d8/d23/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_aefb2897375082ae37730737eedf4c1ec}
+
+
+Количество каналов в приборе 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a20702c1214e518d92f2f9e2e8c66550e}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}!Is\-Busy@{Is\-Busy}}
+\index{Is\-Busy@{Is\-Busy}!SMPLSharp::Objects::SmplMultiDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}}
+\subsubsection[{Is\-Busy}]{\setlength{\rightskip}{0pt plus 5cm}bool S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Multi\-Device.\-Is\-Busy\hspace{0.3cm}{\ttfamily [get]}}}\label{d8/d23/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a20702c1214e518d92f2f9e2e8c66550e}
+
+
+Все каналы прибора заняты? 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_aa5f9548873f61a77d0eda3d1a94b555d}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}!Model@{Model}}
+\index{Model@{Model}!SMPLSharp::Objects::SmplMultiDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}}
+\subsubsection[{Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Smpl\-Model} S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Multi\-Device.\-Model\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d8/d23/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_aa5f9548873f61a77d0eda3d1a94b555d}
+
+
+Модель, с которой связан прибор 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a8120bc9019cef69077019bc59c0acfa6}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}!Name@{Name}}
+\index{Name@{Name}!SMPLSharp::Objects::SmplMultiDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}}
+\subsubsection[{Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual string S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Multi\-Device.\-Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d8/d23/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a8120bc9019cef69077019bc59c0acfa6}
+
+
+Имя прибора 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a1d76170364b223e8e36d93ae178ab915}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}!Query\-Counter@{Query\-Counter}}
+\index{Query\-Counter@{Query\-Counter}!SMPLSharp::Objects::SmplMultiDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}}
+\subsubsection[{Query\-Counter}]{\setlength{\rightskip}{0pt plus 5cm}virtual int S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Multi\-Device.\-Query\-Counter\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d8/d23/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a1d76170364b223e8e36d93ae178ab915}
+
+
+Счетчик запросов (пар вызовов reserve/release) 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a2194a701f0588035a4d3365211a23b3b}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}!Time\-Last\-Reserved@{Time\-Last\-Reserved}}
+\index{Time\-Last\-Reserved@{Time\-Last\-Reserved}!SMPLSharp::Objects::SmplMultiDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}}
+\subsubsection[{Time\-Last\-Reserved}]{\setlength{\rightskip}{0pt plus 5cm}virtual int S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Multi\-Device.\-Time\-Last\-Reserved\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d8/d23/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a2194a701f0588035a4d3365211a23b3b}
+
+
+Время последнего вызова Reserve 
+
+\hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a1d6b0142376d56ac7e2dc9bd977fe338}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}!Time\-Total\-Reserved@{Time\-Total\-Reserved}}
+\index{Time\-Total\-Reserved@{Time\-Total\-Reserved}!SMPLSharp::Objects::SmplMultiDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Multi\-Device}}
+\subsubsection[{Time\-Total\-Reserved}]{\setlength{\rightskip}{0pt plus 5cm}virtual int S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Multi\-Device.\-Time\-Total\-Reserved\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d8/d23/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_multi_device_a1d6b0142376d56ac7e2dc9bd977fe338}
+
+
+Суммарное время, пока прибор занят 
+
+
+
+Объявления и описания членов класса находятся в файле\-:\begin{DoxyCompactItemize}
+\item 
+D\-:/\-My Documents/\-Git\-Hub/\-S\-M\-P\-L\-Sharp/\-S\-M\-P\-L\-Sharp/Smpl\-Multi\-Device.\-cs\end{DoxyCompactItemize}

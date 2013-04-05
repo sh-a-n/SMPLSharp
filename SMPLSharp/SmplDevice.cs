@@ -12,7 +12,12 @@ namespace SMPLSharp.Objects
     // Typically represents some work-performing resource of system being modeled
     // The Interconnection of facilities is not explicit, but can be determined 
     //   by the model’s routing of tokens between facilities
-    //
+    /// <summary>
+    /// Equipment or facility
+    /// Typically represents some work-performing resource of system being modeled
+    /// The Interconnection of facilities is not explicit, but can be determined 
+    ///   by the model’s routing of tokens between facilities
+    /// </summary>
     public class SmplDevice
     {
 
@@ -116,7 +121,7 @@ namespace SMPLSharp.Objects
             /// <summary>
             /// Зарезервировать прибор и поменять его статус на param. В случае передачи token == null, прибор будет освобожден
             /// </summary>
-            /// <param name="token"></param>
+            /// <param name="token">параметр</param>
  
             public void Reserve(object token)
             {
@@ -131,7 +136,7 @@ namespace SMPLSharp.Objects
             }
 
             /// <summary>
-            /// Освоболить прибор
+            /// Освободить прибор
             /// </summary>
  
             public void Release()
