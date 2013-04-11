@@ -135,7 +135,11 @@ namespace SMPLSharp.Objects
             /// </summary>
             /// <param name="model">модель</param>
             /// <param name="name">имя очереди</param>
- 
+            /// Пример использования:
+            /// @code
+            /// SmplModel model = new SmplModel();
+            /// SmplQueue queue = new SmplQueue(model, "queue1");
+            /// @endcode
             internal SmplQueue(SmplModel model, string name)
             {
                 Model = model;
@@ -168,7 +172,12 @@ namespace SMPLSharp.Objects
             /// <summary>
             /// Добавить новый элемент (1) в очередь
             /// </summary>
- 
+            /// Пример использования:
+            /// @code
+            /// SmplModel model = new SmplModel();
+            /// SmplQueue queue = new SmplQueue(model, "queue1");
+            /// queue.Enqueue();
+            /// @endcode
             virtual public void Enqueue()
             {
                 Enqueue(1);
@@ -179,7 +188,12 @@ namespace SMPLSharp.Objects
             /// </summary>
             /// <param name="token">элемент</param>
             /// <param name="priority">приоритет</param>
- 
+            /// Пример использования:
+            /// @code
+            /// SmplModel model = new SmplModel();
+            /// SmplQueue queue = new SmplQueue(model, "queue1");
+            /// queue.Enqueue("elem1", 1);
+            /// @endcode
             virtual public void Enqueue(object token, int priority = 0)
             {
                 var new_element = new SmplQueueElement(token, priority);
@@ -202,6 +216,13 @@ namespace SMPLSharp.Objects
         /// Извлечь первый элемент очереди
         /// </summary>
         /// <returns>Возвращает элемент очереди. В случае пустой очереди генерирует исключение</returns>
+            /// Пример использования:
+            /// @code
+            /// SmplModel model = new SmplModel();
+            /// SmplQueue queue = new SmplQueue(model, "queue1");
+            /// queue.Enqueue("elem1", 1);
+            /// var element = queue.Head();
+            /// @endcode
             virtual public object Head()
             {
                 var l = Length;

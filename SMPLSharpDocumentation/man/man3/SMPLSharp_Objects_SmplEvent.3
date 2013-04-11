@@ -1,0 +1,68 @@
+.TH "SMPLSharp.Objects.SmplEvent" 3 "Пт 5 Апр 2013" "SMPLSharp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SMPLSharp.Objects.SmplEvent \- 
+.PP
+Model's event A change of state of any system entity, active or passive Can be, for example, Arrival of task or Computing completion  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Свойства"
+
+.in +1c
+.ti -1c
+.RI "virtual int \fBEventID\fP\fC [get, set]\fP"
+.br
+.RI "\fIИдентификатор типа события \fP"
+.ti -1c
+.RI "virtual int \fBTimeRegistred\fP\fC [get, set]\fP"
+.br
+.RI "\fIВремя регистрации в модели \fP"
+.ti -1c
+.RI "virtual int \fBTimeCaused\fP\fC [get, set]\fP"
+.br
+.RI "\fIВремя возникновения в модели (TimeRegistred + время ожидания) \fP"
+.ti -1c
+.RI "virtual object \fBParam\fP\fC [get, set]\fP"
+.br
+.RI "\fIДоп\&. параметр события \fP"
+.in -1c
+.SH "Подробное описание"
+.PP 
+Model's event A change of state of any system entity, active or passive Can be, for example, Arrival of task or Computing completion 
+
+
+.PP
+См\&. определение в файле SmplEvent\&.cs строка 16
+.SH "Полный список свойств"
+.PP 
+.SS "virtual int SMPLSharp\&.Objects\&.SmplEvent\&.EventID\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Идентификатор типа события 
+.PP
+См\&. определение в файле SmplEvent\&.cs строка 25
+.SS "virtual object SMPLSharp\&.Objects\&.SmplEvent\&.Param\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Доп\&. параметр события 
+.PP
+См\&. определение в файле SmplEvent\&.cs строка 43
+.SS "virtual int SMPLSharp\&.Objects\&.SmplEvent\&.TimeCaused\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Время возникновения в модели (TimeRegistred + время ожидания) 
+.PP
+См\&. определение в файле SmplEvent\&.cs строка 37
+.SS "virtual int SMPLSharp\&.Objects\&.SmplEvent\&.TimeRegistred\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Время регистрации в модели 
+.PP
+См\&. определение в файле SmplEvent\&.cs строка 31
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для SMPLSharp из исходного текста\&.

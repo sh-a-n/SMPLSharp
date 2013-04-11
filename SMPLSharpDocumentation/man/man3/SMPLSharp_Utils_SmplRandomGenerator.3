@@ -1,0 +1,159 @@
+.TH "SMPLSharp.Utils.SmplRandomGenerator" 3 "Пт 5 Апр 2013" "SMPLSharp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SMPLSharp.Utils.SmplRandomGenerator \- 
+.PP
+Генератор случайных чисел  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "\fBSmplRandomGenerator\fP ()"
+.br
+.RI "\fIКонструктор генератора, задающий seed от текущего времени \fP"
+.ti -1c
+.RI "\fBSmplRandomGenerator\fP (uint seed)"
+.br
+.RI "\fIКонструкутор генератора с заданным seed \fP"
+.ti -1c
+.RI "int \fBIRandom\fP (int a)"
+.br
+.RI "\fIГенерирует число по равномерному распределению в диапозоне [0, a] включительно \fP"
+.ti -1c
+.RI "int \fBIRandom\fP (int a, int b)"
+.br
+.RI "\fIГенерирует число по равномерному распределению в диапозоне [a, b] включительно \fP"
+.ti -1c
+.RI "int \fBNegExp\fP (int m)"
+.br
+.RI "\fIГенерирует число по отрицательному экспоненциальному распределению со средней точкой m \fP"
+.ti -1c
+.RI "int \fBPoisson\fP (double lambda)"
+.br
+.RI "\fIГенерирует число по распределению Пуассона со параметром lambda \fP"
+.in -1c
+.SS "Свойства"
+
+.in +1c
+.ti -1c
+.RI "uint \fBSeed\fP\fC [get, set]\fP"
+.br
+.RI "\fIТекущее значение Seed \fP"
+.ti -1c
+.RI "uint \fBStartSeed\fP\fC [get, set]\fP"
+.br
+.RI "\fIПервоначальное значение Seed \fP"
+.in -1c
+.SH "Подробное описание"
+.PP 
+Генератор случайных чисел 
+
+
+.PP
+См\&. определение в файле SmplRandomGenerator\&.cs строка 14
+.SH "Конструктор(ы)"
+.PP 
+.SS "SMPLSharp\&.Utils\&.SmplRandomGenerator\&.SmplRandomGenerator ()"
+
+.PP
+Конструктор генератора, задающий seed от текущего времени 
+.PP
+См\&. определение в файле SmplRandomGenerator\&.cs строка 46
+.SS "SMPLSharp\&.Utils\&.SmplRandomGenerator\&.SmplRandomGenerator (uintseed)"
+
+.PP
+Конструкутор генератора с заданным seed \fBАргументы:\fP
+.RS 4
+\fIseed\fP 
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplRandomGenerator\&.cs строка 57
+.SH "Методы"
+.PP 
+.SS "int SMPLSharp\&.Utils\&.SmplRandomGenerator\&.IRandom (inta)"
+
+.PP
+Генерирует число по равномерному распределению в диапозоне [0, a] включительно \fBАргументы:\fP
+.RS 4
+\fIa\fP 
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplRandomGenerator\&.cs строка 72
+.SS "int SMPLSharp\&.Utils\&.SmplRandomGenerator\&.IRandom (inta, intb)"
+
+.PP
+Генерирует число по равномерному распределению в диапозоне [a, b] включительно \fBАргументы:\fP
+.RS 4
+\fIa\fP 
+.br
+\fIb\fP 
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplRandomGenerator\&.cs строка 85
+.SS "int SMPLSharp\&.Utils\&.SmplRandomGenerator\&.NegExp (intm)"
+
+.PP
+Генерирует число по отрицательному экспоненциальному распределению со средней точкой m \fBАргументы:\fP
+.RS 4
+\fIm\fP 
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplRandomGenerator\&.cs строка 97
+.SS "int SMPLSharp\&.Utils\&.SmplRandomGenerator\&.Poisson (doublelambda)"
+
+.PP
+Генерирует число по распределению Пуассона со параметром lambda \fBАргументы:\fP
+.RS 4
+\fIlambda\fP 
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplRandomGenerator\&.cs строка 110
+.SH "Полный список свойств"
+.PP 
+.SS "uint SMPLSharp\&.Utils\&.SmplRandomGenerator\&.Seed\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Текущее значение Seed 
+.PP
+См\&. определение в файле SmplRandomGenerator\&.cs строка 23
+.SS "uint SMPLSharp\&.Utils\&.SmplRandomGenerator\&.StartSeed\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Первоначальное значение Seed 
+.PP
+См\&. определение в файле SmplRandomGenerator\&.cs строка 33
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для SMPLSharp из исходного текста\&.

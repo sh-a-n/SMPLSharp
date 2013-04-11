@@ -1,0 +1,68 @@
+.TH "SMPLSharp.Objects.SmplMultiDevice.Ambary" 3 "Пт 5 Апр 2013" "SMPLSharp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SMPLSharp.Objects.SmplMultiDevice.Ambary \- 
+.PP
+Канал прибора  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Свойства"
+
+.in +1c
+.ti -1c
+.RI "bool \fBStatus\fP\fC [get, set]\fP"
+.br
+.RI "\fIЕсли Status == null, канал свободен \fP"
+.ti -1c
+.RI "int \fBTimeLastReserved\fP\fC [get, set]\fP"
+.br
+.RI "\fIВремя последнего резервирования \fP"
+.ti -1c
+.RI "int \fBTimeTotalReserved\fP\fC [get, set]\fP"
+.br
+.RI "\fIСуммарное время, пока канал занят \fP"
+.ti -1c
+.RI "int \fBQueryCounter\fP\fC [get, set]\fP"
+.br
+.RI "\fIСчетчик запросов (пар вызовов reserve/release) \fP"
+.in -1c
+.SH "Подробное описание"
+.PP 
+Канал прибора 
+
+
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 40
+.SH "Полный список свойств"
+.PP 
+.SS "int SMPLSharp\&.Objects\&.SmplMultiDevice\&.Ambary\&.QueryCounter\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Счетчик запросов (пар вызовов reserve/release) 
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 74
+.SS "bool SMPLSharp\&.Objects\&.SmplMultiDevice\&.Ambary\&.Status\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Если Status == null, канал свободен 
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 47
+.SS "int SMPLSharp\&.Objects\&.SmplMultiDevice\&.Ambary\&.TimeLastReserved\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Время последнего резервирования 
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 56
+.SS "int SMPLSharp\&.Objects\&.SmplMultiDevice\&.Ambary\&.TimeTotalReserved\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Суммарное время, пока канал занят 
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 65
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для SMPLSharp из исходного текста\&.

@@ -1,0 +1,7 @@
+digraph "Иерархия классов. Графический вид."
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SMPLSharp.Utils.SmplReporter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d18/class_s_m_p_l_sharp_1_1_utils_1_1_smpl_reporter.html",tooltip="Give model statistic "];
+}

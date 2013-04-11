@@ -1,0 +1,224 @@
+.TH "SMPLSharp.Objects.SmplQueue" 3 "Пт 5 Апр 2013" "SMPLSharp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SMPLSharp.Objects.SmplQueue \- 
+.PP
+Очередь\&. Represents place where tokens are waiting when equipment is busy  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBEnqueue\fP ()"
+.br
+.RI "\fIДобавить новый элемент (1) в очередь \fP"
+.ti -1c
+.RI "virtual void \fBEnqueue\fP (object token, int priority=0)"
+.br
+.RI "\fIДобавить новый элемент token в очередь с заданным приоритетом \fP"
+.ti -1c
+.RI "virtual object \fBHead\fP ()"
+.br
+.RI "\fIИзвлечь первый элемент очереди \fP"
+.in -1c
+.SS "Защищенные члены"
+
+.in +1c
+.ti -1c
+.RI "void \fBupdateStatiscticIncrease\fP (int prev_length)"
+.br
+.RI "\fIОбновление статистики при добавлении в очередь \fP"
+.ti -1c
+.RI "void \fBupdateStatiscticDecrease\fP (int prev_length, \fBSmplQueueElement\fP element)"
+.br
+.RI "\fIОбновление статистики при извлечении из очереди \fP"
+.in -1c
+.SS "Свойства"
+
+.in +1c
+.ti -1c
+.RI "virtual string \fBName\fP\fC [get, set]\fP"
+.br
+.RI "\fIИмя очереди \fP"
+.ti -1c
+.RI "int \fBLength\fP\fC [get]\fP"
+.br
+.RI "\fIДлина очереди \fP"
+.ti -1c
+.RI "virtual int \fBMaxLength\fP\fC [get, set]\fP"
+.br
+.RI "\fIМаксимальная длина очереди \fP"
+.ti -1c
+.RI "virtual int \fBCountPassed\fP\fC [get, set]\fP"
+.br
+.RI "\fIКоличество элементов, удаленных из очереди \fP"
+.ti -1c
+.RI "virtual int \fBTimeLastChanged\fP\fC [get, set]\fP"
+.br
+.RI "\fIВремя последнего изменения длины очереди \fP"
+.ti -1c
+.RI "virtual int \fBWaitingPeriodSum\fP\fC [get, set]\fP"
+.br
+.RI "\fIСумма периодов ожиданий \fP"
+.ti -1c
+.RI "virtual int \fBWaitingPeriodSq2Sum\fP\fC [get, set]\fP"
+.br
+.RI "\fIСумма квадратов периодов ожиданий \fP"
+.ti -1c
+.RI "virtual int \fBLengthOfTimeIntegral\fP\fC [get, set]\fP"
+.br
+.RI "\fIСумма длин очереди * соответсвующие периоды изменения\&. Интерграл Q(t), где Q - длина очереди, t - модельное время\&. Используется для вычисления средней длины очереди \fP"
+.ti -1c
+.RI "bool \fBIsEmpty\fP\fC [get]\fP"
+.br
+.RI "\fIОчередь пуста? \fP"
+.ti -1c
+.RI "virtual ICollection
+.br
+< \fBSmplQueueElement\fP > \fBElements\fP\fC [get]\fP"
+.br
+.RI "\fIЭлементы очереди \fP"
+.ti -1c
+.RI "\fBSmplModel\fP \fBModel\fP\fC [get, set]\fP"
+.br
+.RI "\fIМодель, с которой связана очередь \fP"
+.in -1c
+.SH "Подробное описание"
+.PP 
+Очередь\&. Represents place where tokens are waiting when equipment is busy 
+
+
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 17
+.SH "Методы"
+.PP 
+.SS "virtual void SMPLSharp\&.Objects\&.SmplQueue\&.Enqueue ()\fC [virtual]\fP"
+
+.PP
+Добавить новый элемент (1) в очередь 
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 172
+.SS "virtual void SMPLSharp\&.Objects\&.SmplQueue\&.Enqueue (objecttoken, intpriority = \fC0\fP)\fC [virtual]\fP"
+
+.PP
+Добавить новый элемент token в очередь с заданным приоритетом \fBАргументы:\fP
+.RS 4
+\fItoken\fP элемент
+.br
+\fIpriority\fP приоритет
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 183
+.SS "virtual object SMPLSharp\&.Objects\&.SmplQueue\&.Head ()\fC [virtual]\fP"
+
+.PP
+Извлечь первый элемент очереди \fBВозвращает:\fP
+.RS 4
+Возвращает элемент очереди\&. В случае пустой очереди генерирует исключение
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 205
+.SS "void SMPLSharp\&.Objects\&.SmplQueue\&.updateStatiscticDecrease (intprev_length, \fBSmplQueueElement\fPelement)\fC [protected]\fP"
+
+.PP
+Обновление статистики при извлечении из очереди \fBАргументы:\fP
+.RS 4
+\fIprev_length\fP 
+.br
+\fIelement\fP 
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 244
+.SS "void SMPLSharp\&.Objects\&.SmplQueue\&.updateStatiscticIncrease (intprev_length)\fC [protected]\fP"
+
+.PP
+Обновление статистики при добавлении в очередь \fBАргументы:\fP
+.RS 4
+\fIprev_length\fP 
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 231
+.SH "Полный список свойств"
+.PP 
+.SS "virtual int SMPLSharp\&.Objects\&.SmplQueue\&.CountPassed\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Количество элементов, удаленных из очереди 
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 56
+.SS "virtual ICollection<\fBSmplQueueElement\fP> SMPLSharp\&.Objects\&.SmplQueue\&.Elements\fC [get]\fP"
+
+.PP
+Элементы очереди 
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 115
+.SS "bool SMPLSharp\&.Objects\&.SmplQueue\&.IsEmpty\fC [get]\fP"
+
+.PP
+Очередь пуста? 
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 106
+.SS "int SMPLSharp\&.Objects\&.SmplQueue\&.Length\fC [get]\fP"
+
+.PP
+Длина очереди 
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 37
+.SS "virtual int SMPLSharp\&.Objects\&.SmplQueue\&.LengthOfTimeIntegral\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Сумма длин очереди * соответсвующие периоды изменения\&. Интерграл Q(t), где Q - длина очереди, t - модельное время\&. Используется для вычисления средней длины очереди 
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 96
+.SS "virtual int SMPLSharp\&.Objects\&.SmplQueue\&.MaxLength\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Максимальная длина очереди 
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 46
+.SS "\fBSmplModel\fP SMPLSharp\&.Objects\&.SmplQueue\&.Model\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Модель, с которой связана очередь 
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 124
+.SS "virtual string SMPLSharp\&.Objects\&.SmplQueue\&.Name\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Имя очереди 
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 27
+.SS "virtual int SMPLSharp\&.Objects\&.SmplQueue\&.TimeLastChanged\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Время последнего изменения длины очереди 
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 66
+.SS "virtual int SMPLSharp\&.Objects\&.SmplQueue\&.WaitingPeriodSq2Sum\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Сумма квадратов периодов ожиданий 
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 86
+.SS "virtual int SMPLSharp\&.Objects\&.SmplQueue\&.WaitingPeriodSum\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Сумма периодов ожиданий 
+.PP
+См\&. определение в файле SmplQueue\&.cs строка 76
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для SMPLSharp из исходного текста\&.

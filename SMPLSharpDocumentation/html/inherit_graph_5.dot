@@ -1,0 +1,7 @@
+digraph "Иерархия классов. Графический вид."
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SMPLSharp.Objects.SmplQueue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/ded/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_queue.html",tooltip="Очередь. Represents place where tokens are waiting when equipment is busy "];
+}

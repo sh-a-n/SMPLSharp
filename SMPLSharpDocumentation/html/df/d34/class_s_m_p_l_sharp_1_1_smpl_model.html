@@ -8,6 +8,13 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -37,8 +44,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
-      <li><a href="../../namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="../../pages.html"><span>Описания</span></a></li>
+      <li><a href="../../namespaces.html"><span>Пакеты</span></a></li>
       <li class="current"><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -65,12 +74,27 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
       <li><a href="../../functions.html"><span>Члены&#160;классов</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html','../../');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Свойства</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>События</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Свойства</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>События</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Страницы</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,11 +103,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="../../dd/d3b/namespace_s_m_p_l_sharp.html">SMPLSharp</a></li><li class="navelem"><a class="el" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html">SmplModel</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Открытые члены</a> &#124;
@@ -208,13 +227,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Simulation model. Provides set of function for building event-based, discrete-event simulation model </p>
+
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00173">173</a></p>
 </div><h2 class="groupheader">Конструктор(ы)</h2>
 <a class="anchor" id="af44997fa13bc821115726c45c7aaad7a"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">SMPLSharp.SmplModel.SmplModel </td>
@@ -223,14 +241,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Конструктор </p>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line"><a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a> model = <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00253">253</a></p>
 
 </div>
 </div>
@@ -238,9 +255,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
 <a class="anchor" id="a2af716a4608f04a0ec2814d921c5197e"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int SMPLSharp.SmplModel.Cancel </td>
@@ -260,11 +274,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Отменить ближайшее запланированное событие с указанными параметрами </p>
@@ -276,15 +285,21 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Время до окончания отменяемого события или -1 в случае, если событие не найдено</dd></dl>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line"><a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a> model = <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+<div class="line">model.CreateDevice(<span class="stringliteral">&quot;device1&quot;</span>);</div>
+<div class="line">model.Devices[<span class="stringliteral">&quot;device1&quot;</span>].Reserve();</div>
+<div class="line">model.Schedule(0,30,<span class="stringliteral">&quot;string&quot;</span>);</div>
+<div class="line"><span class="keywordtype">int</span> time = model.Cancel(0,<span class="stringliteral">&quot;string&quot;</span>);</div>
+<div class="line">model.Devices[<span class="stringliteral">&quot;device1&quot;</span>].Release();</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00551">551</a></p>
 
 </div>
 </div>
 <a class="anchor" id="a1101457a63f40e7d80e707d7793f35ee"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool SMPLSharp.SmplModel.Cause </td>
@@ -294,11 +309,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Вызвать ближайшее событие модели </p>
@@ -309,15 +319,21 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Если обработчик EventCaused задаст в e.StopModel значение false, функция возвратит false. true, если событие существует. В случае, если ни одно событие не запланировано, кидается исключение</dd></dl>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line"><a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a> model = <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+<div class="line">model.CreateDevice(<span class="stringliteral">&quot;device1&quot;</span>);</div>
+<div class="line">model.Devices[<span class="stringliteral">&quot;device1&quot;</span>].Reserve();</div>
+<div class="line">model.Schedule(0,30);</div>
+<div class="line">SmplEvent e;</div>
+<div class="line"><span class="keywordtype">bool</span> res = model.Cause(e);</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00476">476</a></p>
 
 </div>
 </div>
 <a class="anchor" id="ae2da4d875550fe62753443c0a7a276ee"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool SMPLSharp.SmplModel.Cause </td>
@@ -326,24 +342,24 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Вызвать ближайшее событие модели </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Если обработчик EventCaused задаст в e.StopModel значение false, функция возвратит false. true, если событие существует. В случае, если ни одно событие не запланировано, кидается исключение</dd></dl>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line"><a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a> model = <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+<div class="line">model.CreateDevice(<span class="stringliteral">&quot;device1&quot;</span>);</div>
+<div class="line">model.Devices[<span class="stringliteral">&quot;device1&quot;</span>].Reserve();</div>
+<div class="line">model.Schedule(0,30);</div>
+<div class="line"><span class="keywordtype">bool</span> res = model.Cause();</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00504">504</a></p>
 
 </div>
 </div>
 <a class="anchor" id="a033dfe1b24a1864b7a4c8a85831aafd3"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool SMPLSharp.SmplModel.Cause </td>
@@ -363,11 +379,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Вызвать ближайшее событие модели </p>
@@ -379,6 +390,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Если обработчик EventCaused задаст в e.StopModel значение false, функция возвратит false. true, если событие существует. В случае, если ни одно событие не запланировано, кидается исключение</dd></dl>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line"><a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a> model = <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+<div class="line">model.CreateDevice(<span class="stringliteral">&quot;device1&quot;</span>);</div>
+<div class="line">model.Devices[<span class="stringliteral">&quot;device1&quot;</span>].Reserve();</div>
+<div class="line">model.Schedule(0,30,<span class="stringliteral">&quot;string&quot;</span>);</div>
+<div class="line">SmplEvent e;</div>
+<div class="line"><span class="keywordtype">string</span> str;</div>
+<div class="line"><span class="keywordtype">bool</span> res = model.Cause(e,str);</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00527">527</a></p>
 
 </div>
 </div>
@@ -399,7 +420,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -412,6 +433,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Новый прибор</dd></dl>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line"><a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a> model = <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+<div class="line">SmplDevice d1 = model.CreateDevice(<span class="stringliteral">&quot;device1&quot;</span>);</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00363">363</a></p>
 
 </div>
 </div>
@@ -442,7 +468,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -456,6 +482,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Новый многоканальный прибор</dd></dl>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line">SmplMpdel model =  <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+<div class="line">SmplMultyDevice multydev = model.CreateMultyDevice(<span class="stringliteral">&quot;dev1&quot;</span>, 2);</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00403">403</a></p>
 
 </div>
 </div>
@@ -476,7 +507,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -489,6 +520,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Новая очередь</dd></dl>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line"><a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a> model = <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+<div class="line">SmplQueue q1 = model.CreateQueue(<span class="stringliteral">&quot;q1&quot;</span>);</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00325">325</a></p>
 
 </div>
 </div>
@@ -509,7 +545,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -522,15 +558,18 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Прибор</dd></dl>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line"><a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a> model = <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+<div class="line">model.CreateDevice(<span class="stringliteral">&quot;device1&quot;</span>);</div>
+<div class="line">SmplDevice d1 = model.Device(<span class="stringliteral">&quot;device1&quot;</span>);</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00385">385</a></p>
 
 </div>
 </div>
 <a class="anchor" id="a77390fc51749077e44b0285a76faf5cc"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int SMPLSharp.SmplModel.IRandom </td>
@@ -550,11 +589,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Генерирует число по равномерному распределению в диапозоне [a, b] включительно </p>
@@ -566,15 +600,19 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line"><a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a> model = <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+<div class="line">model.CreateDevice(<span class="stringliteral">&quot;device1&quot;</span>);</div>
+<div class="line">model.Devices[<span class="stringliteral">&quot;device1&quot;</span>].Reserve();</div>
+<div class="line">model.Schedule(0,model.IRandom(15,25));</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00580">580</a></p>
 
 </div>
 </div>
 <a class="anchor" id="aa89b976daa026bf83a1a2818d34abfa0"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int SMPLSharp.SmplModel.IRandom </td>
@@ -584,11 +622,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Генерирует число по равномерному распределению в диапозоне [0, a] включительно </p>
@@ -599,6 +632,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line"><a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a> model = <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+<div class="line">model.CreateDevice(<span class="stringliteral">&quot;device1&quot;</span>);</div>
+<div class="line">model.Devices[<span class="stringliteral">&quot;device1&quot;</span>].Reserve();</div>
+<div class="line">model.Schedule(0,model.IRandom(30));</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00597">597</a></p>
 
 </div>
 </div>
@@ -619,7 +659,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -632,15 +672,18 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Многоканаьный прибор</dd></dl>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line">SmplMpdel model =  <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+<div class="line">model.CreateMultyDevice(<span class="stringliteral">&quot;dev1&quot;</span>, 2);</div>
+<div class="line">SmplMultyDevice dev1 = model.MultyDevice(<span class="stringliteral">&quot;dev1&quot;</span>);</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00426">426</a></p>
 
 </div>
 </div>
 <a class="anchor" id="a2a899ce5ab2a8a7b127a962c33b047e4"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int SMPLSharp.SmplModel.NexExp </td>
@@ -650,11 +693,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Генерирует число по отрицательному экспоненциальному распределению со средней точкой m </p>
@@ -665,6 +703,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line"><a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a> model = <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+<div class="line">model.CreateDevice(<span class="stringliteral">&quot;device1&quot;</span>);</div>
+<div class="line">model.Devices[<span class="stringliteral">&quot;device1&quot;</span>].Reserve();</div>
+<div class="line">model.Schedule(0,model.IRandom(5));</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00614">614</a></p>
 
 </div>
 </div>
@@ -685,7 +730,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -698,6 +743,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00301">301</a></p>
 
 </div>
 </div>
@@ -718,7 +765,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -731,15 +778,18 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Новая очередь</dd></dl>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line"><a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a> model = <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+<div class="line">model.CreateQueue(<span class="stringliteral">&quot;q1&quot;</span>);</div>
+<div class="line">SmplQueue q1 = model.Queue(<span class="stringliteral">&quot;q1&quot;</span>);</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00347">347</a></p>
 
 </div>
 </div>
 <a class="anchor" id="a221aa0af22ddc3dcc9860df9a76eb96e"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">string SMPLSharp.SmplModel.Report </td>
@@ -748,24 +798,28 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Генерирует стандартный отчет о модели </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Строка, содержащая весь отчет</dd></dl>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line"><a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a> model = <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+<div class="line">model.CreateDevice(<span class="stringliteral">&quot;device1&quot;</span>);</div>
+<div class="line">model.Devices[<span class="stringliteral">&quot;device1&quot;</span>].Reserve();</div>
+<div class="line">model.Schedule(0,30);</div>
+<div class="line">SmplEvent e;</div>
+<div class="line">model.Cause(e);</div>
+<div class="line">model.Devices[<span class="stringliteral">&quot;device1&quot;</span>].Release();</div>
+<div class="line"><span class="keywordtype">string</span> str = model.Report();</div>
+<div class="line">Console.WriteLine(str);</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00635">635</a></p>
 
 </div>
 </div>
 <a class="anchor" id="af567f319b044a2c6c98a80bff589ad04"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void SMPLSharp.SmplModel.Schedule </td>
@@ -791,11 +845,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Запланировать событие </p>
@@ -807,6 +856,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
   </table>
   </dd>
 </dl>
+<p>Пример использования: </p>
+<div class="fragment"><div class="line"><a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a> model = <span class="keyword">new</span> <a class="code" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html#af44997fa13bc821115726c45c7aaad7a" title="Конструктор ">SmplModel</a>();</div>
+<div class="line">model.CreateDevice(<span class="stringliteral">&quot;device1&quot;</span>);</div>
+<div class="line">model.Devices[<span class="stringliteral">&quot;device1&quot;</span>].Reserve();</div>
+<div class="line">model.Schedule(0,30);</div>
+</div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00446">446</a></p>
 
 </div>
 </div>
@@ -831,6 +887,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
 
 <p>Приборы модели </p>
 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00276">276</a></p>
+
 </div>
 </div>
 <a class="anchor" id="ac57b9b5e15eb34682873492bab42445f"></a>
@@ -852,6 +910,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
 </div><div class="memdoc">
 
 <p>Журнал будущих событий модели </p>
+
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00281">281</a></p>
 
 </div>
 </div>
@@ -875,6 +935,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
 
 <p>Многоканальные приборы модели </p>
 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00286">286</a></p>
+
 </div>
 </div>
 <a class="anchor" id="ace458c3e9bb07de68137027426eeee82"></a>
@@ -896,6 +958,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
 </div><div class="memdoc">
 
 <p>Очереди модели </p>
+
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00271">271</a></p>
 
 </div>
 </div>
@@ -920,6 +984,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
 
 <p>Приборы </p>
 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00229">229</a></p>
+
 </div>
 </div>
 <a class="anchor" id="a5427e31d8b72ff5823518e5eff801fd3"></a>
@@ -941,6 +1007,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
 </div><div class="memdoc">
 
 <p>Модель была остановлена </p>
+
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00212">212</a></p>
 
 </div>
 </div>
@@ -964,6 +1032,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
 
 <p>Многоканальные приборы </p>
 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00237">237</a></p>
+
 </div>
 </div>
 <a class="anchor" id="a83863cdbfb43901325e891a65fd27d40"></a>
@@ -985,6 +1055,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
 </div><div class="memdoc">
 
 <p>Время следующего события </p>
+
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00200">200</a></p>
 
 </div>
 </div>
@@ -1008,6 +1080,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
 
 <p>Очереди </p>
 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00221">221</a></p>
+
 </div>
 </div>
 <a class="anchor" id="a0f7a947d68471f69ba6afaf03ec15093"></a>
@@ -1029,6 +1103,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
 </div><div class="memdoc">
 
 <p>Генератор случайных чисел </p>
+
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00182">182</a></p>
 
 </div>
 </div>
@@ -1052,6 +1128,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
 
 <p>Модельное время </p>
 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00191">191</a></p>
+
 </div>
 </div>
 <h2 class="groupheader">Cобытия</h2>
@@ -1067,17 +1145,23 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
 
 <p>Событие соершено </p>
 
+<p>См. определение в файле <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a> строка <a class="el" href="../../d2/de9/_smpl_model_8cs_source.html#l00295">295</a></p>
+
 </div>
 </div>
 <hr/>Объявления и описания членов класса находятся в файле:<ul>
-<li>D:/My Documents/GitHub/SMPLSharp/SMPLSharp/SmplModel.cs</li>
+<li>D:/My Documents/GitHub/SMPLSharp/SMPLSharp/<a class="el" href="../../d2/de9/_smpl_model_8cs_source.html">SmplModel.cs</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Документация по SMPLSharp. Последние изменения: Пт 5 Апр 2013 16:01:31. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="../../doxygen.png" alt="doxygen"/>
-</a> 1.8.3.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dd/d3b/namespace_s_m_p_l_sharp.html">SMPLSharp</a></li><li class="navelem"><a class="el" href="../../df/d34/class_s_m_p_l_sharp_1_1_smpl_model.html">SmplModel</a></li>
+    <li class="footer">Документация по SMPLSharp. Последние изменения: Чт 11 Апр 2013 22:51:49. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
+  </ul>
+</div>
 </body>
 </html>

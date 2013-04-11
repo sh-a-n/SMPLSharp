@@ -68,7 +68,10 @@ namespace SMPLSharp.Utils
             /// </summary>
             /// <param name="a"></param>
             /// <returns></returns>
- 
+            /// Пример использования:
+            /// @code
+            /// int randomValue = SmplRandomGenerator.IRandom(5);
+            /// @endcode
             public int IRandom(int a)
             {
                 Seed = Seed * 1664525 + 1013904223;
@@ -81,7 +84,10 @@ namespace SMPLSharp.Utils
             /// <param name="a"></param>
             /// <param name="b"></param>
             /// <returns></returns>
- 
+            /// Пример использования:
+            /// @code
+            /// int randomValue = SmplRandomGenerator.IRandom(2, 7);
+            /// @endcode
             public int IRandom(int a, int b)
             {
                 Seed = Seed * 1664525 + 1013904223;
@@ -93,7 +99,10 @@ namespace SMPLSharp.Utils
             /// </summary>
             /// <param name="m"></param>
             /// <returns></returns>
- 
+            /// Пример использования:
+            /// @code
+            /// int randomValue = SmplRandomGenerator.NegExp(5);
+            /// @endcode
             public int NegExp(int m)
             {
                 Seed = Seed * 1664525 + 1013904223;
@@ -106,7 +115,10 @@ namespace SMPLSharp.Utils
             /// </summary>
             /// <param name="lambda"></param>
             /// <returns></returns>
- 
+            /// Пример использования:
+            /// @code
+            /// int randomValue = SmplRandomGenerator.Poisson(1.5);
+            /// @endcode
             public int Poisson(double lambda) {
                 double L = Math.Exp(-lambda);
                 double p = 1.0;

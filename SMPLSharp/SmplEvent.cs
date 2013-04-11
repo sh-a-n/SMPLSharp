@@ -53,8 +53,7 @@ namespace SMPLSharp.Objects
             /// <param name="event_id">идентификатор события</param>
             /// <param name="current_time">текущее модельное время</param>
             /// <param name="waiting_time">время ожидания возникновения</param>
-            /// <param name="param">доп. параметр события</param>
- 
+            /// <param name="param">доп. параметр события</param> 
             internal SmplEvent(int event_id, int current_time, int waiting_time, object param = null)
             {
                 EventID = event_id;

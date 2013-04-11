@@ -1,0 +1,71 @@
+.TH "SMPLSharp.EventCausedEventArgs" 3 "Пт 5 Апр 2013" "SMPLSharp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SMPLSharp.EventCausedEventArgs \- 
+.PP
+Event when model's event is caused  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Базовые классы:EventArgs\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "\fBEventCausedEventArgs\fP (\fBSmplEvent\fP model_event)"
+.br
+.RI "\fIКонструктор \fP"
+.in -1c
+.SS "Свойства"
+
+.in +1c
+.ti -1c
+.RI "\fBSmplEvent\fP \fBEvent\fP\fC [get, set]\fP"
+.br
+.RI "\fIСобытие модели \fP"
+.ti -1c
+.RI "bool \fBStopModel\fP\fC [get, set]\fP"
+.br
+.RI "\fIЕсли StopModel == false, остановить выполнение модели (\fBSmplModel\&.Cause\fP вернет false) \fP"
+.in -1c
+.SH "Подробное описание"
+.PP 
+Event when model's event is caused 
+
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 443
+.SH "Конструктор(ы)"
+.PP 
+.SS "SMPLSharp\&.EventCausedEventArgs\&.EventCausedEventArgs (\fBSmplEvent\fPmodel_event)"
+
+.PP
+Конструктор \fBАргументы:\fP
+.RS 4
+\fImodel_event\fP Событие
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 479
+.SH "Полный список свойств"
+.PP 
+.SS "\fBSmplEvent\fP SMPLSharp\&.EventCausedEventArgs\&.Event\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Событие модели 
+.PP
+См\&. определение в файле SmplModel\&.cs строка 453
+.SS "bool SMPLSharp\&.EventCausedEventArgs\&.StopModel\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Если StopModel == false, остановить выполнение модели (\fBSmplModel\&.Cause\fP вернет false) 
+.PP
+См\&. определение в файле SmplModel\&.cs строка 463
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для SMPLSharp из исходного текста\&.

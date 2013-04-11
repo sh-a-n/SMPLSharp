@@ -12,7 +12,7 @@ Equipment or facility Typically represents some work-\/performing resource of sy
 void \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a43be17c0606bf8f720149c2777a33e31}{Reserve} ()
 \begin{DoxyCompactList}\small\item\em Зарезервировать прибор (param = 1) \end{DoxyCompactList}\item 
 void \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a8fac05272f1a7e1213336639e3453512}{Reserve} (object token)
-\begin{DoxyCompactList}\small\item\em Зарезервировать прибор и поменять его статус на param. В случае передачи token == null, прибор будет освобожден \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Зарезервировать прибор и поменять его статус на param. В случае передачи token == null, прибор будет освобожден. Если прибор занаят, то происходит исключение с текстом ошибки. \end{DoxyCompactList}\item 
 void \hyperlink{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a81feb298bcfe5e7c87cd0e91a1a329ce}{Release} ()
 \begin{DoxyCompactList}\small\item\em Освободить прибор \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Свойства}
@@ -39,6 +39,10 @@ Equipment or facility Typically represents some work-\/performing resource of sy
 
 
 
+См. определение в файле Smpl\-Device.\-cs строка 21
+
+
+
 \subsection{Методы}
 \hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a81feb298bcfe5e7c87cd0e91a1a329ce}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Release@{Release}}
 \index{Release@{Release}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
@@ -46,10 +50,14 @@ Equipment or facility Typically represents some work-\/performing resource of sy
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a81feb298bcfe5e7c87cd0e91a1a329ce}
+)}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a81feb298bcfe5e7c87cd0e91a1a329ce}
 
 
 Освободить прибор 
+
+
+
+См. определение в файле Smpl\-Device.\-cs строка 149
 
 \hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a43be17c0606bf8f720149c2777a33e31}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Reserve@{Reserve}}
 \index{Reserve@{Reserve}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
@@ -57,10 +65,14 @@ Equipment or facility Typically represents some work-\/performing resource of sy
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a43be17c0606bf8f720149c2777a33e31}
+)}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a43be17c0606bf8f720149c2777a33e31}
 
 
 Зарезервировать прибор (param = 1) 
+
+
+
+См. определение в файле Smpl\-Device.\-cs строка 115
 
 \hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a8fac05272f1a7e1213336639e3453512}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Reserve@{Reserve}}
 \index{Reserve@{Reserve}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
@@ -68,16 +80,20 @@ Equipment or facility Typically represents some work-\/performing resource of sy
 \begin{DoxyParamCaption}
 \item[{object}]{token}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a8fac05272f1a7e1213336639e3453512}
+)}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a8fac05272f1a7e1213336639e3453512}
 
 
-Зарезервировать прибор и поменять его статус на param. В случае передачи token == null, прибор будет освобожден 
+Зарезервировать прибор и поменять его статус на param. В случае передачи token == null, прибор будет освобожден. Если прибор занаят, то происходит исключение с текстом ошибки. 
 
 
 \begin{DoxyParams}{Аргументы}
 {\em token} & параметр\\
 \hline
 \end{DoxyParams}
+
+
+См. определение в файле Smpl\-Device.\-cs строка 124
+
 
 
 \subsection{Полный список свойств}
@@ -88,12 +104,20 @@ Equipment or facility Typically represents some work-\/performing resource of sy
 
 Прибор занят? 
 
+
+
+См. определение в файле Smpl\-Device.\-cs строка 48
+
 \hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_ad4036c2596ab7029b778ad45090df69b}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Model@{Model}}
 \index{Model@{Model}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
 \subsubsection[{Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Smpl\-Model} S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device.\-Model\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_ad4036c2596ab7029b778ad45090df69b}
 
 
 Модель, с которой связан прибор 
+
+
+
+См. определение в файле Smpl\-Device.\-cs строка 83
 
 \hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a3525605581b83649d988ca1326b4732f}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Name@{Name}}
 \index{Name@{Name}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
@@ -102,12 +126,20 @@ Equipment or facility Typically represents some work-\/performing resource of sy
 
 Имя прибора 
 
+
+
+См. определение в файле Smpl\-Device.\-cs строка 30
+
 \hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a675ca052cc3996e38aec7ccc1dd7ca8c}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Query\-Counter@{Query\-Counter}}
 \index{Query\-Counter@{Query\-Counter}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
 \subsubsection[{Query\-Counter}]{\setlength{\rightskip}{0pt plus 5cm}virtual int S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device.\-Query\-Counter\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a675ca052cc3996e38aec7ccc1dd7ca8c}
 
 
 Счетчик запросов (пар вызовов reserve/release) 
+
+
+
+См. определение в файле Smpl\-Device.\-cs строка 74
 
 \hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a2e79fee0f480adec487fdf013ed52b2a}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Status@{Status}}
 \index{Status@{Status}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
@@ -116,6 +148,10 @@ Equipment or facility Typically represents some work-\/performing resource of sy
 
 Состояние прибора. Если Status == null, прибор свободен 
 
+
+
+См. определение в файле Smpl\-Device.\-cs строка 39
+
 \hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a8757abb401c1dfa7093ced84f715a2d2}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Time\-Last\-Reserved@{Time\-Last\-Reserved}}
 \index{Time\-Last\-Reserved@{Time\-Last\-Reserved}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
 \subsubsection[{Time\-Last\-Reserved}]{\setlength{\rightskip}{0pt plus 5cm}virtual int S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device.\-Time\-Last\-Reserved\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_a8757abb401c1dfa7093ced84f715a2d2}
@@ -123,12 +159,20 @@ Equipment or facility Typically represents some work-\/performing resource of sy
 
 Время последнего вызова Reserve 
 
+
+
+См. определение в файле Smpl\-Device.\-cs строка 56
+
 \hypertarget{class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_afe478b9c4ec74e462f5af5d3a51f4131}{\index{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}!Time\-Total\-Reserved@{Time\-Total\-Reserved}}
 \index{Time\-Total\-Reserved@{Time\-Total\-Reserved}!SMPLSharp::Objects::SmplDevice@{S\-M\-P\-L\-Sharp\-::\-Objects\-::\-Smpl\-Device}}
 \subsubsection[{Time\-Total\-Reserved}]{\setlength{\rightskip}{0pt plus 5cm}virtual int S\-M\-P\-L\-Sharp.\-Objects.\-Smpl\-Device.\-Time\-Total\-Reserved\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{d7/d39/class_s_m_p_l_sharp_1_1_objects_1_1_smpl_device_afe478b9c4ec74e462f5af5d3a51f4131}
 
 
 Суммарное время, пока прибор занят 
+
+
+
+См. определение в файле Smpl\-Device.\-cs строка 65
 
 
 

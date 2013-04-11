@@ -160,7 +160,11 @@ namespace SMPLSharp.Objects
             /// <param name="model">модель</param>
             /// <param name="name">имя прибора</param>
             /// <param name="countAmbary">количество каналов</param>
- 
+            /// Пример использования:
+            /// @code
+            /// SmplMpdel model =  new SmplModel();
+            /// SmplMultyDevice mdevice = new MultyDevice(model, "multydevice1", 2);
+            /// @endcode 
             internal SmplMultiDevice(SmplModel model, string name, int countAmbary)
             {
                 Model = model;
@@ -180,7 +184,12 @@ namespace SMPLSharp.Objects
             /// Зарезервировать прибор (param = 1)
             /// </summary>
             /// <returns></returns>
- 
+            /// Пример использования:
+            /// @code
+            /// SmplMpdel model =  new SmplModel();
+            /// SmplMultyDevice mdevice = new MultyDevice(model, "multydevice1", 2);
+            /// mdevice.Reserve();
+            /// @endcode
             public int Reserve()
             {
                 return Reserve(1);
@@ -192,7 +201,12 @@ namespace SMPLSharp.Objects
             /// <param name="token"></param>
             /// <param name="id">номер канала</param>
             /// <returns>номер занятого канала прибора</returns>
- 
+            /// Пример использования:
+            /// @code
+            /// SmplMpdel model =  new SmplModel();
+            /// SmplMultyDevice mdevice = new MultyDevice(model, "multydevice1", 2);
+            /// mdevice.Reserve(1, 0);
+            /// @endcode
             public int Reserve(object token, int id = -1)
             {
                 if ((id < 0) || (id > (CountAmbary - 1)))
@@ -231,7 +245,13 @@ namespace SMPLSharp.Objects
             /// Освоболить канал прибора с индексом id
             /// </summary>
             /// <param name="id">индекс канала</param>
- 
+            /// Пример использования:
+            /// @code
+            /// SmplMpdel model =  new SmplModel();
+            /// SmplMultyDevice mdevice = new MultyDevice(model, "multydevice1", 2);
+            /// mdevice.Reserve(1,0);
+            /// mdevice.Release(0);
+            /// @endcode 
             public void Release(int id)
             {
                 if (ArrAmbary[id].Status != false)

@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>SMPLSharp: Пример программы на SMPL</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">SMPLSharp
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li class="current"><a href="../../pages.html"><span>Описания</span></a></li>
+      <li><a href="../../namespaces.html"><span>Пакеты</span></a></li>
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('dc/d54/smplexample.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Свойства</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>События</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Страницы</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Пример программы на SMPL </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="task"></a>
+Задача</h1>
+<p>Задание 12. Специализированное вычислительное устройство, работающее в режиме реального времени, имеет в своем составе два процессора, соединенные с общей оперативной памятью. В режиме нормальной эксплуатации задания выполняются на пер¬вом процессоре, а второй является резервным. Первый процессор характеризуется низкой надежностью и работает безотказно лишь в течение 150 ± 20 мин. Если отказ происходит во время решения задания, в течение 2 мин производится включение второго про¬цессора, который продолжает решение прерванного задания, а также решает и последующие задания до восстановления первого процессора. Это восстановление происходит за 20 ± 10 мин, после чего начинается решение очередного задания на первом процессо¬ре, а резервный выключается. Задания поступают на устройство каждые 10 ± 5 мин и решаются за 5 ± 2 мин. Надежность резервно¬го процессора считается идеальной. Смоделировать процесс работы устройства в течение 50 ч. Под¬считать число решенных заданий, число отказов процессора и число прерванных заданий. Определить максимальную длину оче¬реди заданий и коэффициент загрузки резервного процессора. </p>
+<h1><a class="anchor" id="examplesolution"></a>
+Пример решения</h1>
+<div class="fragment"><div class="line"><span class="keyword">using</span> System;</div>
+<div class="line"><span class="keyword">using</span> System.Collections.Generic;</div>
+<div class="line"><span class="keyword">using</span> System.Linq;</div>
+<div class="line"><span class="keyword">using</span> System.Text;</div>
+<div class="line"><span class="keyword">using</span> System.Threading.Tasks;</div>
+<div class="line"><span class="keyword">using</span> SMPLSharp;</div>
+<div class="line"><span class="keyword">using</span> SMPLSharp.Objects;</div>
+<div class="line"><span class="keyword">using</span> SMPLSharp.Utils;</div>
+<div class="line"><span class="keyword">namespace </span>KM1</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">class </span>Program</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keyword">static</span> <span class="keywordtype">void</span> Main(<span class="keywordtype">string</span>[] args)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keyword">const</span> <span class="keywordtype">int</span> modelingtime = 3000;<span class="comment">//время моделирования</span></div>
+<div class="line">            <span class="keyword">const</span> <span class="keywordtype">int</span> zm = 0, newzad = 1, proc1craked = 2, proc1repared = 3, zo1 = 4, zo2 = 5, proc2on = 6;</div>
+<div class="line">            SmplModel model = <span class="keyword">new</span> SmplModel();</div>
+<div class="line">            model.CreateDevice(<span class="stringliteral">&quot;proc1&quot;</span>);<span class="comment">//создание proc1</span></div>
+<div class="line">            model.CreateDevice(<span class="stringliteral">&quot;proc2&quot;</span>);<span class="comment">//создание proc2</span></div>
+<div class="line">            model.CreateQueue(<span class="stringliteral">&quot;line&quot;</span>);<span class="comment">//создание line</span></div>
+<div class="line">            model.Schedule(zm, modelingtime);</div>
+<div class="line">            model.Schedule(newzad, model.IRandom(5, 15));</div>
+<div class="line">            model.Schedule(proc1craked, model.IRandom(130, 170));</div>
+<div class="line">            <span class="keywordtype">bool</span> p1cracked = <span class="keyword">false</span>, proc2ison = <span class="keyword">false</span>, proc2needreserv = <span class="keyword">false</span>;</div>
+<div class="line">            <span class="keywordtype">int</span> reshzad = 0, otkaz = 0, prerv = 0;</div>
+<div class="line">            <span class="keywordtype">float</span> proc2koef = 0;</div>
+<div class="line">            SmplEvent e;                   </div>
+<div class="line">            <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line">            {</div>
+<div class="line">                model.Cause(out e);                         </div>
+<div class="line">                <span class="keywordflow">switch</span> (e.EventID)</div>
+<div class="line">                {</div>
+<div class="line">                    <span class="keywordflow">case</span> zm:<span class="comment">//завершение моделирования</span></div>
+<div class="line">                        Console.WriteLine(<span class="stringliteral">&quot;Число решенных задач: {0}\nЧисло отказов процессора: {1}\nЧисло прерванных задач: {2}\nМаксимальная длина очереди: {3}\nКоэффициент загрузки резервного процессора: {4}\n&quot;</span>, reshzad, otkaz, prerv, model.Queues[<span class="stringliteral">&quot;line&quot;</span>].MaxLength, proc2koef / (<span class="keywordtype">float</span>)reshzad);</div>
+<div class="line">                        Console.WriteLine(<span class="stringliteral">&quot;\n&quot;</span> + model.Report());</div>
+<div class="line">                        Console.ReadKey();</div>
+<div class="line">                        Environment.Exit(0);</div>
+<div class="line">                        <span class="keywordflow">break</span>;</div>
+<div class="line">                    <span class="keywordflow">case</span> newzad:<span class="comment">//поступление новой задачи</span></div>
+<div class="line">                        <span class="keywordtype">string</span> dev = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">                        <span class="keywordtype">int</span> zo = 0;</div>
+<div class="line">                        <span class="keywordflow">if</span> (p1cracked)</div>
+<div class="line">                        {</div>
+<div class="line">                            dev = <span class="stringliteral">&quot;proc2&quot;</span>;</div>
+<div class="line">                            zo = zo2;</div>
+<div class="line">                        }</div>
+<div class="line">                        <span class="keywordflow">else</span></div>
+<div class="line">                        {</div>
+<div class="line">                            dev = <span class="stringliteral">&quot;proc1&quot;</span>;</div>
+<div class="line">                            zo = zo1;</div>
+<div class="line">                        }</div>
+<div class="line">                        <span class="keywordflow">if</span> ((!model.Devices[dev].IsBusy)&amp;&amp;!(dev == <span class="stringliteral">&quot;proc2&quot;</span> &amp;&amp; !proc2ison<span class="comment">/*proc1 уже сломан, а proc2 еще не включен*/</span>))</div>
+<div class="line">                        {</div>
+<div class="line">                            <span class="comment">//dev не занят</span></div>
+<div class="line">                            model.Devices[dev].Reserve();</div>
+<div class="line">                            model.Schedule(zo, model.IRandom(3, 7));                          </div>
+<div class="line">                        }</div>
+<div class="line">                        <span class="keywordflow">else</span></div>
+<div class="line">                        {</div>
+<div class="line">                            <span class="comment">//dev занят</span></div>
+<div class="line">                            model.Queues[<span class="stringliteral">&quot;line&quot;</span>].Enqueue();</div>
+<div class="line">                        }</div>
+<div class="line">                        model.Schedule(newzad, model.IRandom(5, 15));</div>
+<div class="line">                        <span class="keywordflow">break</span>;</div>
+<div class="line">                    <span class="keywordflow">case</span> zo1:<span class="comment">//завершение облуживания на proc1</span></div>
+<div class="line">                        model.Devices[<span class="stringliteral">&quot;proc1&quot;</span>].Release();</div>
+<div class="line">                        reshzad++;</div>
+<div class="line">                        <span class="keywordflow">if</span> (!model.Queues[<span class="stringliteral">&quot;line&quot;</span>].IsEmpty)</div>
+<div class="line">                        {</div>
+<div class="line">                            <span class="comment">//очередь не пуста</span></div>
+<div class="line">                            model.Queues[<span class="stringliteral">&quot;line&quot;</span>].Head();</div>
+<div class="line">                            model.Schedule(zo1, model.IRandom(3, 7));</div>
+<div class="line">                            model.Devices[<span class="stringliteral">&quot;proc1&quot;</span>].Reserve();                          </div>
+<div class="line">                        }                       </div>
+<div class="line">                        <span class="keywordflow">break</span>;</div>
+<div class="line">                    <span class="keywordflow">case</span> proc1craked:<span class="comment">//proc1 сломался</span></div>
+<div class="line">                        otkaz++;</div>
+<div class="line">                        p1cracked = <span class="keyword">true</span>;</div>
+<div class="line">                        model.Schedule(proc2on, 2);</div>
+<div class="line">                        <span class="keywordflow">if</span> (model.Devices[<span class="stringliteral">&quot;proc1&quot;</span>].IsBusy)</div>
+<div class="line">                        {</div>
+<div class="line">                            <span class="comment">//proc1 занят</span></div>
+<div class="line">                            model.Devices[<span class="stringliteral">&quot;proc1&quot;</span>].Release();</div>
+<div class="line">                            <span class="keywordtype">int</span> zotime = model.Cancel(zo1);</div>
+<div class="line">                            <span class="comment">//на proc1 была задача</span></div>
+<div class="line">                            model.Schedule(zo2, zotime + 2);</div>
+<div class="line">                            proc2needreserv = <span class="keyword">true</span>;                           </div>
+<div class="line">                        }</div>
+<div class="line">                        model.Schedule(proc1repared, model.IRandom(10, 30));</div>
+<div class="line">                        <span class="keywordflow">break</span>;</div>
+<div class="line">                    <span class="keywordflow">case</span> zo2:<span class="comment">//завершения обслуживаняи на proc2</span></div>
+<div class="line">                        model.Devices[<span class="stringliteral">&quot;proc2&quot;</span>].Release();</div>
+<div class="line">                        reshzad++;</div>
+<div class="line">                        <span class="keywordflow">if</span> (!model.Queues[<span class="stringliteral">&quot;line&quot;</span>].IsEmpty)</div>
+<div class="line">                        {</div>
+<div class="line">                            <span class="comment">//очередь не пуста</span></div>
+<div class="line">                            model.Queues[<span class="stringliteral">&quot;line&quot;</span>].Head();</div>
+<div class="line">                            model.Schedule(zo2, model.IRandom(3, 7));</div>
+<div class="line">                            model.Devices[<span class="stringliteral">&quot;proc2&quot;</span>].Reserve();</div>
+<div class="line">                        }                        </div>
+<div class="line">                        proc2koef++;</div>
+<div class="line">                        <span class="keywordflow">break</span>;</div>
+<div class="line">                    <span class="keywordflow">case</span> proc1repared:<span class="comment">//proc1 восстановился                       </span></div>
+<div class="line">                        <span class="keywordflow">if</span> (model.Devices[<span class="stringliteral">&quot;proc2&quot;</span>].IsBusy)</div>
+<div class="line">                        {</div>
+<div class="line">                            <span class="comment">//proc2 занят</span></div>
+<div class="line">                            model.Devices[<span class="stringliteral">&quot;proc2&quot;</span>].Release();</div>
+<div class="line">                            model.Cancel(zo2);</div>
+<div class="line">                            proc2ison = <span class="keyword">false</span>;</div>
+<div class="line">                            prerv++;</div>
+<div class="line">                        }</div>
+<div class="line">                        <span class="keywordflow">if</span> (!model.Queues[<span class="stringliteral">&quot;line&quot;</span>].IsEmpty)</div>
+<div class="line">                        {</div>
+<div class="line">                            <span class="comment">//очередь не пуста</span></div>
+<div class="line">                            model.Queues[<span class="stringliteral">&quot;line&quot;</span>].Head();</div>
+<div class="line">                            model.Devices[<span class="stringliteral">&quot;proc1&quot;</span>].Reserve();</div>
+<div class="line">                            model.Schedule(zo1, model.IRandom(3, 7));</div>
+<div class="line">                        }</div>
+<div class="line">                        model.Schedule(proc1craked, model.IRandom(130, 170));</div>
+<div class="line">                        p1cracked = <span class="keyword">false</span>;</div>
+<div class="line">                        <span class="keywordflow">break</span>;</div>
+<div class="line">                    <span class="keywordflow">case</span> proc2on:<span class="comment">//proc2 включился</span></div>
+<div class="line">                        <span class="keywordflow">if</span> (proc2needreserv)</div>
+<div class="line">                        {</div>
+<div class="line">                            <span class="comment">//нужно зарезервировать proc2, т.к. на него поступила задача с proc1</span></div>
+<div class="line">                            model.Devices[<span class="stringliteral">&quot;proc2&quot;</span>].Reserve();</div>
+<div class="line">                            proc2needreserv = <span class="keyword">false</span>;</div>
+<div class="line">                        }</div>
+<div class="line">                        <span class="keywordflow">else</span></div>
+<div class="line">                        {</div>
+<div class="line">                            <span class="comment">//нужно взять новую задачу</span></div>
+<div class="line">                            <span class="keywordflow">if</span> (!model.Queues[<span class="stringliteral">&quot;line&quot;</span>].IsEmpty)</div>
+<div class="line">                            {</div>
+<div class="line">                                model.Queues[<span class="stringliteral">&quot;line&quot;</span>].Head();</div>
+<div class="line">                                model.Schedule(zo2, model.IRandom(3, 7));</div>
+<div class="line">                                model.Devices[<span class="stringliteral">&quot;proc2&quot;</span>].Reserve();</div>
+<div class="line">                            }</div>
+<div class="line">                        }</div>
+<div class="line">                        proc2ison = <span class="keyword">true</span>;</div>
+<div class="line">                        <span class="keywordflow">break</span>;</div>
+<div class="line">                }               </div>
+<div class="line">            }            </div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Документация по SMPLSharp. Последние изменения: Чт 11 Апр 2013 22:51:49. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
+  </ul>
+</div>
+</body>
+</html>

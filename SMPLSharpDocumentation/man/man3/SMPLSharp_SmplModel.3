@@ -1,0 +1,503 @@
+.TH "SMPLSharp.SmplModel" 3 "Пт 5 Апр 2013" "SMPLSharp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SMPLSharp.SmplModel \- 
+.PP
+Simulation model\&. Provides set of function for building event-based, discrete-event simulation model  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "\fBSmplModel\fP ()"
+.br
+.RI "\fIКонструктор \fP"
+.ti -1c
+.RI "virtual \fBSmplQueue\fP \fBCreateQueue\fP (string name)"
+.br
+.RI "\fIДобавить очередь в модель \fP"
+.ti -1c
+.RI "virtual \fBSmplQueue\fP \fBQueue\fP (string name)"
+.br
+.RI "\fIВозвратить существующую очередь \fP"
+.ti -1c
+.RI "virtual \fBSmplDevice\fP \fBCreateDevice\fP (string name)"
+.br
+.RI "\fIДобавить прибор в модель \fP"
+.ti -1c
+.RI "virtual \fBSmplDevice\fP \fBDevice\fP (string name)"
+.br
+.RI "\fIВозвратить существующий прибор \fP"
+.ti -1c
+.RI "virtual \fBSmplMultiDevice\fP \fBCreateMultiDevice\fP (string name, int countAmbary)"
+.br
+.RI "\fIДобавить многоканальный прибор в модель \fP"
+.ti -1c
+.RI "virtual \fBSmplMultiDevice\fP \fBMultiDevice\fP (string name)"
+.br
+.RI "\fIВозвратить существующий многоканальный прибор \fP"
+.ti -1c
+.RI "void \fBSchedule\fP (int event_id, int wait_time, object param=null)"
+.br
+.RI "\fIЗапланировать событие \fP"
+.ti -1c
+.RI "bool \fBCause\fP (out \fBSmplEvent\fP model_event)"
+.br
+.RI "\fIВызвать ближайшее событие модели \fP"
+.ti -1c
+.RI "bool \fBCause\fP ()"
+.br
+.RI "\fIВызвать ближайшее событие модели \fP"
+.ti -1c
+.RI "bool \fBCause\fP (out int event_id, out object param)"
+.br
+.RI "\fIВызвать ближайшее событие модели \fP"
+.ti -1c
+.RI "int \fBCancel\fP (int event_id, object param=null)"
+.br
+.RI "\fIОтменить ближайшее запланированное событие с указанными параметрами \fP"
+.ti -1c
+.RI "int \fBIRandom\fP (int a, int b)"
+.br
+.RI "\fIГенерирует число по равномерному распределению в диапозоне [a, b] включительно \fP"
+.ti -1c
+.RI "int \fBIRandom\fP (int a)"
+.br
+.RI "\fIГенерирует число по равномерному распределению в диапозоне [0, a] включительно \fP"
+.ti -1c
+.RI "int \fBNexExp\fP (int m)"
+.br
+.RI "\fIГенерирует число по отрицательному экспоненциальному распределению со средней точкой m \fP"
+.ti -1c
+.RI "string \fBReport\fP ()"
+.br
+.RI "\fIГенерирует стандартный отчет о модели \fP"
+.in -1c
+.SS "Защищенные члены"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBOnEventCaused\fP (\fBEventCausedEventArgs\fP e)"
+.br
+.RI "\fIСобытие возникновения события модели\&. Возникает при вызове Cause \fP"
+.in -1c
+.SS "Защищенные данные"
+
+.in +1c
+.ti -1c
+.RI "Dictionary< string, \fBSmplQueue\fP > \fBqueues\fP"
+.br
+.RI "\fIОчереди модели \fP"
+.ti -1c
+.RI "Dictionary< string, \fBSmplDevice\fP > \fBdevices\fP"
+.br
+.RI "\fIПриборы модели \fP"
+.ti -1c
+.RI "List< \fBSmplEvent\fP > \fBfutureEvents\fP"
+.br
+.RI "\fIЖурнал будущих событий модели \fP"
+.ti -1c
+.RI "Dictionary< string, 
+.br
+\fBSmplMultiDevice\fP > \fBmultiDevices\fP"
+.br
+.RI "\fIМногоканальные приборы модели \fP"
+.in -1c
+.SS "Свойства"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBSmplRandomGenerator\fP \fBRandGen\fP\fC [get, set]\fP"
+.br
+.RI "\fIГенератор случайных чисел \fP"
+.ti -1c
+.RI "virtual int \fBTime\fP\fC [get, set]\fP"
+.br
+.RI "\fIМодельное время \fP"
+.ti -1c
+.RI "virtual int \fBNextEventTime\fP\fC [get]\fP"
+.br
+.RI "\fIВремя следующего события \fP"
+.ti -1c
+.RI "virtual bool \fBIsStopped\fP\fC [get, set]\fP"
+.br
+.RI "\fIМодель была остановлена \fP"
+.ti -1c
+.RI "virtual Dictionary< string, 
+.br
+\fBSmplQueue\fP > \fBQueues\fP\fC [get]\fP"
+.br
+.RI "\fIОчереди \fP"
+.ti -1c
+.RI "virtual Dictionary< string, 
+.br
+\fBSmplDevice\fP > \fBDevices\fP\fC [get]\fP"
+.br
+.RI "\fIПриборы \fP"
+.ti -1c
+.RI "virtual Dictionary< string, 
+.br
+\fBSmplMultiDevice\fP > \fBMultiDevices\fP\fC [get]\fP"
+.br
+.RI "\fIМногоканальные приборы \fP"
+.in -1c
+.SS "События"
+
+.in +1c
+.ti -1c
+.RI "\fBEventCausedHandler\fP \fBEventCaused\fP"
+.br
+.RI "\fIСобытие соершено \fP"
+.in -1c
+.SH "Подробное описание"
+.PP 
+Simulation model\&. Provides set of function for building event-based, discrete-event simulation model 
+
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 21
+.SH "Конструктор(ы)"
+.PP 
+.SS "SMPLSharp\&.SmplModel\&.SmplModel ()"
+
+.PP
+Конструктор 
+.PP
+См\&. определение в файле SmplModel\&.cs строка 97
+.SH "Методы"
+.PP 
+.SS "int SMPLSharp\&.SmplModel\&.Cancel (intevent_id, objectparam = \fCnull\fP)"
+
+.PP
+Отменить ближайшее запланированное событие с указанными параметрами \fBАргументы:\fP
+.RS 4
+\fIevent_id\fP Идентификатор события
+.br
+\fIparam\fP Параметры события
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+Время до окончания отменяемого события или -1 в случае, если событие не найдено
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 326
+.SS "bool SMPLSharp\&.SmplModel\&.Cause (out \fBSmplEvent\fPmodel_event)"
+
+.PP
+Вызвать ближайшее событие модели \fBАргументы:\fP
+.RS 4
+\fImodel_event\fP вызванное событие модели
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+Если обработчик EventCaused задаст в e\&.StopModel значение false, функция возвратит false\&. true, если событие существует\&. В случае, если ни одно событие не запланировано, кидается исключение
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 277
+.SS "bool SMPLSharp\&.SmplModel\&.Cause ()"
+
+.PP
+Вызвать ближайшее событие модели \fBВозвращает:\fP
+.RS 4
+Если обработчик EventCaused задаст в e\&.StopModel значение false, функция возвратит false\&. true, если событие существует\&. В случае, если ни одно событие не запланировано, кидается исключение
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 297
+.SS "bool SMPLSharp\&.SmplModel\&.Cause (out intevent_id, out objectparam)"
+
+.PP
+Вызвать ближайшее событие модели \fBАргументы:\fP
+.RS 4
+\fIevent_id\fP идентификатор вызванного события
+.br
+\fIparam\fP параметр вызванного события
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+Если обработчик EventCaused задаст в e\&.StopModel значение false, функция возвратит false\&. true, если событие существует\&. В случае, если ни одно событие не запланировано, кидается исключение
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 310
+.SS "virtual \fBSmplDevice\fP SMPLSharp\&.SmplModel\&.CreateDevice (stringname)\fC [virtual]\fP"
+
+.PP
+Добавить прибор в модель \fBАргументы:\fP
+.RS 4
+\fIname\fP Имя прибора
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+Новый прибор
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 194
+.SS "virtual \fBSmplMultiDevice\fP SMPLSharp\&.SmplModel\&.CreateMultiDevice (stringname, intcountAmbary)\fC [virtual]\fP"
+
+.PP
+Добавить многоканальный прибор в модель \fBАргументы:\fP
+.RS 4
+\fIname\fP Имя многоканального прибора
+.br
+\fIcountAmbary\fP Количество каналов
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+Новый многоканальный прибор
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 225
+.SS "virtual \fBSmplQueue\fP SMPLSharp\&.SmplModel\&.CreateQueue (stringname)\fC [virtual]\fP"
+
+.PP
+Добавить очередь в модель \fBАргументы:\fP
+.RS 4
+\fIname\fP Имя очереди
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+Новая очередь
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 165
+.SS "virtual \fBSmplDevice\fP SMPLSharp\&.SmplModel\&.Device (stringname)\fC [virtual]\fP"
+
+.PP
+Возвратить существующий прибор \fBАргументы:\fP
+.RS 4
+\fIname\fP Имя прибора
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+Прибор
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 211
+.SS "int SMPLSharp\&.SmplModel\&.IRandom (inta, intb)"
+
+.PP
+Генерирует число по равномерному распределению в диапозоне [a, b] включительно \fBАргументы:\fP
+.RS 4
+\fIa\fP Левая граница диапазона
+.br
+\fIb\fP Правая граница диапазона
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 348
+.SS "int SMPLSharp\&.SmplModel\&.IRandom (inta)"
+
+.PP
+Генерирует число по равномерному распределению в диапозоне [0, a] включительно \fBАргументы:\fP
+.RS 4
+\fIa\fP Правая граница диапазона
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 358
+.SS "virtual \fBSmplMultiDevice\fP SMPLSharp\&.SmplModel\&.MultiDevice (stringname)\fC [virtual]\fP"
+
+.PP
+Возвратить существующий многоканальный прибор \fBАргументы:\fP
+.RS 4
+\fIname\fP имя прибора
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+Многоканаьный прибор
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 243
+.SS "int SMPLSharp\&.SmplModel\&.NexExp (intm)"
+
+.PP
+Генерирует число по отрицательному экспоненциальному распределению со средней точкой m \fBАргументы:\fP
+.RS 4
+\fIm\fP Средняя точка
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 369
+.SS "virtual bool SMPLSharp\&.SmplModel\&.OnEventCaused (\fBEventCausedEventArgs\fPe)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Событие возникновения события модели\&. Возникает при вызове Cause \fBАргументы:\fP
+.RS 4
+\fIe\fP 
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 145
+.SS "virtual \fBSmplQueue\fP SMPLSharp\&.SmplModel\&.Queue (stringname)\fC [virtual]\fP"
+
+.PP
+Возвратить существующую очередь \fBАргументы:\fP
+.RS 4
+\fIname\fP Имя очереди
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+Новая очередь
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 182
+.SS "string SMPLSharp\&.SmplModel\&.Report ()"
+
+.PP
+Генерирует стандартный отчет о модели \fBВозвращает:\fP
+.RS 4
+Строка, содержащая весь отчет
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 379
+.SS "void SMPLSharp\&.SmplModel\&.Schedule (intevent_id, intwait_time, objectparam = \fCnull\fP)"
+
+.PP
+Запланировать событие \fBАргументы:\fP
+.RS 4
+\fIevent_id\fP идентификатор типа события
+.br
+\fIwait_time\fP время, через которе событие вызовется
+.br
+\fIparam\fP параметр, передаваемый событию
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplModel\&.cs строка 256
+.SH "Данные класса"
+.PP 
+.SS "Dictionary<string, \fBSmplDevice\fP> SMPLSharp\&.SmplModel\&.devices\fC [protected]\fP"
+
+.PP
+Приборы модели 
+.PP
+См\&. определение в файле SmplModel\&.cs строка 120
+.SS "List<\fBSmplEvent\fP> SMPLSharp\&.SmplModel\&.futureEvents\fC [protected]\fP"
+
+.PP
+Журнал будущих событий модели 
+.PP
+См\&. определение в файле SmplModel\&.cs строка 125
+.SS "Dictionary<string, \fBSmplMultiDevice\fP> SMPLSharp\&.SmplModel\&.multiDevices\fC [protected]\fP"
+
+.PP
+Многоканальные приборы модели 
+.PP
+См\&. определение в файле SmplModel\&.cs строка 130
+.SS "Dictionary<string, \fBSmplQueue\fP> SMPLSharp\&.SmplModel\&.queues\fC [protected]\fP"
+
+.PP
+Очереди модели 
+.PP
+См\&. определение в файле SmplModel\&.cs строка 115
+.SH "Полный список свойств"
+.PP 
+.SS "virtual Dictionary<string, \fBSmplDevice\fP> SMPLSharp\&.SmplModel\&.Devices\fC [get]\fP"
+
+.PP
+Приборы 
+.PP
+См\&. определение в файле SmplModel\&.cs строка 77
+.SS "virtual bool SMPLSharp\&.SmplModel\&.IsStopped\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Модель была остановлена 
+.PP
+См\&. определение в файле SmplModel\&.cs строка 60
+.SS "virtual Dictionary<string, \fBSmplMultiDevice\fP> SMPLSharp\&.SmplModel\&.MultiDevices\fC [get]\fP"
+
+.PP
+Многоканальные приборы 
+.PP
+См\&. определение в файле SmplModel\&.cs строка 85
+.SS "virtual int SMPLSharp\&.SmplModel\&.NextEventTime\fC [get]\fP"
+
+.PP
+Время следующего события 
+.PP
+См\&. определение в файле SmplModel\&.cs строка 48
+.SS "virtual Dictionary<string, \fBSmplQueue\fP> SMPLSharp\&.SmplModel\&.Queues\fC [get]\fP"
+
+.PP
+Очереди 
+.PP
+См\&. определение в файле SmplModel\&.cs строка 69
+.SS "virtual \fBSmplRandomGenerator\fP SMPLSharp\&.SmplModel\&.RandGen\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Генератор случайных чисел 
+.PP
+См\&. определение в файле SmplModel\&.cs строка 30
+.SS "virtual int SMPLSharp\&.SmplModel\&.Time\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Модельное время 
+.PP
+См\&. определение в файле SmplModel\&.cs строка 39
+.SH "Cобытия"
+.PP 
+.SS "\fBEventCausedHandler\fP SMPLSharp\&.SmplModel\&.EventCaused"
+
+.PP
+Событие соершено 
+.PP
+См\&. определение в файле SmplModel\&.cs строка 139
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для SMPLSharp из исходного текста\&.

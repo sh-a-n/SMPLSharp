@@ -1,0 +1,139 @@
+.TH "SMPLSharp.Objects.SmplDevice" 3 "Пт 5 Апр 2013" "SMPLSharp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SMPLSharp.Objects.SmplDevice \- 
+.PP
+Equipment or facility Typically represents some work-performing resource of system being modeled The Interconnection of facilities is not explicit, but can be determined by the model’s routing of tokens between facilities  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "void \fBReserve\fP ()"
+.br
+.RI "\fIЗарезервировать прибор (param = 1) \fP"
+.ti -1c
+.RI "void \fBReserve\fP (object token)"
+.br
+.RI "\fIЗарезервировать прибор и поменять его статус на param\&. В случае передачи token == null, прибор будет освобожден\&. Если прибор занаят, то происходит исключение с текстом ошибки\&. \fP"
+.ti -1c
+.RI "void \fBRelease\fP ()"
+.br
+.RI "\fIОсвободить прибор \fP"
+.in -1c
+.SS "Свойства"
+
+.in +1c
+.ti -1c
+.RI "virtual string \fBName\fP\fC [get, set]\fP"
+.br
+.RI "\fIИмя прибора \fP"
+.ti -1c
+.RI "virtual object \fBStatus\fP\fC [get, set]\fP"
+.br
+.RI "\fIСостояние прибора\&. Если Status == null, прибор свободен \fP"
+.ti -1c
+.RI "bool \fBIsBusy\fP\fC [get]\fP"
+.br
+.RI "\fIПрибор занят? \fP"
+.ti -1c
+.RI "virtual int \fBTimeLastReserved\fP\fC [get, set]\fP"
+.br
+.RI "\fIВремя последнего вызова Reserve \fP"
+.ti -1c
+.RI "virtual int \fBTimeTotalReserved\fP\fC [get, set]\fP"
+.br
+.RI "\fIСуммарное время, пока прибор занят \fP"
+.ti -1c
+.RI "virtual int \fBQueryCounter\fP\fC [get, set]\fP"
+.br
+.RI "\fIСчетчик запросов (пар вызовов reserve/release) \fP"
+.ti -1c
+.RI "\fBSmplModel\fP \fBModel\fP\fC [get, set]\fP"
+.br
+.RI "\fIМодель, с которой связан прибор \fP"
+.in -1c
+.SH "Подробное описание"
+.PP 
+Equipment or facility Typically represents some work-performing resource of system being modeled The Interconnection of facilities is not explicit, but can be determined by the model’s routing of tokens between facilities 
+
+
+.PP
+См\&. определение в файле SmplDevice\&.cs строка 21
+.SH "Методы"
+.PP 
+.SS "void SMPLSharp\&.Objects\&.SmplDevice\&.Release ()"
+
+.PP
+Освободить прибор 
+.PP
+См\&. определение в файле SmplDevice\&.cs строка 149
+.SS "void SMPLSharp\&.Objects\&.SmplDevice\&.Reserve ()"
+
+.PP
+Зарезервировать прибор (param = 1) 
+.PP
+См\&. определение в файле SmplDevice\&.cs строка 115
+.SS "void SMPLSharp\&.Objects\&.SmplDevice\&.Reserve (objecttoken)"
+
+.PP
+Зарезервировать прибор и поменять его статус на param\&. В случае передачи token == null, прибор будет освобожден\&. Если прибор занаят, то происходит исключение с текстом ошибки\&. \fBАргументы:\fP
+.RS 4
+\fItoken\fP параметр
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplDevice\&.cs строка 124
+.SH "Полный список свойств"
+.PP 
+.SS "bool SMPLSharp\&.Objects\&.SmplDevice\&.IsBusy\fC [get]\fP"
+
+.PP
+Прибор занят? 
+.PP
+См\&. определение в файле SmplDevice\&.cs строка 48
+.SS "\fBSmplModel\fP SMPLSharp\&.Objects\&.SmplDevice\&.Model\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Модель, с которой связан прибор 
+.PP
+См\&. определение в файле SmplDevice\&.cs строка 83
+.SS "virtual string SMPLSharp\&.Objects\&.SmplDevice\&.Name\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Имя прибора 
+.PP
+См\&. определение в файле SmplDevice\&.cs строка 30
+.SS "virtual int SMPLSharp\&.Objects\&.SmplDevice\&.QueryCounter\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Счетчик запросов (пар вызовов reserve/release) 
+.PP
+См\&. определение в файле SmplDevice\&.cs строка 74
+.SS "virtual object SMPLSharp\&.Objects\&.SmplDevice\&.Status\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Состояние прибора\&. Если Status == null, прибор свободен 
+.PP
+См\&. определение в файле SmplDevice\&.cs строка 39
+.SS "virtual int SMPLSharp\&.Objects\&.SmplDevice\&.TimeLastReserved\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Время последнего вызова Reserve 
+.PP
+См\&. определение в файле SmplDevice\&.cs строка 56
+.SS "virtual int SMPLSharp\&.Objects\&.SmplDevice\&.TimeTotalReserved\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Суммарное время, пока прибор занят 
+.PP
+См\&. определение в файле SmplDevice\&.cs строка 65
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для SMPLSharp из исходного текста\&.

@@ -1,0 +1,179 @@
+.TH "SMPLSharp.Objects.SmplMultiDevice" 3 "Пт 5 Апр 2013" "SMPLSharp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SMPLSharp.Objects.SmplMultiDevice \- 
+.PP
+Equipment or facility Typically represents some work-performing resource of system being modeled The Interconnection of facilities is not explicit, but can be determined by the model’s routing of tokens between facilities  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Классы"
+
+.in +1c
+.ti -1c
+.RI "struct \fBAmbary\fP"
+.br
+.RI "\fIКанал прибора \fP"
+.in -1c
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "int \fBReserve\fP ()"
+.br
+.RI "\fIЗарезервировать прибор (param = 1) \fP"
+.ti -1c
+.RI "int \fBReserve\fP (object token, int id=-1)"
+.br
+.RI "\fIЗарезервировать прибор и поменять статус первого свободного канала на true\&. В случае передачи token == null, прибор будет освобожден \fP"
+.ti -1c
+.RI "void \fBRelease\fP (int id)"
+.br
+.RI "\fIОсвоболить канал прибора с индексом id \fP"
+.in -1c
+.SS "Открытые атрибуты"
+
+.in +1c
+.ti -1c
+.RI "\fBAmbary\fP[] \fBArrAmbary\fP"
+.br
+.RI "\fIМассив каналов прибора \fP"
+.in -1c
+.SS "Свойства"
+
+.in +1c
+.ti -1c
+.RI "virtual string \fBName\fP\fC [get, set]\fP"
+.br
+.RI "\fIИмя прибора \fP"
+.ti -1c
+.RI "int \fBCountAmbary\fP\fC [get, set]\fP"
+.br
+.RI "\fIКоличество каналов в приборе \fP"
+.ti -1c
+.RI "bool \fBIsBusy\fP\fC [get]\fP"
+.br
+.RI "\fIВсе каналы прибора заняты? \fP"
+.ti -1c
+.RI "virtual int \fBTimeLastReserved\fP\fC [get, set]\fP"
+.br
+.RI "\fIВремя последнего вызова Reserve \fP"
+.ti -1c
+.RI "virtual int \fBTimeTotalReserved\fP\fC [get, set]\fP"
+.br
+.RI "\fIСуммарное время, пока прибор занят \fP"
+.ti -1c
+.RI "virtual int \fBQueryCounter\fP\fC [get, set]\fP"
+.br
+.RI "\fIСчетчик запросов (пар вызовов reserve/release) \fP"
+.ti -1c
+.RI "\fBSmplModel\fP \fBModel\fP\fC [get, set]\fP"
+.br
+.RI "\fIМодель, с которой связан прибор \fP"
+.in -1c
+.SH "Подробное описание"
+.PP 
+Equipment or facility Typically represents some work-performing resource of system being modeled The Interconnection of facilities is not explicit, but can be determined by the model’s routing of tokens between facilities 
+
+
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 21
+.SH "Методы"
+.PP 
+.SS "void SMPLSharp\&.Objects\&.SmplMultiDevice\&.Release (intid)"
+
+.PP
+Освоболить канал прибора с индексом id \fBАргументы:\fP
+.RS 4
+\fIid\fP индекс канала
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 235
+.SS "int SMPLSharp\&.Objects\&.SmplMultiDevice\&.Reserve ()"
+
+.PP
+Зарезервировать прибор (param = 1) \fBВозвращает:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 184
+.SS "int SMPLSharp\&.Objects\&.SmplMultiDevice\&.Reserve (objecttoken, intid = \fC-1\fP)"
+
+.PP
+Зарезервировать прибор и поменять статус первого свободного канала на true\&. В случае передачи token == null, прибор будет освобожден \fBАргументы:\fP
+.RS 4
+\fItoken\fP 
+.br
+\fIid\fP номер канала
+.RE
+.PP
+\fBВозвращает:\fP
+.RS 4
+номер занятого канала прибора
+.RE
+.PP
+
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 196
+.SH "Данные класса"
+.PP 
+.SS "\fBAmbary\fP [] SMPLSharp\&.Objects\&.SmplMultiDevice\&.ArrAmbary"
+
+.PP
+Массив каналов прибора 
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 95
+.SH "Полный список свойств"
+.PP 
+.SS "int SMPLSharp\&.Objects\&.SmplMultiDevice\&.CountAmbary\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Количество каналов в приборе 
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 86
+.SS "bool SMPLSharp\&.Objects\&.SmplMultiDevice\&.IsBusy\fC [get]\fP"
+
+.PP
+Все каналы прибора заняты? 
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 102
+.SS "\fBSmplModel\fP SMPLSharp\&.Objects\&.SmplMultiDevice\&.Model\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Модель, с которой связан прибор 
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 148
+.SS "virtual string SMPLSharp\&.Objects\&.SmplMultiDevice\&.Name\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Имя прибора 
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 31
+.SS "virtual int SMPLSharp\&.Objects\&.SmplMultiDevice\&.QueryCounter\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Счетчик запросов (пар вызовов reserve/release) 
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 138
+.SS "virtual int SMPLSharp\&.Objects\&.SmplMultiDevice\&.TimeLastReserved\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Время последнего вызова Reserve 
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 118
+.SS "virtual int SMPLSharp\&.Objects\&.SmplMultiDevice\&.TimeTotalReserved\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Суммарное время, пока прибор занят 
+.PP
+См\&. определение в файле SmplMultiDevice\&.cs строка 128
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для SMPLSharp из исходного текста\&.
