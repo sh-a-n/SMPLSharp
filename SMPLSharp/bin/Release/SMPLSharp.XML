@@ -1,0 +1,923 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMPLSharp</name>
+    </assembly>
+    <members>
+        <member name="T:SMPLSharp.Objects.SmplMultiDevice">
+            <summary>
+            Equipment or facility
+            Typically represents some work-performing resource of system being modeled
+            The Interconnection of facilities is not explicit, but can be determined 
+              by the model’s routing of tokens between facilities
+            </summary>
+        </member>
+        <member name="F:SMPLSharp.Objects.SmplMultiDevice.ArrAmbary">
+            <summary>
+            Массив каналов прибора
+            </summary>
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplMultiDevice.#ctor(SMPLSharp.SmplModel,System.String,System.Int32)">
+            <summary>
+            Конструктор прибора. Экземпляры создаются через SMPLModel
+            </summary>
+            <param name="model">модель</param>
+            <param name="name">имя прибора</param>
+            <param name="countAmbary">количество каналов</param>
+            Пример создания экземпляра:
+            @code
+            SmplMpdel model =  new SmplModel();
+            SmplMultyDevice mdevice = model.CreateMultyDevice("multydevice1", 2);
+            @endcode 
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplMultiDevice.Reserve">
+            <summary>
+            Зарезервировать прибор (param = 1)
+            </summary>
+            <returns></returns>
+            Пример использования:
+            @code
+            SmplMpdel model =  new SmplModel();
+            SmplMultyDevice mdevice = new MultyDevice(model, "multydevice1", 2);
+            mdevice.Reserve();
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplMultiDevice.Reserve(System.Object,System.Int32)">
+            <summary>
+            Зарезервировать прибор и поменять статус первого свободного канала на true. В случае передачи token == null, прибор будет освобожден
+            </summary>
+            <param name="token"></param>
+            <param name="id">номер канала</param>
+            <returns>номер занятого канала прибора</returns>
+            Пример использования:
+            @code
+            SmplMpdel model =  new SmplModel();
+            SmplMultyDevice mdevice = new MultyDevice(model, "multydevice1", 2);
+            mdevice.Reserve(1, 0);
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplMultiDevice.Release(System.Int32)">
+            <summary>
+            Освоболить канал прибора с индексом id
+            </summary>
+            <param name="id">индекс канала</param>
+            Пример использования:
+            @code
+            SmplMpdel model =  new SmplModel();
+            SmplMultyDevice mdevice = new MultyDevice(model, "multydevice1", 2);
+            mdevice.Reserve(1,0);
+            mdevice.Release(0);
+            @endcode 
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplMultiDevice.Name">
+            <summary>
+             Имя прибора
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplMultiDevice.CountAmbary">
+            <summary>
+            Количество каналов в приборе
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplMultiDevice.IsBusy">
+            <summary>
+            Все каналы прибора заняты?
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplMultiDevice.TimeLastReserved">
+            <summary>
+            Время последнего вызова Reserve
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplMultiDevice.TimeTotalReserved">
+            <summary>
+            Суммарное время, пока прибор занят
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplMultiDevice.QueryCounter">
+            <summary>
+            Счетчик запросов (пар вызовов reserve/release)
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplMultiDevice.Model">
+            <summary>
+            Модель, с которой связан прибор
+            </summary>
+        </member>
+        <member name="T:SMPLSharp.Objects.SmplMultiDevice.Ambary">
+            <summary>
+            Канал прибора
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplMultiDevice.Ambary.Status">
+            <summary>
+            Если Status == null, канал свободен
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplMultiDevice.Ambary.TimeLastReserved">
+            <summary>
+            Время последнего резервирования
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplMultiDevice.Ambary.TimeTotalReserved">
+            <summary>
+            Суммарное время, пока канал занят
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplMultiDevice.Ambary.QueryCounter">
+            <summary>
+            Счетчик запросов (пар вызовов reserve/release)
+            </summary>
+        </member>
+        <member name="T:SMPLSharp.Objects.SmplDevice">
+            <summary>
+            Equipment or facility
+            Typically represents some work-performing resource of system being modeled
+            The Interconnection of facilities is not explicit, but can be determined 
+              by the model’s routing of tokens between facilities
+            </summary>
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplDevice.#ctor(SMPLSharp.SmplModel,System.String)">
+            <summary>
+            Конструктор прибора. Экземпляры создаются через SMPLModel
+            </summary>
+            <param name="model">Модель</param>
+            <param name="name">Имя прибора</param>
+            Пример создания экземпляра:
+            @code
+            SmplModel model = new SmplModel();
+            SmplDevice device = model.CreateDevice("device1");
+            @endcode 
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplDevice.Reserve">
+            <summary>
+            Зарезервировать прибор (param = 1)
+            </summary>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            model.CreateDevice("device1");
+            model.Devices["device1"].Reserve();
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplDevice.Reserve(System.Object)">
+            <summary>
+            Зарезервировать прибор и поменять его статус на param. В случае передачи token == null, прибор будет освобожден. Если прибор занаят, то происходит исключение с текстом ошибки.
+            </summary>
+            <param name="token">параметр</param>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            model.CreateDevice("device1");
+            model.Devices["device1"].Reserve(2);
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplDevice.Release">
+            <summary>
+            Освободить прибор
+            </summary>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            model.CreateDevice("device1");
+            model.Devices["device1"].Reserve();
+            model.Devices["device1"].Release();
+            @endcode
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplDevice.Name">
+            <summary>
+            Имя прибора
+            </summary> 
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplDevice.Status">
+            <summary>
+            Состояние прибора. Если Status == null, прибор свободен
+            </summary> 
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplDevice.IsBusy">
+            <summary>
+             Прибор занят?
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplDevice.TimeLastReserved">
+            <summary>
+            Время последнего вызова Reserve
+            </summary> 
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplDevice.TimeTotalReserved">
+            <summary>
+            Суммарное время, пока прибор занят
+            </summary> 
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplDevice.QueryCounter">
+            <summary>
+            Счетчик запросов (пар вызовов reserve/release)
+            </summary> 
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplDevice.Model">
+            <summary>
+            Модель, с которой связан прибор
+            </summary> 
+        </member>
+        <member name="T:SMPLSharp.Objects.SmplEvent">
+            <summary>
+            Model's event
+            A change of state of any system entity, active or passive
+            Can be, for example, Arrival of task or Computing completion 
+            </summary>
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplEvent.#ctor(System.Int32,System.Int32,System.Int32,System.Object)">
+            <summary>
+            Конструктор события. Экземпляры создаются в SmplModel в методе Schedule(int event_id, int wait_time, object param = null).
+            </summary>
+            <param name="event_id">идентификатор события</param>
+            <param name="current_time">текущее модельное время</param>
+            <param name="waiting_time">время ожидания возникновения</param>
+            <param name="param">доп. параметр события</param> 
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplEvent.EventID">
+            <summary>
+            Идентификатор типа события
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplEvent.TimeRegistred">
+            <summary>
+            Время регистрации в модели
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplEvent.TimeCaused">
+            <summary>
+            Время возникновения в модели (TimeRegistred + время ожидания)
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplEvent.Param">
+            <summary>
+            Доп. параметр события 
+            </summary>
+        </member>
+        <member name="T:SMPLSharp.SmplModel">
+            <summary>
+            Simulation model. Provides set of function for building event-based, discrete-event simulation model
+            </summary>
+        </member>
+        <member name="M:SMPLSharp.SmplModel.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            @endcode
+        </member>
+        <member name="F:SMPLSharp.SmplModel.queues">
+            <summary>
+            Очереди модели
+            </summary> 
+        </member>
+        <member name="F:SMPLSharp.SmplModel.devices">
+            <summary>
+            Приборы модели
+            </summary> 
+        </member>
+        <member name="F:SMPLSharp.SmplModel.futureEvents">
+            <summary>
+            Журнал будущих событий модели
+            </summary>
+        </member>
+        <member name="F:SMPLSharp.SmplModel.multiDevices">
+            <summary>
+            Многоканальные приборы модели
+            </summary> 
+        </member>
+        <member name="M:SMPLSharp.SmplModel.OnEventCaused(SMPLSharp.EventCausedEventArgs)">
+            <summary>
+            Событие возникновения события модели. Возникает при вызове Cause
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SMPLSharp.SmplModel.CreateQueue(System.String)">
+            <summary>
+            Добавить очередь в модель
+            </summary>
+            <param name="name">Имя очереди</param>
+            <returns>Новая очередь</returns>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            SmplQueue q1 = model.CreateQueue("q1");
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.SmplModel.Queue(System.String)">
+            <summary>
+            Возвратить существующую очередь
+            </summary>
+            <param name="name">Имя очереди</param>
+            <returns>Новая очередь</returns>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            model.CreateQueue("q1");
+            SmplQueue q1 = model.Queue("q1");
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.SmplModel.CreateDevice(System.String)">
+            <summary>
+            Добавить прибор в модель
+            </summary>
+            <param name="name">Имя прибора</param>
+            <returns>Новый прибор</returns>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            SmplDevice d1 = model.CreateDevice("device1");
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.SmplModel.Device(System.String)">
+            <summary>
+            Возвратить существующий прибор
+            </summary>
+            <param name="name">Имя прибора</param>
+            <returns>Прибор</returns>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            model.CreateDevice("device1");
+            SmplDevice d1 = model.Device("device1");
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.SmplModel.CreateMultiDevice(System.String,System.Int32)">
+            <summary>
+            Добавить многоканальный прибор в модель
+            </summary>
+            <param name="name">Имя многоканального прибора</param>
+            <param name="countAmbary">Количество каналов</param>
+            <returns>Новый многоканальный прибор</returns>
+            Пример использования:
+            @code
+            SmplMpdel model =  new SmplModel();
+            SmplMultyDevice multydev = model.CreateMultyDevice("dev1", 2);
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.SmplModel.MultiDevice(System.String)">
+            <summary>
+            Возвратить существующий многоканальный прибор
+            </summary>
+            <param name="name">имя прибора</param>
+            <returns>Многоканаьный прибор</returns>
+            Пример использования:
+            @code
+            SmplMpdel model =  new SmplModel();
+            model.CreateMultyDevice("dev1", 2);
+            SmplMultyDevice dev1 = model.MultyDevice("dev1");
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.SmplModel.Schedule(System.Int32,System.Int32,System.Object)">
+            <summary>
+            Запланировать событие
+            </summary>
+            <param name="event_id">идентификатор типа события</param>
+            <param name="wait_time">время, через которе событие вызовется</param>
+            <param name="param">параметр, передаваемый событию</param>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            model.CreateDevice("device1");
+            model.Devices["device1"].Reserve();
+            model.Schedule(0,30);
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.SmplModel.Cause(SMPLSharp.Objects.SmplEvent@)">
+            <summary>
+            Вызвать ближайшее событие модели
+            </summary>
+            <param name="model_event">вызванное событие модели</param>
+            <returns>Если обработчик EventCaused задаст в e.StopModel значение false, функция возвратит false. true, если событие существует. В случае, если ни одно событие не запланировано, кидается исключение</returns>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            model.CreateDevice("device1");
+            model.Devices["device1"].Reserve();
+            model.Schedule(0,30);
+            SmplEvent e;
+            bool res = model.Cause(e);
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.SmplModel.Cause">
+            <summary>
+            Вызвать ближайшее событие модели
+            </summary>
+            <returns>Если обработчик EventCaused задаст в e.StopModel значение false, функция возвратит false. true, если событие существует. В случае, если ни одно событие не запланировано, кидается исключение</returns>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            model.CreateDevice("device1");
+            model.Devices["device1"].Reserve();
+            model.Schedule(0,30);
+            bool res = model.Cause();
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.SmplModel.Cause(System.Int32@,System.Object@)">
+            <summary>
+            Вызвать ближайшее событие модели
+            </summary>
+            <param name="event_id">идентификатор вызванного события</param>
+            <param name="param">параметр вызванного события</param>
+            <returns>Если обработчик EventCaused задаст в e.StopModel значение false, функция возвратит false. true, если событие существует. В случае, если ни одно событие не запланировано, кидается исключение</returns>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            model.CreateDevice("device1");
+            model.Devices["device1"].Reserve();
+            model.Schedule(0,30,"string");
+            SmplEvent e;
+            string str;
+            bool res = model.Cause(e,str);
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.SmplModel.Cancel(System.Int32,System.Object)">
+            <summary>
+            Отменить ближайшее запланированное событие с указанными параметрами
+            </summary>
+            <param name="event_id">Идентификатор события</param>
+            <param name="param">Параметры события</param>
+            <returns>Время до окончания отменяемого события или -1 в случае, если событие не найдено</returns>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            model.CreateDevice("device1");
+            model.Devices["device1"].Reserve();
+            model.Schedule(0,30,"string");
+            int time = model.Cancel(0,"string");
+            model.Devices["device1"].Release();
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.SmplModel.IRandom(System.Int32,System.Int32)">
+            <summary>
+            Генерирует число по равномерному распределению в диапозоне [a, b] включительно
+            </summary>
+            <param name="a">Левая граница диапазона</param>
+            <param name="b">Правая граница диапазона</param>
+            <returns></returns>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            model.CreateDevice("device1");
+            model.Devices["device1"].Reserve();
+            model.Schedule(0,model.IRandom(15,25));
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.SmplModel.IRandom(System.Int32)">
+            <summary>
+            Генерирует число по равномерному распределению в диапозоне [0, a] включительно
+            </summary>
+            <param name="a">Правая граница диапазона</param>
+            <returns></returns>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            model.CreateDevice("device1");
+            model.Devices["device1"].Reserve();
+            model.Schedule(0,model.IRandom(30));
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.SmplModel.NexExp(System.Int32)">
+            <summary>
+            Генерирует число по отрицательному экспоненциальному распределению со средней точкой m
+            </summary>
+            <param name="m">Средняя точка</param>
+            <returns></returns>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            model.CreateDevice("device1");
+            model.Devices["device1"].Reserve();
+            model.Schedule(0,model.IRandom(5));
+            @endcode 
+        </member>
+        <member name="M:SMPLSharp.SmplModel.Report">
+            <summary>
+            Генерирует стандартный отчет о модели
+            </summary>
+            <returns>Строка, содержащая весь отчет</returns>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            model.CreateDevice("device1");
+            model.Devices["device1"].Reserve();
+            model.Schedule(0,30);
+            SmplEvent e;
+            model.Cause(e);
+            model.Devices["device1"].Release();
+            string str = model.Report();
+            Console.WriteLine(str);
+            @endcode
+        </member>
+        <member name="P:SMPLSharp.SmplModel.RandGen">
+            <summary>
+            Генератор случайных чисел
+            </summary> 
+        </member>
+        <member name="P:SMPLSharp.SmplModel.Time">
+            <summary>
+            Модельное время
+            </summary> 
+        </member>
+        <member name="P:SMPLSharp.SmplModel.NextEventTime">
+            <summary>
+            Время следующего события
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.SmplModel.IsStopped">
+            <summary>
+            Модель была остановлена
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.SmplModel.Queues">
+            <summary>
+            Очереди
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.SmplModel.Devices">
+            <summary>
+             Приборы
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.SmplModel.MultiDevices">
+            <summary>
+            Многоканальные приборы
+            </summary> 
+        </member>
+        <member name="E:SMPLSharp.SmplModel.EventCaused">
+            <summary>
+            Событие соершено
+            </summary>
+        </member>
+        <member name="T:SMPLSharp.EventCausedHandler">
+            <summary>
+            Delegate for EventCaused
+            </summary>
+            <param name="o"></param>
+            <param name="e"></param> 
+        </member>
+        <member name="T:SMPLSharp.EventCausedEventArgs">
+            <summary>
+            Event when model's event is caused
+            </summary> 
+        </member>
+        <member name="M:SMPLSharp.EventCausedEventArgs.#ctor(SMPLSharp.Objects.SmplEvent)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="model_event">Событие</param>
+            @code
+            
+            @endcode
+        </member>
+        <member name="P:SMPLSharp.EventCausedEventArgs.Event">
+            <summary>
+            Событие модели
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.EventCausedEventArgs.StopModel">
+            <summary>
+            Если StopModel == false, остановить выполнение модели (SmplModel.Cause вернет false)
+            </summary>
+        </member>
+        <member name="T:SMPLSharp.Objects.SmplQueue">
+            <summary>
+            Очередь. Represents place where tokens are waiting when equipment is busy
+            </summary>
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplQueue.#ctor(SMPLSharp.SmplModel,System.String)">
+            <summary>
+            Конструктор очереди. Экземпляры создаются через SMPLModel
+            </summary>
+            <param name="model">модель</param>
+            <param name="name">имя очереди</param>
+            Пример создания экземпляра:
+            @code
+            SmplModel model = new SmplModel();
+            SmplQueue queue = model.CreateQueue("queue1");
+            @endcode
+        </member>
+        <member name="F:SMPLSharp.Objects.SmplQueue.elements">
+            <summary>
+            Элементы очереди
+            [2][2][2][1][1] (Указаны приоритеты)
+            
+            При извлечении берем первый из элементов
+            При вставке добавляем в конец списка (пропускаем элементы с более низким приоритетом)
+            </summary>
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplQueue.Enqueue">
+            <summary>
+            Добавить новый элемент (1) в очередь
+            </summary>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            SmplQueue queue = new SmplQueue(model, "queue1");
+            queue.Enqueue();
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplQueue.Enqueue(System.Object,System.Int32)">
+            <summary>
+            Добавить новый элемент token в очередь с заданным приоритетом
+            </summary>
+            <param name="token">элемент</param>
+            <param name="priority">приоритет</param>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            SmplQueue queue = new SmplQueue(model, "queue1");
+            queue.Enqueue("elem1", 1);
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplQueue.Head">
+            <summary>
+            Извлечь первый элемент очереди
+            </summary>
+            <returns>Возвращает элемент очереди. В случае пустой очереди генерирует исключение</returns>
+            Пример использования:
+            @code
+            SmplModel model = new SmplModel();
+            SmplQueue queue = new SmplQueue(model, "queue1");
+            queue.Enqueue("elem1", 1);
+            var element = queue.Head();
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplQueue.updateStatiscticIncrease(System.Int32)">
+            <summary>
+            Обновление статистики при добавлении в очередь
+            </summary>
+            <param name="prev_length"></param>
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplQueue.updateStatiscticDecrease(System.Int32,SMPLSharp.Objects.SmplQueueElement)">
+            <summary>
+            Обновление статистики при извлечении из очереди
+            </summary>
+            <param name="prev_length"></param>
+            <param name="element"></param>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplQueue.Name">
+            <summary>
+            Имя очереди
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplQueue.Length">
+            <summary>
+            Длина очереди
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplQueue.MaxLength">
+            <summary>
+            Максимальная длина очереди
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplQueue.CountPassed">
+            <summary>
+            Количество элементов, удаленных из очереди
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplQueue.TimeLastChanged">
+            <summary>
+            Время последнего изменения длины очереди
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplQueue.WaitingPeriodSum">
+            <summary>
+            Сумма периодов ожиданий
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplQueue.WaitingPeriodSq2Sum">
+            <summary>
+            Сумма квадратов периодов ожиданий
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplQueue.LengthOfTimeIntegral">
+            <summary>
+            Сумма длин очереди * соответсвующие периоды изменения. Интерграл Q(t), где Q - длина очереди, t - модельное время. Используется для вычисления средней длины очереди
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplQueue.IsEmpty">
+            <summary>
+             Очередь пуста?
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplQueue.Elements">
+            <summary>
+            Элементы очереди
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplQueue.Model">
+            <summary>
+            Модель, с которой связана очередь
+            </summary>
+        </member>
+        <member name="T:SMPLSharp.Objects.SmplQueueElement">
+            <summary>
+            Элемент очереди
+            </summary>
+        </member>
+        <member name="M:SMPLSharp.Objects.SmplQueueElement.#ctor(System.Object,System.Int32)">
+            <summary>
+            Конструктор элемента
+            </summary>
+            <param name="token">содержимое элемента</param>
+            <param name="priority">приоритет элемента</param>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplQueueElement.Value">
+            <summary>
+            Содержимое элемента
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplQueueElement.Priority">
+            <summary>
+            Приоритет элемента
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Objects.SmplQueueElement.TimeAdded">
+            <summary>
+            Время добавления в очередь
+            </summary>
+        </member>
+        <member name="T:SMPLSharp.Utils.SmplRandomGenerator">
+            <summary>
+            Генератор случайных чисел
+            </summary> 
+        </member>
+        <member name="M:SMPLSharp.Utils.SmplRandomGenerator.#ctor">
+            <summary>
+            Конструктор генератора, задающий seed от текущего времени
+            </summary>
+        </member>
+        <member name="M:SMPLSharp.Utils.SmplRandomGenerator.#ctor(System.UInt32)">
+            <summary>
+            Конструкутор генератора с заданным seed
+            </summary>
+            <param name="seed"></param>
+        </member>
+        <member name="M:SMPLSharp.Utils.SmplRandomGenerator.IRandom(System.Int32)">
+            <summary>
+            Генерирует число по равномерному распределению в диапозоне [0, a] включительно
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+            Пример использования:
+            @code
+            int randomValue = SmplRandomGenerator.IRandom(5);
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.Utils.SmplRandomGenerator.IRandom(System.Int32,System.Int32)">
+            <summary>
+            Генерирует число по равномерному распределению в диапозоне [a, b] включительно
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns></returns>
+            Пример использования:
+            @code
+            int randomValue = SmplRandomGenerator.IRandom(2, 7);
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.Utils.SmplRandomGenerator.NegExp(System.Int32)">
+            <summary>
+            Генерирует число по отрицательному экспоненциальному распределению со средней точкой m
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+            Пример использования:
+            @code
+            int randomValue = SmplRandomGenerator.NegExp(5);
+            @endcode
+        </member>
+        <member name="M:SMPLSharp.Utils.SmplRandomGenerator.Poisson(System.Double)">
+            <summary>
+            Генерирует число по распределению Пуассона со параметром lambda
+            </summary>
+            <param name="lambda"></param>
+            <returns></returns>
+            Пример использования:
+            @code
+            int randomValue = SmplRandomGenerator.Poisson(1.5);
+            @endcode
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplRandomGenerator.Seed">
+            <summary>
+            Текущее значение Seed
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplRandomGenerator.StartSeed">
+            <summary>
+            Первоначальное значение Seed
+            </summary>
+        </member>
+        <member name="T:SMPLSharp.Utils.SmplRDeviceStatisic">
+            <summary>
+            Статистика по прибору
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplRDeviceStatisic.Name">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplRDeviceStatisic.AverageTimeReserved">
+            <summary>
+            Среднее время обслуживания заявки
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplRDeviceStatisic.BusyIndex">
+            <summary>
+            Занятость прибора (0..1)
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplRDeviceStatisic.QueryCount">
+            <summary>
+            Количество обслужанных заявок
+            </summary>
+        </member>
+        <member name="T:SMPLSharp.Utils.SmplRMultiDeviceStatisic">
+            <summary>
+            Статистика по многоканальному прибору
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplRMultiDeviceStatisic.ChannelCount">
+            <summary>
+            Количество каналов
+            </summary>
+        </member>
+        <member name="T:SMPLSharp.Utils.SmplRQueueStatisic">
+            <summary>
+            Статистика по очереди
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplRQueueStatisic.Name">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplRQueueStatisic.AverageTimeWaiting">
+            <summary>
+            Среднее время ожидания
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplRQueueStatisic.DispersalTimeWaiting">
+            <summary>
+            Разброс времени ожидания
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplRQueueStatisic.AverageLength">
+            <summary>
+            Средняя длина очереди
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplRQueueStatisic.MaxLength">
+            <summary>
+            Максимальная длина очереди
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplRQueueStatisic.TotalCount">
+            <summary>
+            Число заявок, попавших в очередь
+            </summary>
+        </member>
+        <member name="T:SMPLSharp.Utils.SmplReporter">
+            <summary>
+            Give model statistic
+            </summary> 
+        </member>
+        <member name="M:SMPLSharp.Utils.SmplReporter.#ctor(SMPLSharp.SmplModel)">
+            <summary>
+            Конструктор для SmplReporter
+            </summary>
+            <param name="model">Модель</param>
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplReporter.ModelTime">
+            <summary>
+            Время моделирования
+            </summary> 
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplReporter.DeviceStatistic">
+            <summary>
+            Информация о приборах
+            </summary> 
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplReporter.MultiDeviceStatistic">
+            <summary>
+            Информация о многоканальных приборах
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplReporter.QueueStatistic">
+            <summary>
+            Информация о очередях
+            </summary>
+        </member>
+        <member name="P:SMPLSharp.Utils.SmplReporter.Model">
+            <summary>
+            Модель, с которой связан прибор
+            </summary>
+        </member>
+    </members>
+</doc>
