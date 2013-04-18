@@ -48,7 +48,7 @@ namespace SMPLSharp.Objects
 
              
             /// <summary>
-            /// Конструктор:
+            /// Конструктор события. Экземпляры создаются в SmplModel в методе Schedule(int event_id, int wait_time, object param = null).
             /// </summary>
             /// <param name="event_id">идентификатор события</param>
             /// <param name="current_time">текущее модельное время</param>

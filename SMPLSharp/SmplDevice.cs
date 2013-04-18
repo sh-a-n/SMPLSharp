@@ -94,10 +94,10 @@ namespace SMPLSharp.Objects
             /// </summary>
             /// <param name="model">Модель</param>
             /// <param name="name">Имя прибора</param>
-            /// Пример использования:
+            /// Пример создания экземпляра:
             /// @code
             /// SmplModel model = new SmplModel();
-            /// SmplDevice device = new SmplDevice(model, "device1");
+            /// SmplDevice device = model.CreateDevice("device1");
             /// @endcode 
             internal SmplDevice(SmplModel model, string name)
             {

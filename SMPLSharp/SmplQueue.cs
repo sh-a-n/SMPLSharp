@@ -135,10 +135,10 @@ namespace SMPLSharp.Objects
             /// </summary>
             /// <param name="model">модель</param>
             /// <param name="name">имя очереди</param>
-            /// Пример использования:
+            /// Пример создания экземпляра:
             /// @code
             /// SmplModel model = new SmplModel();
-            /// SmplQueue queue = new SmplQueue(model, "queue1");
+            /// SmplQueue queue = model.CreateQueue("queue1");
             /// @endcode
             internal SmplQueue(SmplModel model, string name)
             {

@@ -160,10 +160,10 @@ namespace SMPLSharp.Objects
             /// <param name="model">модель</param>
             /// <param name="name">имя прибора</param>
             /// <param name="countAmbary">количество каналов</param>
-            /// Пример использования:
+            /// Пример создания экземпляра:
             /// @code
             /// SmplMpdel model =  new SmplModel();
-            /// SmplMultyDevice mdevice = new MultyDevice(model, "multydevice1", 2);
+            /// SmplMultyDevice mdevice = model.CreateMultyDevice("multydevice1", 2);
             /// @endcode 
             internal SmplMultiDevice(SmplModel model, string name, int countAmbary)
             {
