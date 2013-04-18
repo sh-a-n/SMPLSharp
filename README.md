@@ -11,5 +11,6 @@ SMPLSharp Web Site(on SourceForge):http://sourceforge.net/projects/smplsharp/
 Fixed and Improved by Sh-a-n. Source code:https://github.com/sh-a-n/SMPLSharp/
 
 
-Скомпилированная библиотека находится в папке /SMPLSharp/bin/Release
+Скомпилированная библиотека находится в папке /SMPLSharp/bin/Release.
+
 Документация и примеры использования кода находятся в папке /SMPLSharpDocumentation/html/ в виде html-документа с имененм index.html
