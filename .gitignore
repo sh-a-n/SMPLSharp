@@ -1,5 +1,6 @@
 *.suo
-/SMPLSharp/bin
+/SMPLSharp/bin/Debug
+/SMPLSharp/bin/*pdb
 /SMPLSharp/obj
 /SMPLSharpConsoleTest/bin
 /SMPLSharpConsoleTest/obj
